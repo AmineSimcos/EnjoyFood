@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimar2y">#29ffc6</color>
+    <color name="colorPrimary">#20e3b2</color>
+    <color name="colorPrimaryDark">#20e3b2</color>
+    <color name="colorAccent">#8AC545</color>
+    <color name="colorAccent2">#0f3443</color>
+    <color name="colorText">#3a3a3c</color>
+    <color name="a">#75ba97</color>
+    <color name="a_background">#00823F</color>
+    <color name="b">#bdda8d</color>
+    <color name="b_background">#86bc2b</color>
+    <color name="c">#fee374</color>
+    <color name="c_background">#fecc00</color>
+    <color name="d">#f6ba73</color>
+    <color name="d_background">#ef8200</color>
+    <color name="e">#f1947b</color>
+    <color name="e_background">#e73c09</color>
+    <color name="white">#ffffff</color>
+
+    <!-- colors for button style -->
+    <color name="gradient_start_color">#4c84ff</color>
+    <color name="gradient_end_color">#18a3fe</color>
+
+    <!-- colors for tab and screen text -->
+    <color name="tab_indicator_gray">#c0c0c0</color>
+    <color name="intro_title_color">#000000</color>
+    <color name="intro_description_color">#656565</color>
+
 </resources>

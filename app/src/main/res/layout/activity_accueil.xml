@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.fragmentAccueil">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:layout_marginVertical="8dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Bienvenue !"/>
+    <ViewFlipper
+        android:id="@+id/v_fliper"
+        android:layout_weight="60"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
+
+    <TextView
+        android:layout_weight="10"
+        android:id="@+id/tv_title"
+        android:layout_below="@id/v_fliper"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:text="Menu"/>
+
+    <HorizontalScrollView
+        android:layout_weight="20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:layout_marginVertical="10dp"
+        android:layout_marginTop="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_produit"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:textSize="13sp"
+                android:layout_margin="10dp"
+                android:paddingVertical="25dp"
+                android:textAllCaps="false"
+                android:text="@string/menu_produit"
+                android:drawableTop="@drawable/ic_produit"
+                android:background="@drawable/img_accueil" />
+
+            <Button
+                android:id="@+id/btn_consommation"
+                android:src="@drawable/ic_consommation"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:textSize="13sp"
+                android:layout_margin="10dp"
+                android:paddingVertical="25dp"
+                android:textAllCaps="false"
+                android:text="@string/menu_consommations"
+                android:drawableTop="@drawable/ic_consommation"
+                android:background="@drawable/img_accueil" />
+
+            <Button
+                android:id="@+id/btn_historique"
+                android:src="@drawable/ic_history"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:textSize="13sp"
+                android:layout_margin="10dp"
+                android:paddingVertical="25dp"
+                android:textAllCaps="false"
+                android:text="Historique"
+                android:drawableTop="@drawable/ic_history"
+                android:background="@drawable/img_accueil" />
+
+            <Button
+                android:id="@+id/btn_apropos"
+                android:src="@drawable/ic_apropos"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:textSize="13sp"
+                android:layout_margin="10dp"
+                android:paddingVertical="25dp"
+                android:textAllCaps="false"
+                android:text="@string/menu_apropos"
+                android:drawableTop="@drawable/ic_apropos"
+                android:background="@drawable/img_accueil" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <Button
+        android:id="@+id/btn_scanner"
+        android:layout_weight="10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="80dp"
+        android:layout_marginVertical="20dp"
+        android:paddingStart="20dp"
+        android:textAllCaps="false"
+        android:drawablePadding="-60dp"
+        android:background="@drawable/btn_register"
+        android:drawableStart="@drawable/bar4"
+        android:text="Analyser" />
+
+</LinearLayout>

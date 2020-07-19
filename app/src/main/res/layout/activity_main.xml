@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:background="@drawable/background1"
     tools:openDrawer="start">
 
     <include
@@ -13,12 +14,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <com.google.android.material.navigation.NavigationView
+    <com.shreyaspatil.material.navigationview.MaterialNavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
+        app:itemStyle="rounded_right"
         app:menu="@menu/activity_main_drawer" />
+
+
+
 </androidx.drawerlayout.widget.DrawerLayout>

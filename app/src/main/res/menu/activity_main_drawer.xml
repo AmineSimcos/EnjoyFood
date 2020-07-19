@@ -5,16 +5,46 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:id="@+id/nav_accueil"
+            android:icon="@drawable/ic_accueil"
+            android:title="@string/menu_accueil" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:id="@+id/nav_produit"
+            android:icon="@drawable/ic_produit"
+            android:title="@string/menu_produit" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/nav_consommation"
+            android:icon="@drawable/ic_consommation"
+            android:title="@string/menu_consommations" />
+        <item
+            android:id="@+id/nav_historique"
+            android:icon="@drawable/ic_history"
+            android:title="Historique" />
+        <item
+            android:id="@+id/nav_apropos"
+            android:icon="@drawable/ic_apropos"
+            android:title="@string/menu_apropos" />
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item android:title="Profile">
+            <menu>
+                <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_login"
+                    android:icon="@drawable/ic_log"
+                    android:title="@string/menu_login" />
+                <item
+                    android:id="@+id/nav_profile"
+                    android:icon="@drawable/ic_profile"
+                    android:title="@string/menu_profile" />
+                <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/ic_logout"
+                    android:title="@string/menu_logout" />
+                </group>
+            </menu>
+
+        </item>
     </group>
 </menu>
