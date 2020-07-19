@@ -1,7 +1,7 @@
 package com.exemple.enjoyfood;
 
 public class URLs {
-    public static final String ROOT_URL = "http://192.168.43.89/enjoyfood/";
+    public static final String ROOT_URL = "http://192.168.1.35/enjoyfood/";
     public static final String URL_PRODUCT = ROOT_URL + "getProduct.php";
     public static final String URL_ALL_PRODUCT = ROOT_URL + "getAll.php";
     public static final String URL_PHOTO = ROOT_URL + "image/product/";
