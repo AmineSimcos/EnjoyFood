@@ -8,7 +8,7 @@ import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
 
-import dz.baichoudjedi.lovefood.R;
+import com.exemple.enjoyfood.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
 

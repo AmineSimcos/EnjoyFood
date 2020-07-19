@@ -7,9 +7,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import dz.baichoudjedi.lovefood.ui.Tab1;
-import dz.baichoudjedi.lovefood.ui.Tab2;
-import dz.baichoudjedi.lovefood.ui.Tab3;
+import com.exemple.enjoyfood.ui.Tab1;
+import com.exemple.enjoyfood.ui.Tab2;
+import com.exemple.enjoyfood.ui.Tab3;
 
 public class PagerAdapter extends FragmentStatePagerAdapter {
 

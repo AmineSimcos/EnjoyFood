@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import dz.baichoudjedi.lovefood.model.Categorie;
+import com.exemple.enjoyfood.model.Categorie;
 
 public class ExpandableListDataPump {
     public static HashMap<String, List<Categorie>> getData() {

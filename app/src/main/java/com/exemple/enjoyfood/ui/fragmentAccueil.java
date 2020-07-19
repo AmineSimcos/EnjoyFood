@@ -23,7 +23,7 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.thekhaeng.pushdownanim.PushDownAnim;
 
-import dz.baichoudjedi.lovefood.R;
+import com.exemple.enjoyfood.R;
 
 import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
 import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_STATIC_DP;

@@ -21,9 +21,9 @@ import com.thekhaeng.pushdownanim.PushDownAnim;
 import java.util.ArrayList;
 import java.util.List;
 
-import dz.baichoudjedi.lovefood.R;
-import dz.baichoudjedi.lovefood.model.ScreenItem;
-import dz.baichoudjedi.lovefood.myadapter.IntroViewPagerAdapter;
+import com.exemple.enjoyfood.R;
+import com.exemple.enjoyfood.model.ScreenItem;
+import com.exemple.enjoyfood.myadapter.IntroViewPagerAdapter;
 
 import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
 

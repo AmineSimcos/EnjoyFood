@@ -17,9 +17,9 @@ import com.thekhaeng.pushdownanim.PushDownAnim;
 
 import java.util.Map;
 
-import dz.baichoudjedi.lovefood.R;
-import dz.baichoudjedi.lovefood.VolleySingleton;
-import dz.baichoudjedi.lovefood.myrequest.MyRequest;
+import com.exemple.enjoyfood.R;
+import com.exemple.enjoyfood.VolleySingleton;
+import com.exemple.enjoyfood.myrequest.MyRequest;
 
 import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
 

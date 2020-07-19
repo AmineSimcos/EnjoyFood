@@ -11,8 +11,10 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import dz.baichoudjedi.lovefood.model.Categorie;
-import dz.baichoudjedi.lovefood.R;
+import com.exemple.enjoyfood.model.Categorie;
+
+import com.exemple.enjoyfood.model.Categorie;
+import com.exemple.enjoyfood.R;
 
 public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
 

@@ -18,7 +18,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-import dz.baichoudjedi.lovefood.R;
+import com.exemple.enjoyfood.R;
 
 public class fragmentHistorique extends Fragment {
 

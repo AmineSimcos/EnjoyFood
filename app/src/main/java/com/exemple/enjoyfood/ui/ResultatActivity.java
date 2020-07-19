@@ -3,7 +3,7 @@ package com.exemple.enjoyfood.ui;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.PagerAdapter;
+//import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
@@ -25,13 +25,14 @@ import com.thekhaeng.pushdownanim.PushDownAnim;
 import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import dz.baichoudjedi.lovefood.DownLoadImageTask;
-import dz.baichoudjedi.lovefood.SessionManager;
-import dz.baichoudjedi.lovefood.VolleySingleton;
-import dz.baichoudjedi.lovefood.model.Produit;
-import dz.baichoudjedi.lovefood.R;
-import dz.baichoudjedi.lovefood.URLs;
-import dz.baichoudjedi.lovefood.myrequest.MyRequest;
+import com.exemple.enjoyfood.DownLoadImageTask;
+import com.exemple.enjoyfood.SessionManager;
+import com.exemple.enjoyfood.VolleySingleton;
+import com.exemple.enjoyfood.model.Produit;
+import com.exemple.enjoyfood.R;
+import com.exemple.enjoyfood.URLs;
+import com.exemple.enjoyfood.myrequest.MyRequest;
+import com.exemple.enjoyfood.myadapter.PagerAdapter;
 
 import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
 
@@ -79,7 +80,7 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
         t.addTab(t.newTab().setText("Statistique"));
         t.setTabGravity(TabLayout.GRAVITY_FILL);
         final ViewPager viewPager = findViewById(R.id.viewPager);
-        final PagerAdapter adapter = new dz.baichoudjedi.lovefood.myadapter.PagerAdapter(getSupportFragmentManager(),t.getTabCount());
+        final PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(),t.getTabCount());
         viewPager.setAdapter(adapter);
         viewPager.setOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(t));
         t.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

@@ -13,8 +13,8 @@ import androidx.viewpager.widget.PagerAdapter;
 
 import java.util.List;
 
-import dz.baichoudjedi.lovefood.R;
-import dz.baichoudjedi.lovefood.model.ScreenItem;
+import com.exemple.enjoyfood.R;
+import com.exemple.enjoyfood.model.ScreenItem;
 
 public class IntroViewPagerAdapter extends PagerAdapter {
 

@@ -34,10 +34,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import dz.baichoudjedi.lovefood.R;
-import dz.baichoudjedi.lovefood.SessionManager;
-import dz.baichoudjedi.lovefood.URLs;
-import dz.baichoudjedi.lovefood.VolleySingleton;
+import com.exemple.enjoyfood.R;
+import com.exemple.enjoyfood.SessionManager;
+import com.exemple.enjoyfood.URLs;
+import com.exemple.enjoyfood.VolleySingleton;
 
 public class fragmentConsommation extends Fragment {
     double Ncalorie = 0;

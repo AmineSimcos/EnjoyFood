@@ -45,16 +45,16 @@ import java.util.Map;
 import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import dz.baichoudjedi.lovefood.URLs;
-import dz.baichoudjedi.lovefood.VolleySingleton;
-import dz.baichoudjedi.lovefood.model.Categorie;
-import dz.baichoudjedi.lovefood.ExpandableListDataPump;
-import dz.baichoudjedi.lovefood.R;
-import dz.baichoudjedi.lovefood.model.Produit;
-import dz.baichoudjedi.lovefood.myadapter.CustomExpandableListAdapter;
-import dz.baichoudjedi.lovefood.myadapter.GridViewAdapter;
-import dz.baichoudjedi.lovefood.myadapter.MonProduitAdapter;
-import dz.baichoudjedi.lovefood.myrequest.MyRequest;
+import com.exemple.enjoyfood.URLs;
+import com.exemple.enjoyfood.VolleySingleton;
+import com.exemple.enjoyfood.model.Categorie;
+import com.exemple.enjoyfood.ExpandableListDataPump;
+import com.exemple.enjoyfood.R;
+import com.exemple.enjoyfood.model.Produit;
+import com.exemple.enjoyfood.myadapter.CustomExpandableListAdapter;
+import com.exemple.enjoyfood.myadapter.GridViewAdapter;
+import com.exemple.enjoyfood.myadapter.MonProduitAdapter;
+import com.exemple.enjoyfood.myrequest.MyRequest;
 
 import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
 

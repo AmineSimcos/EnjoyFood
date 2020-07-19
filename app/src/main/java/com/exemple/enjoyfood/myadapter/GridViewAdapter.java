@@ -22,14 +22,14 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-import dz.baichoudjedi.lovefood.URLs;
-import dz.baichoudjedi.lovefood.VolleySingleton;
-import dz.baichoudjedi.lovefood.model.Categorie;
-import dz.baichoudjedi.lovefood.R;
-import dz.baichoudjedi.lovefood.model.Produit;
-import dz.baichoudjedi.lovefood.myrequest.MyRequest;
-import dz.baichoudjedi.lovefood.ui.ResultatActivity;
-import dz.baichoudjedi.lovefood.ui.fragmentProduit;
+import com.exemple.enjoyfood.URLs;
+import com.exemple.enjoyfood.VolleySingleton;
+import com.exemple.enjoyfood.model.Categorie;
+import com.exemple.enjoyfood.R;
+import com.exemple.enjoyfood.model.Produit;
+import com.exemple.enjoyfood.myrequest.MyRequest;
+import com.exemple.enjoyfood.ui.ResultatActivity;
+import com.exemple.enjoyfood.ui.fragmentProduit;
 
 public class GridViewAdapter extends ArrayAdapter<Produit> {
 

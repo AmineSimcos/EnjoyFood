@@ -19,9 +19,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import dz.baichoudjedi.lovefood.URLs;
-import dz.baichoudjedi.lovefood.model.Produit;
-import dz.baichoudjedi.lovefood.R;
+import com.exemple.enjoyfood.URLs;
+import com.exemple.enjoyfood.model.Produit;
+import com.exemple.enjoyfood.R;
 
 public class MonProduitAdapter extends RecyclerView.Adapter<MonProduitAdapter.ProduitViewHolder> implements Filterable {
 

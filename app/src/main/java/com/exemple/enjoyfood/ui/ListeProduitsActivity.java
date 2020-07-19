@@ -37,12 +37,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import dz.baichoudjedi.lovefood.model.Produit;
-import dz.baichoudjedi.lovefood.R;
-import dz.baichoudjedi.lovefood.URLs;
-import dz.baichoudjedi.lovefood.VolleySingleton;
-import dz.baichoudjedi.lovefood.myadapter.MonProduitAdapter;
-import dz.baichoudjedi.lovefood.myrequest.MyRequest;
+import com.exemple.enjoyfood.model.Produit;
+import com.exemple.enjoyfood.R;
+import com.exemple.enjoyfood.URLs;
+import com.exemple.enjoyfood.VolleySingleton;
+import com.exemple.enjoyfood.myadapter.MonProduitAdapter;
+import com.exemple.enjoyfood.myrequest.MyRequest;
 
 public class ListeProduitsActivity extends AppCompatActivity implements MonProduitAdapter.onItemClickListenr{
 

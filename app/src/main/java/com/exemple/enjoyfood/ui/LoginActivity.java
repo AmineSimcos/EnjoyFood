@@ -17,10 +17,10 @@ import com.android.volley.RequestQueue;
 import com.google.android.material.textfield.TextInputLayout;
 import com.thekhaeng.pushdownanim.PushDownAnim;
 
-import dz.baichoudjedi.lovefood.R;
-import dz.baichoudjedi.lovefood.SessionManager;
-import dz.baichoudjedi.lovefood.VolleySingleton;
-import dz.baichoudjedi.lovefood.myrequest.MyRequest;
+import com.exemple.enjoyfood.R;
+import com.exemple.enjoyfood.SessionManager;
+import com.exemple.enjoyfood.VolleySingleton;
+import com.exemple.enjoyfood.myrequest.MyRequest;
 
 import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
 

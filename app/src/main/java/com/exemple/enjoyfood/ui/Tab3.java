@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.exemple.enjoyfood.R;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
@@ -16,8 +17,8 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 
-import dz.baichoudjedi.lovefood.R;
-import dz.baichoudjedi.lovefood.model.Produit;
+import com.exemple.enjoyfood.R;
+import com.exemple.enjoyfood.model.Produit;
 
 public class Tab3 extends Fragment {
 

@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 import com.thekhaeng.pushdownanim.PushDownAnim;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import dz.baichoudjedi.lovefood.R;
+import com.exemple.enjoyfood.R;
 
 import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
 

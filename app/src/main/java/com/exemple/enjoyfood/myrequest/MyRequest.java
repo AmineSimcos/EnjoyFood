@@ -16,7 +16,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-import dz.baichoudjedi.lovefood.URLs;
+import com.exemple.enjoyfood.URLs;
 
 public class MyRequest {
 

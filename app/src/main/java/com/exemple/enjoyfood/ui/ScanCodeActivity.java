@@ -1,19 +1,16 @@
 package com.exemple.enjoyfood.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.RequestQueue;
 import com.google.zxing.Result;
 
-import dz.baichoudjedi.lovefood.VolleySingleton;
-import dz.baichoudjedi.lovefood.model.Produit;
-import dz.baichoudjedi.lovefood.myrequest.MyRequest;
-
+import com.exemple.enjoyfood.VolleySingleton;
+import com.exemple.enjoyfood.myrequest.MyRequest;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler{

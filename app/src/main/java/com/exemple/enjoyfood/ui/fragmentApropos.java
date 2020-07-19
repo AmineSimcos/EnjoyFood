@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import dz.baichoudjedi.lovefood.R;
+import com.exemple.enjoyfood.R;
 
 public class fragmentApropos extends Fragment {
     @Nullable

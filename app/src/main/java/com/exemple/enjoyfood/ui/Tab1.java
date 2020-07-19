@@ -14,10 +14,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import dz.baichoudjedi.lovefood.DownLoadImageTask;
-import dz.baichoudjedi.lovefood.R;
-import dz.baichoudjedi.lovefood.URLs;
-import dz.baichoudjedi.lovefood.model.Produit;
+import com.exemple.enjoyfood.DownLoadImageTask;
+import com.exemple.enjoyfood.R;
+import com.exemple.enjoyfood.URLs;
+import com.exemple.enjoyfood.model.Produit;
 
 
 public class Tab1 extends Fragment {

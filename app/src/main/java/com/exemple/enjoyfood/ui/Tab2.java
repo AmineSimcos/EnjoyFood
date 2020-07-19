@@ -9,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import dz.baichoudjedi.lovefood.R;
-import dz.baichoudjedi.lovefood.model.Produit;
+import com.exemple.enjoyfood.R;
+import com.exemple.enjoyfood.model.Produit;
 
 public class Tab2 extends Fragment {
 

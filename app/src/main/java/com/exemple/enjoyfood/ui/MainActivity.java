@@ -20,8 +20,8 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.navigation.NavigationView;
 import com.shreyaspatil.material.navigationview.MaterialNavigationView;
 
-import dz.baichoudjedi.lovefood.R;
-import dz.baichoudjedi.lovefood.SessionManager;
+import com.exemple.enjoyfood.R;
+import com.exemple.enjoyfood.SessionManager;
 
 public class MainActivity extends AppCompatActivity{
 
