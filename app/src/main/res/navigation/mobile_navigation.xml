@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_accueil"
-        android:name="dz.baichoudjedi.lovefood.ui.fragmentAccueil"
+        android:name="com.exemple.enjoyfood.ui.fragmentAccueil"
         android:label="@string/menu_accueil"
         tools:layout="@layout/activity_accueil">
 
@@ -16,31 +16,31 @@
 
     <fragment
         android:id="@+id/nav_produit"
-        android:name="dz.baichoudjedi.lovefood.ui.fragmentProduit"
+        android:name="com.exemple.enjoyfood.ui.fragmentProduit"
         android:label="@string/menu_produit"
         tools:layout="@layout/activity_produit" />
 
     <fragment
         android:id="@+id/nav_consommation"
-        android:name="dz.baichoudjedi.lovefood.ui.fragmentConsommation"
+        android:name="com.exemple.enjoyfood.ui.fragmentConsommation"
         android:label="@string/menu_consommations"
         tools:layout="@layout/activity_consommation" />
 
     <fragment
         android:id="@+id/nav_historique"
-        android:name="dz.baichoudjedi.lovefood.ui.fragmentHistorique"
+        android:name="com.exemple.enjoyfood.ui.fragmentHistorique"
         android:label="@string/menu_historique"
         tools:layout="@layout/activity_historique" />
 
     <fragment
         android:id="@+id/nav_apropos"
-        android:name="dz.baichoudjedi.lovefood.ui.fragmentApropos"
+        android:name="com.exemple.enjoyfood.ui.fragmentApropos"
         android:label="@string/menu_apropos"
         tools:layout="@layout/activity_apropos" />
 
     <fragment
         android:id="@+id/nav_profile"
-        android:name="dz.baichoudjedi.lovefood.ui.fragmentProfile"
+        android:name="com.exemple.enjoyfood.ui.fragmentProfile"
         android:label="@string/menu_profile"
         tools:layout="@layout/activity_profile" />
 

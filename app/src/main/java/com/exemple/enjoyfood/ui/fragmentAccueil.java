@@ -32,7 +32,7 @@ public class fragmentAccueil  extends Fragment {
     public static TextView txt;
     private Button btn, btn_produit, btn_consommation, btn_historique, btn_apropos;
     //private VideoView v_background;
-    //private String path = "android.resource://dz.baichoudjedi.lovefood/" + R.raw.video2;
+    //private String path = "android.resource://.baichoudjedi.lovefood/" + R.raw.video2;
     ViewFlipper v_flipper;
 
     @Nullable
