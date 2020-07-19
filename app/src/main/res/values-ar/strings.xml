@@ -1,4 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EnjoyFood</string>
+    <string name="app_name">Enjoy Food</string>
+    <string name="menu_produit">منتجات</string>
+    <string name="menu_accueil">الرئيسية</string>
+    <string name="menu_consommations">احصائيات</string>
+    <string name="action_settings">اعدادات</string>
+    <string name="menu_partager">نشر</string>
+    <string name="menu_apropos">حول التطبيق</string>
+    <string name="about">عن التطبيق</string>
+    <string name="version">"النسخة 1.0      "</string>
+    <string name="populaire">الأكثر فحصا</string>
+    <string name="categorie">حسب الصنف</string>
+    <string name="bienvenue">مرحبا بكم في</string>
+    <string name="composition_nutrisionnelle">المحتوى الغذائي</string>
+    <string name="pour_n100_ml">ل 100 مل</string>
+    <string name="par_portion_250_ml">ل 250 مل</string>
+    <string name="energie">السعرة الطاقوية</string>
+    <string name="mati_res_grasses">مواد دهنية</string>
+    <string name="glucides">غلوسيدات</string>
+    <string name="prot_ines">بروتينات</string>
+    <string name="fibres">ألياف</string>
+    <string name="sodium">صوديوم</string>
+    <string name="sel">ملح</string>
+    <string name="calicium">كاليسيوم</string>
+    <string name="fruits_l_gumes">فواكه، خضر (%)</string>
+    <string name="ingrediant">محتويات</string>
+    <string name="enjoyfood">EnjoyFood</string>
+    <string name="sucres">منها السكريات</string>
+    <string name="graisses_satur_es">منها الأحماض الدهنية المشبعة</string>
+    <string name="nutrition">العناصر الغذائية</string>
+    <string name="unity_g">غ</string>
+    <string name="unity_kj">كيلو جول</string>
+    <string name="unity_kcal">كيلو حريرة</string>
+    <string name="for100ml">ل 100 مل</string>
+    <string name="for100g">ل 100 غ</string>
+    <string name="for250ml">ل 250 مل</string>
+    <string name="for250g">ل 250 غ</string>
 </resources>
