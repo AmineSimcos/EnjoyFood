@@ -17,10 +17,10 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.exemple.enjoyfood.R;
 import com.google.android.material.navigation.NavigationView;
 import com.shreyaspatil.material.navigationview.MaterialNavigationView;
 
-import com.exemple.enjoyfood.R;
 import com.exemple.enjoyfood.SessionManager;
 
 public class MainActivity extends AppCompatActivity{
