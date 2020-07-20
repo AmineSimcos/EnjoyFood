@@ -35,4 +35,10 @@ public class SplashScreenActivity extends AppCompatActivity {
         // handler post delayed
         new Handler().postDelayed(runnable, Config.SPALSH_SCREEN_TIMEOUT);
     }
+
+    @Override
+    public void finish() {
+        super.finish();
+        //overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }
 }
