@@ -29,11 +29,9 @@ import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
 import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_STATIC_DP;
 
 public class fragmentAccueil  extends Fragment {
-    public static TextView txt;
     private Button btn, btn_produit, btn_consommation, btn_historique, btn_apropos;
-    //private VideoView v_background;
-    //private String path = "android.resource://.baichoudjedi.lovefood/" + R.raw.video2;
-    ViewFlipper v_flipper;
+    private int images[] = {R.drawable.test, R.drawable.testa,R.drawable.testb,R.drawable.testc,R.drawable.testd,R.drawable.teste};
+    private ViewFlipper v_flipper;
 
     @Nullable
     @Override
@@ -46,14 +44,15 @@ public class fragmentAccueil  extends Fragment {
         btn_historique = v.findViewById(R.id.btn_historique);
         btn_apropos = v.findViewById(R.id.btn_apropos);
 
-        int images[] = {R.drawable.test, R.drawable.testa,R.drawable.testb,R.drawable.testc,R.drawable.testd,R.drawable.teste};
+
         v_flipper = v.findViewById(R.id.v_fliper);
 
-        for(int i = 0; i < images.length; i++){
-            flipperImages(images[i]);
+        for (int image : images) {
+            flipperImages(image);
         }
 
         PushDownAnim.setPushDownAnimTo(btn,btn_apropos,btn_consommation,btn_historique,btn_produit)
+                .setScale( MODE_SCALE, 0.89f)
                 .setDurationPush( PushDownAnim.DEFAULT_PUSH_DURATION )
                 .setDurationRelease( PushDownAnim.DEFAULT_RELEASE_DURATION )
                 .setInterpolatorPush( PushDownAnim.DEFAULT_INTERPOLATOR )
