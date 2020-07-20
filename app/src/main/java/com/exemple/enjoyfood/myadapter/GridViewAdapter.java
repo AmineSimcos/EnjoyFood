@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -22,14 +21,12 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-import com.exemple.enjoyfood.URLs;
+import com.exemple.enjoyfood.Config;
 import com.exemple.enjoyfood.VolleySingleton;
-import com.exemple.enjoyfood.model.Categorie;
 import com.exemple.enjoyfood.R;
 import com.exemple.enjoyfood.model.Produit;
 import com.exemple.enjoyfood.myrequest.MyRequest;
 import com.exemple.enjoyfood.ui.ResultatActivity;
-import com.exemple.enjoyfood.ui.fragmentProduit;
 
 public class GridViewAdapter extends ArrayAdapter<Produit> {
 
@@ -58,7 +55,7 @@ public class GridViewAdapter extends ArrayAdapter<Produit> {
         final ImageView logo = convertView.findViewById(R.id.iv_adapter);
         final ProgressBar pg = convertView.findViewById(R.id.prog_adapter);
 
-        String imgURL = URLs.URL_PHOTO + c.getImage();
+        String imgURL = Config.URL_PHOTO + c.getImage();
         Picasso.with(context).load(imgURL).fit().centerInside().into(logo);
         pg.setVisibility(View.GONE);
         logo.setVisibility(View.VISIBLE);

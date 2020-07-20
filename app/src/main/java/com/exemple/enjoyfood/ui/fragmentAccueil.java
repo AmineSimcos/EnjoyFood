@@ -9,8 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.VideoView;
 import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
@@ -18,15 +16,13 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
-import androidx.navigation.ui.NavigationUI;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.exemple.enjoyfood.Config;
 import com.thekhaeng.pushdownanim.PushDownAnim;
 
 import com.exemple.enjoyfood.R;
 
 import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
-import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_STATIC_DP;
 
 public class fragmentAccueil  extends Fragment {
     private Button btn, btn_produit, btn_consommation, btn_historique, btn_apropos;
@@ -51,13 +47,15 @@ public class fragmentAccueil  extends Fragment {
             flipperImages(image);
         }
 
-        PushDownAnim.setPushDownAnimTo(btn,btn_apropos,btn_consommation,btn_historique,btn_produit)
-                .setScale( MODE_SCALE, 0.89f)
-                .setDurationPush( PushDownAnim.DEFAULT_PUSH_DURATION )
-                .setDurationRelease( PushDownAnim.DEFAULT_RELEASE_DURATION )
-                .setInterpolatorPush( PushDownAnim.DEFAULT_INTERPOLATOR )
-                .setInterpolatorRelease( PushDownAnim.DEFAULT_INTERPOLATOR );
-
+        // Activer l'animation du boutton
+        if(Config.ANIMATION_BUTTON_ACTIVE) {
+            PushDownAnim.setPushDownAnimTo(btn, btn_apropos, btn_consommation, btn_historique, btn_produit)
+                    .setScale(MODE_SCALE, 0.89f)
+                    .setDurationPush(PushDownAnim.DEFAULT_PUSH_DURATION)
+                    .setDurationRelease(PushDownAnim.DEFAULT_RELEASE_DURATION)
+                    .setInterpolatorPush(PushDownAnim.DEFAULT_INTERPOLATOR)
+                    .setInterpolatorRelease(PushDownAnim.DEFAULT_INTERPOLATOR);
+        }
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

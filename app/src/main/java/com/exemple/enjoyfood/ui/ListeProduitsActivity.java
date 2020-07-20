@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,7 +25,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
@@ -34,12 +32,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import com.exemple.enjoyfood.model.Produit;
 import com.exemple.enjoyfood.R;
-import com.exemple.enjoyfood.URLs;
+import com.exemple.enjoyfood.Config;
 import com.exemple.enjoyfood.VolleySingleton;
 import com.exemple.enjoyfood.myadapter.MonProduitAdapter;
 import com.exemple.enjoyfood.myrequest.MyRequest;
@@ -78,7 +74,7 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
 
 
     private void parseJSON(){
-        String url = URLs.URL_ALL_PRODUCT;
+        String url = Config.URL_ALL_PRODUCT;
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(JSONObject response) {

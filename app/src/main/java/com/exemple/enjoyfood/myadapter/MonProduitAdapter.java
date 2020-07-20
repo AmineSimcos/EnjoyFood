@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import com.exemple.enjoyfood.URLs;
+import com.exemple.enjoyfood.Config;
 import com.exemple.enjoyfood.model.Produit;
 import com.exemple.enjoyfood.R;
 
@@ -90,7 +90,7 @@ public class MonProduitAdapter extends RecyclerView.Adapter<MonProduitAdapter.Pr
     @Override
     public void onBindViewHolder(@NonNull ProduitViewHolder holder, int position) {
         Produit p = mProduit.get(position);
-        String imgURL = URLs.URL_PHOTO + p.getImage();
+        String imgURL = Config.URL_PHOTO + p.getImage();
         String name = p.getTitre();
         String description = p.getDescription();
         holder.mTextNameProduct.setText(name);

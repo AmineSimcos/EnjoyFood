@@ -30,7 +30,7 @@ import com.exemple.enjoyfood.SessionManager;
 import com.exemple.enjoyfood.VolleySingleton;
 import com.exemple.enjoyfood.model.Produit;
 import com.exemple.enjoyfood.R;
-import com.exemple.enjoyfood.URLs;
+import com.exemple.enjoyfood.Config;
 import com.exemple.enjoyfood.myrequest.MyRequest;
 import com.exemple.enjoyfood.myadapter.PagerAdapter;
 
@@ -64,12 +64,15 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
             }
         });
 
-        PushDownAnim.setPushDownAnimTo(btn_add)
-                .setScale( MODE_SCALE, 0.89f)
-                .setDurationPush( PushDownAnim.DEFAULT_PUSH_DURATION )
-                .setDurationRelease( PushDownAnim.DEFAULT_RELEASE_DURATION )
-                .setInterpolatorPush( PushDownAnim.DEFAULT_INTERPOLATOR )
-                .setInterpolatorRelease( PushDownAnim.DEFAULT_INTERPOLATOR );
+        // Activer l'animation du boutton
+        if(Config.ANIMATION_BUTTON_ACTIVE) {
+            PushDownAnim.setPushDownAnimTo(btn_add)
+                    .setScale(MODE_SCALE, 0.89f)
+                    .setDurationPush(PushDownAnim.DEFAULT_PUSH_DURATION)
+                    .setDurationRelease(PushDownAnim.DEFAULT_RELEASE_DURATION)
+                    .setInterpolatorPush(PushDownAnim.DEFAULT_INTERPOLATOR)
+                    .setInterpolatorRelease(PushDownAnim.DEFAULT_INTERPOLATOR);
+        }
 
         iv = findViewById(R.id.iv);
         pg = findViewById(R.id.pg_image_produit_resultat);
@@ -145,7 +148,7 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
             pg.setVisibility(View.GONE);
         }
         else{
-            new DownLoadImageTask(iv).execute(URLs.URL_PHOTO + produit.getImage());
+            new DownLoadImageTask(iv).execute(Config.URL_PHOTO + produit.getImage());
             iv.setVisibility(View.VISIBLE);
             pg.setVisibility(View.GONE);
         }

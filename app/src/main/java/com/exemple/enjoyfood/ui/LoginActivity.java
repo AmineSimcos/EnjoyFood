@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
+import com.exemple.enjoyfood.Config;
 import com.google.android.material.textfield.TextInputLayout;
 import com.thekhaeng.pushdownanim.PushDownAnim;
 
@@ -42,12 +43,6 @@ public class LoginActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
 
-//        PushDownAnim.setPushDownAnimTo(btn_send)
-//                .setScale( MODE_SCALE, 0.89f)
-//                .setDurationPush( PushDownAnim.DEFAULT_PUSH_DURATION )
-//                .setDurationRelease( PushDownAnim.DEFAULT_RELEASE_DURATION )
-//                .setInterpolatorPush( PushDownAnim.DEFAULT_INTERPOLATOR )
-//                .setInterpolatorRelease( PushDownAnim.DEFAULT_INTERPOLATOR );
 
         sessionManager = new SessionManager(this);
 
@@ -68,6 +63,16 @@ public class LoginActivity extends AppCompatActivity {
         btn_send = findViewById(R.id.seconnecter);
         pb_loader = findViewById(R.id.pb_loader);
         tv_sinscrir = findViewById(R.id.tv_sinscrir);
+
+        // Activer l'animation du boutton
+        if(Config.ANIMATION_BUTTON_ACTIVE) {
+            PushDownAnim.setPushDownAnimTo(btn_send, tv_sinscrir)
+                    .setScale(MODE_SCALE, 0.89f)
+                    .setDurationPush(PushDownAnim.DEFAULT_PUSH_DURATION)
+                    .setDurationRelease(PushDownAnim.DEFAULT_RELEASE_DURATION)
+                    .setInterpolatorPush(PushDownAnim.DEFAULT_INTERPOLATOR)
+                    .setInterpolatorRelease(PushDownAnim.DEFAULT_INTERPOLATOR);
+        }
 
         queue = VolleySingleton.getInstance(this).getRequestQueue();
         request = new MyRequest(this,queue);

@@ -9,10 +9,10 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.exemple.enjoyfood.R;
+import com.exemple.enjoyfood.Config;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
-    private final int SPALSH_SCREEN_TIMEOUT = 3000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +33,6 @@ public class SplashScreenActivity extends AppCompatActivity {
         };
 
         // handler post delayed
-        new Handler().postDelayed(runnable,SPALSH_SCREEN_TIMEOUT);
+        new Handler().postDelayed(runnable, Config.SPALSH_SCREEN_TIMEOUT);
     }
 }

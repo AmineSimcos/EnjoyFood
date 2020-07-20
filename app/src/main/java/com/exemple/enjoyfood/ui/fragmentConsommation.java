@@ -36,7 +36,7 @@ import java.util.Map;
 
 import com.exemple.enjoyfood.R;
 import com.exemple.enjoyfood.SessionManager;
-import com.exemple.enjoyfood.URLs;
+import com.exemple.enjoyfood.Config;
 import com.exemple.enjoyfood.VolleySingleton;
 
 public class fragmentConsommation extends Fragment {
@@ -103,7 +103,7 @@ public class fragmentConsommation extends Fragment {
     }
 
     private void parseJSON(){
-        String url = URLs.URL_CONSOMMATION;
+        String url = Config.URL_CONSOMMATION;
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>()
                 {

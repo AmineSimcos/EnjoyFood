@@ -16,7 +16,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.exemple.enjoyfood.URLs;
+import com.exemple.enjoyfood.Config;
 
 public class MyRequest {
 
@@ -29,7 +29,7 @@ public class MyRequest {
 
     public void register(final String pseudo, final String email, final String password, final String password2, final RegisterCallBack callback){
 
-        StringRequest request = new StringRequest(Request.Method.POST, URLs.URL_REGISTER, new Response.Listener<String>() {
+        StringRequest request = new StringRequest(Request.Method.POST, Config.URL_REGISTER, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Map<String, String> errors = new HashMap<>();
@@ -93,7 +93,7 @@ public class MyRequest {
 
     public void connection(final String pseudo, final String password, final LoginCallBack callback){
 
-        StringRequest request = new StringRequest(Request.Method.POST, URLs.URL_LOGIN, new Response.Listener<String>() {
+        StringRequest request = new StringRequest(Request.Method.POST, Config.URL_LOGIN, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 //Log.d("APP",response);  pour le test
@@ -148,7 +148,7 @@ public class MyRequest {
 
     public void informationProduct(final String code_bar, final InformationCallback callback){
 
-        StringRequest request = new StringRequest(Request.Method.POST, URLs.URL_PRODUCT, new Response.Listener<String>() {
+        StringRequest request = new StringRequest(Request.Method.POST, Config.URL_PRODUCT, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
@@ -216,7 +216,7 @@ public class MyRequest {
 
     public void ajouterConsommation(final String id, final String code_bar, final String nombre, final AddConsCallBack callback){
 
-        StringRequest request = new StringRequest(Request.Method.POST, URLs.URL_ADD_CONSOMMATION, new Response.Listener<String>() {
+        StringRequest request = new StringRequest(Request.Method.POST, Config.URL_ADD_CONSOMMATION, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 //Log.d("APP",response);  pour le test

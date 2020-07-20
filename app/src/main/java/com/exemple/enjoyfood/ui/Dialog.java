@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
+import com.exemple.enjoyfood.Config;
 import com.thekhaeng.pushdownanim.PushDownAnim;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -38,13 +38,15 @@ public class Dialog extends AppCompatDialogFragment {
         btn_moin = view.findViewById(R.id.btn_moin);
         btn_plus = view.findViewById(R.id.btn_plus);
 
-        // Animation buttons
-        PushDownAnim.setPushDownAnimTo(btn_plus,btn_moin)
-                .setScale( MODE_SCALE, 0.89f)
-                .setDurationPush( PushDownAnim.DEFAULT_PUSH_DURATION )
-                .setDurationRelease( PushDownAnim.DEFAULT_RELEASE_DURATION )
-                .setInterpolatorPush( PushDownAnim.DEFAULT_INTERPOLATOR )
-                .setInterpolatorRelease( PushDownAnim.DEFAULT_INTERPOLATOR );
+        // Activer l'animation du boutton
+        if(Config.ANIMATION_BUTTON_ACTIVE) {
+            PushDownAnim.setPushDownAnimTo(btn_plus, btn_moin)
+                    .setScale(MODE_SCALE, 0.89f)
+                    .setDurationPush(PushDownAnim.DEFAULT_PUSH_DURATION)
+                    .setDurationRelease(PushDownAnim.DEFAULT_RELEASE_DURATION)
+                    .setInterpolatorPush(PushDownAnim.DEFAULT_INTERPOLATOR)
+                    .setInterpolatorRelease(PushDownAnim.DEFAULT_INTERPOLATOR);
+        }
 
         btn_plus.setOnClickListener(new View.OnClickListener() {
             @Override

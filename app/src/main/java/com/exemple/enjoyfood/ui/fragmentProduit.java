@@ -8,11 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ExpandableListAdapter;
-import android.widget.ExpandableListView;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -22,16 +18,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.volley.NetworkError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.thekhaeng.pushdownanim.PushDownAnim;
 
 import org.json.JSONArray;
@@ -40,18 +32,13 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import com.exemple.enjoyfood.URLs;
+import com.exemple.enjoyfood.Config;
 import com.exemple.enjoyfood.VolleySingleton;
-import com.exemple.enjoyfood.model.Categorie;
-import com.exemple.enjoyfood.ExpandableListDataPump;
 import com.exemple.enjoyfood.R;
 import com.exemple.enjoyfood.model.Produit;
-import com.exemple.enjoyfood.myadapter.CustomExpandableListAdapter;
 import com.exemple.enjoyfood.myadapter.GridViewAdapter;
 import com.exemple.enjoyfood.myadapter.MonProduitAdapter;
 import com.exemple.enjoyfood.myrequest.MyRequest;
@@ -102,12 +89,15 @@ public class fragmentProduit extends Fragment {
         tv_subTitle.setText(categorie);
         parseJSON();
 
-        PushDownAnim.setPushDownAnimTo(allProducts,iv_Boissons,iv_fruitsLegumes,iv_feculents,iv_lait,iv_viandes,iv_gras,iv_eau)
-                .setScale( MODE_SCALE, 0.89f)
-                .setDurationPush( PushDownAnim.DEFAULT_PUSH_DURATION )
-                .setDurationRelease( PushDownAnim.DEFAULT_RELEASE_DURATION )
-                .setInterpolatorPush( PushDownAnim.DEFAULT_INTERPOLATOR )
-                .setInterpolatorRelease( PushDownAnim.DEFAULT_INTERPOLATOR );
+        // Activer l'animation du boutton
+        if(Config.ANIMATION_BUTTON_ACTIVE) {
+            PushDownAnim.setPushDownAnimTo(allProducts, iv_Boissons, iv_fruitsLegumes, iv_feculents, iv_lait, iv_viandes, iv_gras, iv_eau)
+                    .setScale(MODE_SCALE, 0.89f)
+                    .setDurationPush(PushDownAnim.DEFAULT_PUSH_DURATION)
+                    .setDurationRelease(PushDownAnim.DEFAULT_RELEASE_DURATION)
+                    .setInterpolatorPush(PushDownAnim.DEFAULT_INTERPOLATOR)
+                    .setInterpolatorRelease(PushDownAnim.DEFAULT_INTERPOLATOR);
+        }
 
         allProducts.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -209,7 +199,7 @@ public class fragmentProduit extends Fragment {
     }
 
     private void parseJSON(){
-        String url = URLs.URL_ALL_PRODUCT;
+        String url = Config.URL_ALL_PRODUCT;
         tv_msg.setVisibility(View.GONE);
         gv.setVisibility(View.GONE);
         pg.setVisibility(View.VISIBLE);
