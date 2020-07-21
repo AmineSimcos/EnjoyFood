@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/x"
+    android:background="@drawable/xi"
     tools:context=".ui.LoginActivity">
 
     <LinearLayout
@@ -18,7 +17,6 @@
 
         <TextView
             android:id="@+id/login_title"
-            android:layout_centerHorizontal="true"
             android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="#333333"
@@ -43,7 +41,8 @@
                 android:drawableStart="@drawable/ic_login"
                 android:hint="@string/pseudo"
                 android:imeOptions="actionNext"
-                android:inputType="text" />
+                android:inputType="text"
+                android:autofillHints="" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -61,7 +60,8 @@
                 android:drawableStart="@drawable/ic_lock"
                 android:hint="@string/password"
                 android:imeOptions="actionDone"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:autofillHints="" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <View
@@ -76,7 +76,6 @@
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
             android:textAllCaps="false"
-            android:layout_centerHorizontal="true"
             android:textColor="#ffffff"
             android:background="@drawable/btn_login_color"
             android:text="@string/connecter"/>
@@ -88,16 +87,12 @@
             android:layout_height="wrap_content"
             android:textSize="15sp"
             android:textColor="#333333"
-            android:layout_below="@id/seconnecter"
-            android:layout_centerInParent="true"
             android:text="@string/register"/>
 
         <ProgressBar
             android:id="@+id/pb_loader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/tv_sinscrir"
             android:layout_marginTop="20dp"
             android:visibility="invisible"/>
 
