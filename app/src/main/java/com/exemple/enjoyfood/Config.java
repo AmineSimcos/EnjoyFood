@@ -13,5 +13,5 @@ public class Config {
 
     public static final int SPALSH_SCREEN_TIMEOUT = 1500;
     public static final boolean ANIMATION_BUTTON_ACTIVE = true;
-    public static final boolean ANIMATION_ACTIVIY_ACTIVE = true;
+
 }

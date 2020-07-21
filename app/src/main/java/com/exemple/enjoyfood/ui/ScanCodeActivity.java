@@ -52,6 +52,7 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
                 b.putInt("fruits_lesgumes",fruits_lesgumes);
                 b.putString("ingrediant",ingrediant);
                 i.putExtras(b);
+                i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(i);
             }
 

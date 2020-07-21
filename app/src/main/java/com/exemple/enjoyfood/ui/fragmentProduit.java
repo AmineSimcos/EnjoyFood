@@ -180,6 +180,7 @@ public class fragmentProduit extends Fragment {
                         b.putString("ingrediant",ingrediant);
                         i.putExtras(b);
                         startActivity(i);
+
                     }
 
                     @Override
@@ -194,7 +195,7 @@ public class fragmentProduit extends Fragment {
 
             }
         });
-
+        getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         return v;
     }
 
