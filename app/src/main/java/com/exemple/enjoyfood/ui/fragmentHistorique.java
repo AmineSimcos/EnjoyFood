@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -66,6 +67,41 @@ public class fragmentHistorique extends Fragment {
         queue = VolleySingleton.getInstance(getContext()).getRequestQueue();
         request = new MyRequest(getContext(),queue);
 
+//        recycler.OnClickListener(new AdapterView.OnClickListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                Toast.makeText(getContext(), "Ne fonctionne pas!", Toast.LENGTH_SHORT).show();
+//                final Intent i = new Intent(getContext(), ResultatActivity.class);
+//                Produit produit = listeProduits.get(position);
+//                Bundle b = new Bundle();
+//                b.putString("code_bar",produit.getCode_bar());
+//                b.putString("titre",produit.getTitre());
+//                b.putString("description",produit.getDescription());
+//                b.putString("image",produit.getImage());
+//                b.putString("categorie",produit.getCategorie());
+//                b.putDouble("energie",produit.getEnergie());
+//                b.putDouble("matiere_grasse",produit.getMatiere_grasse());
+//                b.putDouble("graisse",produit.getGraisse());
+//                b.putDouble("glucide",produit.getGlucide());
+//                b.putDouble("sucre",produit.getSucre());
+//                b.putDouble("proteine",produit.getProteine());
+//                b.putDouble("fibres",produit.getFibre());
+//                b.putDouble("sodium",produit.getSodium());
+//                b.putDouble("sel",produit.getSel());
+//                b.putDouble("calicium",produit.getCalicium());
+//                b.putInt("fruits_lesgumes",produit.getFruits_legumes());
+//                b.putString("ingrediant",produit.getIngrediant());
+//                i.putExtras(b);
+//                startActivity(i);
+//
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
+
         return v;
     }
 
@@ -111,44 +147,6 @@ public class fragmentHistorique extends Fragment {
             }
         });
         requestQueue.add(request);
-    }
-
-
-    public void onItemClick(int position) {
-        final Intent i = new Intent(getContext(), ResultatActivity.class);
-        Produit produit = listeProduits.get(position);
-        String code = produit.getCode_bar();
-        request.informationProduct(code, new MyRequest.InformationCallback() {
-
-            @Override
-            public void onSucces(String code_bar, String titre, String description, String image, String categorie, double energie, double matiere_grasse, double graisse, double glucide, double sucre, double proteine,double fibre, double sodium, double sel, double calicium, int fruits_lesgumes, String ingrediant) {
-                Bundle b = new Bundle();
-                b.putString("code_bar",code_bar);
-                b.putString("titre",titre);
-                b.putString("description",description);
-                b.putString("image",image);
-                b.putString("categorie",categorie);
-                b.putDouble("energie",energie);
-                b.putDouble("matiere_grasse",matiere_grasse);
-                b.putDouble("graisse",graisse);
-                b.putDouble("glucide",glucide);
-                b.putDouble("sucre",sucre);
-                b.putDouble("proteine",proteine);
-                b.putDouble("fibres",fibre);
-                b.putDouble("sodium",sodium);
-                b.putDouble("sel",sel);
-                b.putDouble("calicium",calicium);
-                b.putInt("fruits_lesgumes",fruits_lesgumes);
-                b.putString("ingrediant",ingrediant);
-                i.putExtras(b);
-                startActivity(i);
-            }
-
-            @Override
-            public void onError(String message) {
-                Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
 }
