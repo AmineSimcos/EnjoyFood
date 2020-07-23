@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.exemple.enjoyfood.Config;
+import com.exemple.enjoyfood.Nutriscore;
 import com.exemple.enjoyfood.R;
 import com.exemple.enjoyfood.model.Produit;
 import com.squareup.picasso.Picasso;
@@ -99,6 +100,24 @@ public class HistoriqueAdapter extends RecyclerView.Adapter<HistoriqueAdapter.Pr
 //        holder.mProgressBar.setVisibility(View.GONE);
         holder.mImageView.setVisibility(View.VISIBLE);
 
+        String result = Nutriscore.calcul(p);
+        holder.evaluation.setText(result);
+        if(result.equals("A")){
+            holder.evaluation.setBackground(mContext.getResources().getDrawable(R.drawable.bg_rounded_a));
+        }
+        else if(result.equals("B")){
+            holder.evaluation.setBackground(mContext.getResources().getDrawable(R.drawable.bg_rounded_b));
+        }
+        else if(result.equals("C")){
+            holder.evaluation.setBackground(mContext.getResources().getDrawable(R.drawable.bg_rounded_c));
+        }
+        else if(result.equals("D")){
+            holder.evaluation.setBackground(mContext.getResources().getDrawable(R.drawable.bg_rounded_d));
+        }
+        else if(result.equals("E")){
+            holder.evaluation.setBackground(mContext.getResources().getDrawable(R.drawable.bg_rounded_e));
+        }
+
     }
 
     @Override
@@ -112,6 +131,7 @@ public class HistoriqueAdapter extends RecyclerView.Adapter<HistoriqueAdapter.Pr
         public TextView mTextNameProduct;
         public TextView mTextDescriptionProduit;
         public ProgressBar mProgressBar;
+        public TextView evaluation;
 
         public ProduitViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -120,6 +140,7 @@ public class HistoriqueAdapter extends RecyclerView.Adapter<HistoriqueAdapter.Pr
             //mProgressBar  = itemView.findViewById(R.id.pg_produit_liste);
             mTextNameProduct = itemView.findViewById(R.id.titre);
             mTextDescriptionProduit = itemView.findViewById(R.id.descript);
+            evaluation = itemView.findViewById(R.id.evaluation);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

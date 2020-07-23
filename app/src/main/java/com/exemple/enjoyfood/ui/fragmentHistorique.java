@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,12 +51,14 @@ public class fragmentHistorique extends Fragment {
     private ArrayList<Produit> listeProduits;
     private RequestQueue requestQueue, queue;
     private MyRequest request;
+    private TextView tv_nbr_produit_scannee;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_historique,container,false);
 
+        tv_nbr_produit_scannee = v.findViewById(R.id.tv_nbr_produits_scannee);
         recycler = v.findViewById(R.id.rc_historique);
         recycler.setHasFixedSize(true);
         recycler.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -66,6 +69,7 @@ public class fragmentHistorique extends Fragment {
         parseJSON();
         queue = VolleySingleton.getInstance(getContext()).getRequestQueue();
         request = new MyRequest(getContext(),queue);
+
 
 //        recycler.OnClickListener(new AdapterView.OnClickListener() {
 //            @Override
@@ -120,12 +124,26 @@ public class fragmentHistorique extends Fragment {
                         String description = obj.getString("description");
                         String image = obj.getString("image");
                         String code_bar = obj.getString("code_bar");
-                        listeProduits.add(new Produit(image, titre, description, code_bar));
+                        String categorie = obj.getString("categorie");
+                        double energie = obj.getDouble("energie");
+                        double matiere_grasse = obj.getDouble("matiere_grasse");
+                        double graisse = obj.getDouble("graisse");
+                        double glucide = obj.getDouble("glucide");
+                        double sucre = obj.getDouble("sucre");
+                        double proteine = obj.getDouble("proteine");
+                        double fibre = obj.getDouble("fibres");
+                        double sodium = obj.getDouble("sodium");
+                        double sel = obj.getDouble("sel");
+                        double calicium = obj.getDouble("calicium");
+                        int fruits_lesgumes = obj.getInt("fruits_lesgumes");
+                        String ingrediant = obj.getString("ingrediant");
+                        listeProduits.add(new Produit(code_bar, titre, description, image, categorie, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant));
                         monProduitAdapter = new HistoriqueAdapter(getActivity(), listeProduits);
                         recycler.setAdapter(monProduitAdapter);
                         //pg.setVisibility(View.GONE);
                         recycler.setVisibility(View.VISIBLE);
                         //monProduitAdapter.setOnItemClickListener(ListeProduitsActivity.this);
+                        tv_nbr_produit_scannee.setText(String.valueOf(listeProduits.size()));
 
                     }
                 } catch (JSONException e) {
