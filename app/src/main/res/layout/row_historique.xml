@@ -3,15 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:cardCornerRadius="3dp"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="5dp"
     app:cardElevation="3dp"
     app:cardUseCompatPadding="true">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:padding="8dp">
 
         <ImageView
             android:layout_width="75dp"
@@ -22,25 +22,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Titre"
-            android:textSize="30sp"
+            android:textSize="18sp"
             android:id="@+id/titre"
             android:textStyle="bold"
-            android:layout_toRightOf="@id/imagev"
             android:layout_toEndOf="@id/imagev"
-            android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:text="Description"
             android:layout_alignLeft="@id/titre"
             android:layout_below="@id/titre"
-            android:textSize="18sp"
-            android:id="@+id/descript"
-            android:layout_toRightOf="@id/imagev"
-            android:layout_toEndOf="@id/imagev"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"/>
+            android:id="@+id/descript"/>
+
+        <TextView
+            android:id="@+id/evaluation"
+            android:layout_alignParentEnd="true"
+            android:layout_width="@dimen/nutri_width_normal_size"
+            android:layout_height="@dimen/nutri_height_normal_size"
+            android:gravity="center"
+            android:text="D"
+            android:textStyle="bold"
+            android:textSize="@dimen/nutri_text_size"
+            android:textColor="#fff"
+            android:background="@drawable/bg_rounded_c"/>
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

@@ -155,39 +155,27 @@ public class fragmentProduit extends Fragment {
                 Toast.makeText(getContext(), "Ne fonctionne pas!", Toast.LENGTH_SHORT).show();
                 final Intent i = new Intent(getContext(), ResultatActivity.class);
                 Produit produit = listeProduits.get(position);
-                String code = produit.getCode_bar();
-                request.informationProduct(code, new MyRequest.InformationCallback() {
+                Bundle b = new Bundle();
+                b.putString("code_bar",produit.getCode_bar());
+                b.putString("titre",produit.getTitre());
+                b.putString("description",produit.getDescription());
+                b.putString("image",produit.getImage());
+                b.putString("categorie",produit.getCategorie());
+                b.putDouble("energie",produit.getEnergie());
+                b.putDouble("matiere_grasse",produit.getMatiere_grasse());
+                b.putDouble("graisse",produit.getGraisse());
+                b.putDouble("glucide",produit.getGlucide());
+                b.putDouble("sucre",produit.getSucre());
+                b.putDouble("proteine",produit.getProteine());
+                b.putDouble("fibres",produit.getFibre());
+                b.putDouble("sodium",produit.getSodium());
+                b.putDouble("sel",produit.getSel());
+                b.putDouble("calicium",produit.getCalicium());
+                b.putInt("fruits_lesgumes",produit.getFruits_legumes());
+                b.putString("ingrediant",produit.getIngrediant());
+                i.putExtras(b);
+                startActivity(i);
 
-                    @Override
-                    public void onSucces(String code_bar, String titre, String description, String image, String categorie, double energie, double matiere_grasse, double graisse, double glucide, double sucre, double proteine,double fibre, double sodium, double sel, double calicium, int fruits_lesgumes, String ingrediant) {
-                        Bundle b = new Bundle();
-                        b.putString("code_bar",code_bar);
-                        b.putString("titre",titre);
-                        b.putString("description",description);
-                        b.putString("image",image);
-                        b.putString("categorie",categorie);
-                        b.putDouble("energie",energie);
-                        b.putDouble("matiere_grasse",matiere_grasse);
-                        b.putDouble("graisse",graisse);
-                        b.putDouble("glucide",glucide);
-                        b.putDouble("sucre",sucre);
-                        b.putDouble("proteine",proteine);
-                        b.putDouble("fibres",fibre);
-                        b.putDouble("sodium",sodium);
-                        b.putDouble("sel",sel);
-                        b.putDouble("calicium",calicium);
-                        b.putInt("fruits_lesgumes",fruits_lesgumes);
-                        b.putString("ingrediant",ingrediant);
-                        i.putExtras(b);
-                        startActivity(i);
-
-                    }
-
-                    @Override
-                    public void onError(String message) {
-                        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-                    }
-                });
             }
 
             @Override
@@ -195,7 +183,6 @@ public class fragmentProduit extends Fragment {
 
             }
         });
-        getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         return v;
     }
 
@@ -219,8 +206,19 @@ public class fragmentProduit extends Fragment {
                                     String description = obj.getString("description");
                                     String image = obj.getString("image");
                                     String code_bar = obj.getString("code_bar");
-                                    Log.e("Fragment", titre);
-                                    listeProduits.add(new Produit(image, titre, description, code_bar));
+                                    double energie = obj.getDouble("energie");
+                                    double matiere_grasse = obj.getDouble("matiere_grasse");
+                                    double graisse = obj.getDouble("graisse");
+                                    double glucide = obj.getDouble("glucide");
+                                    double sucre = obj.getDouble("sucre");
+                                    double proteine = obj.getDouble("proteine");
+                                    double fibre = obj.getDouble("fibres");
+                                    double sodium = obj.getDouble("sodium");
+                                    double sel = obj.getDouble("sel");
+                                    double calicium = obj.getDouble("calicium");
+                                    int fruits_lesgumes = obj.getInt("fruits_lesgumes");
+                                    String ingrediant = obj.getString("ingrediant");
+                                    listeProduits.add(new Produit(code_bar, titre, description, image, categorie, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant));
                                     pg.setVisibility(View.GONE);
                                     //Log.e("Fragment", listeProduits.get(0).getImage());
                                     monProduitAdapter = new GridViewAdapter(getActivity(), listeProduits);
@@ -254,7 +252,7 @@ public class fragmentProduit extends Fragment {
                 @Override
                 protected Map<String, String> getParams()
                 {
-                    Map<String, String>  params = new HashMap<String, String>();
+                    Map<String, String>  params = new HashMap<>();
                     params.put("categorie", categorie);
                     return params;
                 }

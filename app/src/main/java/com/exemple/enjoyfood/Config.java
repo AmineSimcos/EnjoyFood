@@ -10,6 +10,8 @@ public class Config {
     public static final String URL_LOGIN = ROOT_URL + "login.php";
     public static final String URL_CONSOMMATION = ROOT_URL + "consommation.php";
     public static final String URL_ADD_CONSOMMATION = ROOT_URL + "ajouter_consommation.php";
+    public static final String URL_ADD_HISTORY = ROOT_URL + "ajouter_historique.php";
+    public static final String URL_HISTORY = ROOT_URL + "history.php";
 
     public static final int SPALSH_SCREEN_TIMEOUT = 1500;
     public static final boolean ANIMATION_BUTTON_ACTIVE = true;

@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:background="@color/colorPrimaryDark"/>
+        android:background="#3333"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgv_profile"
@@ -43,6 +43,36 @@
         android:layout_marginTop="5dp"/>
     
 
+    <TextView
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="110dp"
+        android:layout_below="@id/desc"
+        android:id="@+id/tv_label_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email:"
+        android:drawableStart="@drawable/ic_baseline_email_24"
+        />
 
+    <TextView
+        android:id="@+id/tv_label_telephone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Téléphone:"
+        />
+
+    <TextView
+        android:id="@+id/tv_label_adresse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adresse:"
+        />
+
+    <TextView
+        android:id="@+id/tv_label_pays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pays:"
+        />
 
 </RelativeLayout>
