@@ -32,12 +32,12 @@
         android:text="Menu"/>
 
     <HorizontalScrollView
-        android:layout_weight="20"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_title"
         android:layout_marginVertical="10dp"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="8dp"
+        android:layout_weight="20">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -47,52 +47,52 @@
                 android:id="@+id/btn_produit"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:textSize="13sp"
                 android:layout_margin="10dp"
-                android:paddingVertical="25dp"
-                android:textAllCaps="false"
-                android:text="@string/menu_produit"
+                android:background="@drawable/img_accueil"
                 android:drawableTop="@drawable/ic_produit"
-                android:background="@drawable/img_accueil" />
+                android:paddingVertical="25dp"
+                android:text="@string/menu_produit"
+                android:textAllCaps="false"
+                android:textSize="13sp" />
 
             <Button
                 android:id="@+id/btn_consommation"
-                android:src="@drawable/ic_consommation"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:textSize="13sp"
                 android:layout_margin="10dp"
-                android:paddingVertical="25dp"
-                android:textAllCaps="false"
-                android:text="@string/menu_consommations"
+                android:background="@drawable/img_accueil"
                 android:drawableTop="@drawable/ic_consommation"
-                android:background="@drawable/img_accueil" />
+                android:paddingVertical="25dp"
+                android:src="@drawable/ic_consommation"
+                android:text="@string/menu_consommations"
+                android:textAllCaps="false"
+                android:textSize="13sp" />
 
             <Button
                 android:id="@+id/btn_historique"
-                android:src="@drawable/ic_history"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:textSize="13sp"
                 android:layout_margin="10dp"
-                android:paddingVertical="25dp"
-                android:textAllCaps="false"
-                android:text="Historique"
+                android:background="@drawable/img_accueil"
                 android:drawableTop="@drawable/ic_history"
-                android:background="@drawable/img_accueil" />
+                android:paddingVertical="25dp"
+                android:src="@drawable/ic_history"
+                android:text="Historique"
+                android:textAllCaps="false"
+                android:textSize="13sp" />
 
             <Button
                 android:id="@+id/btn_apropos"
-                android:src="@drawable/ic_apropos"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:textSize="13sp"
                 android:layout_margin="10dp"
-                android:paddingVertical="25dp"
-                android:textAllCaps="false"
-                android:text="@string/menu_apropos"
+                android:background="@drawable/img_accueil"
                 android:drawableTop="@drawable/ic_apropos"
-                android:background="@drawable/img_accueil" />
+                android:paddingVertical="25dp"
+                android:src="@drawable/ic_apropos"
+                android:text="@string/menu_apropos"
+                android:textAllCaps="false"
+                android:textSize="13sp" />
         </LinearLayout>
     </HorizontalScrollView>
 

@@ -1,7 +1,7 @@
 package com.exemple.enjoyfood;
 
 public class Config {
-    public static final String ADRESSE_IP = "192.168.43.89";
+    public static final String ADRESSE_IP = "192.168.1.35";
     public static final String ROOT_URL = "http://" + ADRESSE_IP + "/enjoyfood/";
     public static final String URL_PRODUCT = ROOT_URL + "getProduct.php";
     public static final String URL_ALL_PRODUCT = ROOT_URL + "getAll.php";
