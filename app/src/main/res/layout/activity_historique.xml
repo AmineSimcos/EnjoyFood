@@ -7,10 +7,47 @@
     tools:context=".ui.fragmentHistorique">
 
     <TextView
-        android:layout_centerInParent="true"
+        android:id="@+id/tv_nbr_produits_scannee"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="64sp"
-        android:text="Textoo"/>
+        android:text="7"/>
+
+    <TextView
+        android:id="@+id/tv_produits_scannee"
+        android:layout_below="@+id/tv_nbr_produits_scannee"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Produits scannées"/>
+
+    <View
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/tv_produits_scannee"
+        android:layout_width="match_parent"
+        android:layout_height="0.1px"
+        android:background="#000000"/>
+
+    <TextView
+        android:id="@+id/tv_vider_historique"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/ic_baseline_delete_24"
+        android:layout_below="@id/tv_produits_scannee"
+        android:text="Vider l'historique"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_historique"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/tv_vider_historique"/>
 
 </RelativeLayout>
