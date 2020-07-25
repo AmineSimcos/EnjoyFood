@@ -74,6 +74,8 @@ public class HistoriqueAdapter extends RecyclerView.Adapter<HistoriqueAdapter.Pr
         mLstener = listener;
     }
 
+
+
     public HistoriqueAdapter(Context context, ArrayList<Produit> produits){
         mContext = context;
         mProduit = produits;

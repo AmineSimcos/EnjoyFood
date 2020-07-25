@@ -9,6 +9,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -50,11 +51,14 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
     private CircleImageView btn_add;
     private RequestQueue queue;
     private MyRequest request;
+    private String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultat);
+
+        SessionManager s = new SessionManager(this);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         btn_add = findViewById(R.id._btn_add);
@@ -134,6 +138,21 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
         final int fruits_lesgumes = b.getInt("fruits_lesgumes");
         final String ingrediant = b.getString("ingrediant");
 
+
+        id = s.getID();
+        queue = VolleySingleton.getInstance(this).getRequestQueue();
+        request = new MyRequest(this,queue);
+        request.ajouterHistorique(id, code_Bar, new MyRequest.AddHistoryCallBack() {
+            @Override
+            public void onSucces(String message) {
+                Toast.makeText(getApplicationContext(), "bravo!!", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(String message) {
+                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+            }
+        });
 //        Runnable runnable = new Runnable(){
 //            @Override
 //            public void run(){
@@ -256,8 +275,7 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
 
     @Override
     public void applyNbr(int nbr) {
-        SessionManager s = new SessionManager(this);
-        String id = s.getID();
+
         queue = VolleySingleton.getInstance(this).getRequestQueue();
         request = new MyRequest(this,queue);
         Bundle b = getIntent().getExtras();
