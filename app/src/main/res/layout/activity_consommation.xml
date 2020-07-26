@@ -1,10 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.fragmentConsommation">
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="10dip"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="40dp"
+        app:cardCornerRadius="20dp">
+
+        <org.honorato.multistatetogglebutton.MultiStateToggleButton
+            android:id="@+id/mstb_multi_id"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            app:values="@array/bilan"
+            app:mstbPrimaryColor="@color/colorPrimary"
+            app:mstbSecondaryColor="@color/white"
+            />
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/tv_produits_scannee"
+        android:layout_width="match_parent"
+        android:layout_height="0.1px"
+        android:background="#000000"/>
 
     <Spinner
         android:id="@+id/spinner"
@@ -109,4 +135,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_label_lipide" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>
