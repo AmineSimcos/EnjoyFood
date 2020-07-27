@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context=".ui.fragmentConsommation">
 
+
     <androidx.cardview.widget.CardView
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
