@@ -56,4 +56,10 @@
     <string name="menu_profile">Profile</string>
     <string name="menu_logout">Logout</string>
     <string name="menu_historique">Historique</string>
+
+    <string-array name="bilan">
+        <item>Jour</item>
+        <item>Semaine</item>
+        <item>Mois</item>
+    </string-array>
 </resources>

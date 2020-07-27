@@ -1,112 +1,281 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.fragmentConsommation">
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/tv_calori_total"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_calori_total"
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="26sp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_proteine_total"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center_horizontal"
+        android:layout_height="40dp"
+        app:cardCornerRadius="20dp">
 
-    <TextView
-        android:id="@+id/tv_proteine_total"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="26sp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_lipide_total"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_calori_total" />
+        <org.honorato.multistatetogglebutton.MultiStateToggleButton
+            android:id="@+id/mstb_multi_id"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            app:values="@array/bilan"
+            app:mstbPrimaryColor="@color/colorPrimary"
+            app:mstbSecondaryColor="@color/white"
+            />
+    </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/tv_lipide_total"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="26sp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_glucide_total"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_proteine_total" />
+    <View
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/tv_produits_scannee"
+        android:layout_width="match_parent"
+        android:layout_height="0.1px"
+        android:background="#000000"/>
 
-    <TextView
-        android:id="@+id/tv_glucide_total"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="26sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_lipide_total" />
+    <TableLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tv_label_calorie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Calorie"
-        android:textSize="26sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tv_calori_total"
-        app:layout_constraintHorizontal_bias="0.619"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.165" />
+        <TableRow
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tv_label_glucide"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Glucide"
-        android:textSize="26sp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_label_lipide"
-        app:layout_constraintEnd_toStartOf="@+id/tv_proteine_total"
-        app:layout_constraintHorizontal_bias="0.641"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_label_calorie" />
+            <TextView
+                android:layout_weight="50"
+                android:id="@+id/tv_label_calorie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calorie"
+                android:paddingStart="30dp"
+                android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/tv_label_lipide"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lipide"
-        android:textSize="26sp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_label_proteine"
-        app:layout_constraintEnd_toStartOf="@+id/tv_lipide_total"
-        app:layout_constraintHorizontal_bias="0.566"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_label_glucide" />
+            <TextView
+                android:layout_weight="50"
+                android:id="@+id/tv_calori_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 KCal"
+                android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/tv_label_proteine"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Protéine"
-        android:textSize="26sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tv_glucide_total"
-        app:layout_constraintHorizontal_bias="0.706"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_label_lipide" />
+        </TableRow>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TableRow
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="50"
+                android:id="@+id/tv_label_glucide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Glucide"
+                android:paddingStart="30dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_weight="50"
+                android:id="@+id/tv_glucide_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 g"
+                android:textSize="20sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="50"
+                android:id="@+id/tv_label_sucre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sucre"
+                android:paddingStart="30dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_weight="50"
+                android:id="@+id/tv_sucre_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 g"
+                android:textSize="20sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="50"
+                android:id="@+id/tv_label_fibre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fibre"
+                android:paddingStart="30dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_weight="50"
+                android:id="@+id/tv_fibre_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 g"
+                android:textSize="20sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="50"
+                android:id="@+id/tv_label_matiere_grasse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Matiere grasse"
+                android:paddingStart="30dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_weight="50"
+                android:id="@+id/tv_matiere_grasse_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 g"
+                android:textSize="20sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="50"
+                android:id="@+id/tv_label_graisse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Graisse"
+                android:paddingStart="30dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_weight="50"
+                android:id="@+id/tv_graisse_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 g"
+                android:textSize="20sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="50"
+                android:id="@+id/tv_label_proteine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Protéine"
+                android:paddingStart="30dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_weight="50"
+                android:id="@+id/tv_proteine_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 g"
+                android:textSize="20sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="50"
+                android:id="@+id/tv_label_sodium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sodium"
+                android:paddingStart="30dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_weight="50"
+                android:id="@+id/tv_sodium_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 g"
+                android:textSize="20sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="50"
+                android:id="@+id/tv_label_sel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sel"
+                android:paddingStart="30dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_weight="50"
+                android:id="@+id/tv_sel_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 g"
+                android:textSize="20sp" />
+
+        </TableRow>
+        <TableRow
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="50"
+                android:id="@+id/tv_label_cacium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calcium"
+                android:paddingStart="30dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_weight="50"
+                android:id="@+id/tv_calcium_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 g"
+                android:textSize="20sp" />
+
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>

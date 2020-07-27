@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity{
             final String pseudo = sessionManager.getPseudo();
             String id = sessionManager.getID();
             String email = sessionManager.getEmail();
+
             menu.findItem(R.id.nav_login).setVisible(false);
             menu.findItem(R.id.nav_profile).setVisible(true).setTitle(pseudo);
             menu.findItem(R.id.nav_logout).setVisible(true);
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity{
             menu.findItem(R.id.nav_profile).setVisible(false);
             menu.findItem(R.id.nav_logout).setVisible(false);
         }
+
 
         menu.findItem(R.id.nav_logout).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
@@ -118,4 +120,5 @@ public class MainActivity extends AppCompatActivity{
         navigationView.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) MainActivity.this);
 
     }
+
 }

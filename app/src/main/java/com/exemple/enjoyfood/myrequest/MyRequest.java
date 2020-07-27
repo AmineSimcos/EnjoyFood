@@ -267,4 +267,107 @@ public class MyRequest {
         void onError(String message);
     }
 
+    public void ajouterHistorique(final String id, final String code_bar, final AddHistoryCallBack callback){
+
+        StringRequest request = new StringRequest(Request.Method.POST, Config.URL_ADD_HISTORY, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                //Log.d("APP",response);  pour le test
+                JSONObject json;
+                try {
+                    json = new JSONObject(response);
+                    boolean error = json.getBoolean("error");
+
+                    if(!error){
+                        callback.onSucces("ajouter a la liste de historique");
+                    }
+                    else{
+                        callback.onError(json.getString("message"));
+                    }
+
+                } catch (JSONException e) {
+                    callback.onError("Une erreur s'est produite");
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                if(error instanceof NetworkError){
+                    callback.onError("Impossible de se connecter");
+                }
+                else if(error != null){
+                    callback.onError("Une erreur s'est produite");
+                }
+                //Log.d("APP","ERROR " + error);
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> map = new HashMap<>();
+                map.put("id", id);
+                map.put("code_bar", code_bar);
+                return map;
+            }
+        };
+
+        queue.add(request);
+    }
+
+    public interface AddHistoryCallBack{
+        void onSucces(String message);
+        void onError(String message);
+    }
+
+    public void supprimerHistorique(final String id, final SuppHistoryCallBack callback){
+
+        StringRequest request = new StringRequest(Request.Method.POST, Config.URL_DELL_HISTORY, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                //Log.d("APP",response);  pour le test
+                JSONObject json;
+                try {
+                    json = new JSONObject(response);
+                    boolean error = json.getBoolean("error");
+
+                    if(!error){
+                        callback.onSucces("supprimer toutes l'historique");
+                    }
+                    else{
+                        callback.onError(json.getString("message"));
+                    }
+
+                } catch (JSONException e) {
+                    callback.onError("Une erreur s'est produite");
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                if(error instanceof NetworkError){
+                    callback.onError("Impossible de se connecter");
+                }
+                else if(error != null){
+                    callback.onError("Une erreur s'est produite");
+                }
+                //Log.d("APP","ERROR " + error);
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> map = new HashMap<>();
+                map.put("id", id);
+                return map;
+            }
+        };
+
+        queue.add(request);
+    }
+
+    public interface SuppHistoryCallBack{
+        void onSucces(String message);
+        void onError(String message);
+    }
+
 }
