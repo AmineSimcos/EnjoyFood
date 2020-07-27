@@ -39,6 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_register);
 
+
         btn_send = findViewById(R.id.sinscrir);
         pb_loader = findViewById(R.id.pb_loader);
         til_pseudo = findViewById(R.id.til_pseudo);

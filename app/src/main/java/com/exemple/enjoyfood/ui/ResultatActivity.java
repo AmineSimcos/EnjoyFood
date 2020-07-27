@@ -58,6 +58,7 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultat);
 
+        //Toast.makeText(getApplicationContext(), "Hello", Toast.LENGTH_SHORT).show();
         SessionManager s = new SessionManager(this);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -145,7 +146,7 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
         request.ajouterHistorique(id, code_Bar, new MyRequest.AddHistoryCallBack() {
             @Override
             public void onSucces(String message) {
-                Toast.makeText(getApplicationContext(), "bravo!!", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
             }
 
             @Override
