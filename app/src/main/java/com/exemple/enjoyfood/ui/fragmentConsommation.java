@@ -80,18 +80,18 @@ public class fragmentConsommation extends Fragment {
         tv_calcium = v.findViewById(R.id.tv_calcium_total);
 
         toogle = v.findViewById(R.id.mstb_multi_id);
-        toogle.setElements(R.array.bilan, 1);
+        toogle.setElements(R.array.bilan, 0);
         toogle.setOnValueChangedListener(new ToggleButton.OnValueChangedListener() {
             @Override
             public void onValueChanged(int position) {
                 switch (position){
-                    case 1:
+                    case 0:
                         time = 1;
                         break;
-                    case 2:
+                    case 1:
                         time = 7;
                         break;
-                    case 3:
+                    case 2:
                         time = 30;
                         break;
                     default:
