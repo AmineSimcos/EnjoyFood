@@ -38,10 +38,5 @@
         android:label="@string/menu_apropos"
         tools:layout="@layout/activity_apropos" />
 
-    <fragment
-        android:id="@+id/nav_profile"
-        android:name="com.exemple.enjoyfood.ui.fragmentProfile"
-        android:label="@string/menu_profile"
-        tools:layout="@layout/activity_profile" />
 
 </navigation>

@@ -14,25 +14,30 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.IntroActivity"
-            android:theme="@style/AppTheme2.NoActionBar"/>
-        <activity android:name=".ui.LoginActivity"
-            android:theme="@style/AppTheme2.NoActionBar"/>
-        <activity android:name=".ui.RegisterActivity"
-            android:theme="@style/AppTheme2.NoActionBar"/>
+        <activity
+            android:name=".ui.IntroActivity"
+            android:theme="@style/AppTheme2.NoActionBar" />
+        <activity
+            android:name=".ui.LoginActivity"
+            android:theme="@style/AppTheme2.NoActionBar" />
+        <activity
+            android:name=".ui.RegisterActivity"
+            android:theme="@style/AppTheme2.NoActionBar" />
         <activity
             android:name=".ui.ListeProduitsActivity"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".ui.ResultatActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".ui.ScanCodeActivity"
-            android:theme="@style/AppTheme2.NoActionBar"/>
+        <activity
+            android:name=".ui.ScanCodeActivity"
+            android:theme="@style/AppTheme2.NoActionBar" />
         <activity
             android:name=".ui.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme2.NoActionBar" />
-        <activity android:name=".ui.SplashScreenActivity"
+        <activity
+            android:name=".ui.SplashScreenActivity"
             android:theme="@style/AppTheme2.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
