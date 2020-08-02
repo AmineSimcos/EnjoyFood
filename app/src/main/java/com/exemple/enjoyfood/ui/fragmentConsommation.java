@@ -1,5 +1,6 @@
 package com.exemple.enjoyfood.ui;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -41,79 +44,110 @@ import com.exemple.enjoyfood.SessionManager;
 import com.exemple.enjoyfood.Config;
 import com.exemple.enjoyfood.VolleySingleton;
 
+import static android.app.Activity.RESULT_OK;
+
 public class fragmentConsommation extends Fragment {
 
-    double Nenergie = 0;
-    double Nmatiere_grasse = 0;
-    double Ngraisee = 0;
-    double Nglucide = 0;
-    double Nsucre = 0;
-    double Nproteine = 0;
-    double Nfibre = 0;
-    double Nsodium = 0;
-    double Nsel = 0;
-    double Ncalcium = 0;
-    int time = 1;
-    TextView tv_cal, tv_glucide, tv_sucre, tv_matiere_grasse, tv_graisse, tv_proteine, tv_fibre, tv_sodium, tv_sel, tv_calcium;
-    MultiStateToggleButton toogle;
-    SessionManager sessionManager;
-    String id;
+    private double Nenergie = 0, Nmatiere_grasse = 0, Ngraisee = 0, Nglucide = 0, Nsucre = 0, Nproteine = 0, Nfibre = 0, Nsodium = 0, Nsel = 0, Ncalcium = 0;
+    private int time = 1;
+    private TextView tv_cal, tv_glucide, tv_sucre, tv_matiere_grasse, tv_graisse, tv_proteine, tv_fibre, tv_sodium, tv_sel, tv_calcium;
+    private Button btn_connexion, btn_inscription;
+    private MultiStateToggleButton toogle;
+    private LinearLayout page_cnx, page_consommation;
+    private SessionManager sessionManager;
+    private String id;
+    private final int CODE = 1331;
 
     private RequestQueue requestQueue;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_consommation, container, false);
+
+        page_cnx = v.findViewById(R.id.page_cnx);
+        page_consommation = v.findViewById(R.id.page_consommation);
+
         requestQueue = VolleySingleton.getInstance(getContext()).getRequestQueue();
+
         sessionManager = new SessionManager(getContext());
-        id = sessionManager.getID();
 
-        tv_cal = v.findViewById(R.id.tv_calori_total);
-        tv_glucide = v.findViewById(R.id.tv_glucide_total);
-        tv_sucre = v.findViewById(R.id.tv_sucre_total);
-        tv_matiere_grasse  = v.findViewById(R.id.tv_matiere_grasse_total);
-        tv_graisse = v.findViewById(R.id.tv_graisse_total);
-        tv_proteine = v.findViewById(R.id.tv_proteine_total);
-        tv_fibre = v.findViewById(R.id.tv_fibre_total);
-        tv_sodium = v.findViewById(R.id.tv_sodium_total);
-        tv_sel = v.findViewById(R.id.tv_sel_total);
-        tv_calcium = v.findViewById(R.id.tv_calcium_total);
+        if(sessionManager.isLogged()){
+            page_cnx.setVisibility(View.GONE);
+            page_consommation.setVisibility(View.VISIBLE);
 
-        toogle = v.findViewById(R.id.mstb_multi_id);
-        toogle.setElements(R.array.bilan, 0);
-        toogle.setOnValueChangedListener(new ToggleButton.OnValueChangedListener() {
-            @Override
-            public void onValueChanged(int position) {
-                switch (position){
-                    case 0:
-                        time = 1;
-                        break;
-                    case 1:
-                        time = 7;
-                        break;
-                    case 2:
-                        time = 30;
-                        break;
-                    default:
-                        break;
+            id = sessionManager.getID();
+
+            tv_cal = v.findViewById(R.id.tv_calori_total);
+            tv_glucide = v.findViewById(R.id.tv_glucide_total);
+            tv_sucre = v.findViewById(R.id.tv_sucre_total);
+            tv_matiere_grasse  = v.findViewById(R.id.tv_matiere_grasse_total);
+            tv_graisse = v.findViewById(R.id.tv_graisse_total);
+            tv_proteine = v.findViewById(R.id.tv_proteine_total);
+            tv_fibre = v.findViewById(R.id.tv_fibre_total);
+            tv_sodium = v.findViewById(R.id.tv_sodium_total);
+            tv_sel = v.findViewById(R.id.tv_sel_total);
+            tv_calcium = v.findViewById(R.id.tv_calcium_total);
+
+            toogle = v.findViewById(R.id.mstb_multi_id);
+            toogle.setElements(R.array.bilan, 0);
+            toogle.setOnValueChangedListener(new ToggleButton.OnValueChangedListener() {
+                @Override
+                public void onValueChanged(int position) {
+                    switch (position){
+                        case 0:
+                            time = 1;
+                            break;
+                        case 1:
+                            time = 7;
+                            break;
+                        case 2:
+                            time = 30;
+                            break;
+                        default:
+                            break;
+                    }
+
+                    Nenergie = 0;
+                    Nmatiere_grasse = 0;
+                    Ngraisee = 0;
+                    Nglucide = 0;
+                    Nsucre = 0;
+                    Nproteine = 0;
+                    Nfibre = 0;
+                    Nsodium = 0;
+                    Nsel = 0;
+                    Ncalcium = 0;
+
+                    parseJSON();
                 }
+            });
 
-                Nenergie = 0;
-                Nmatiere_grasse = 0;
-                Ngraisee = 0;
-                Nglucide = 0;
-                Nsucre = 0;
-                Nproteine = 0;
-                Nfibre = 0;
-                Nsodium = 0;
-                Nsel = 0;
-                Ncalcium = 0;
+            parseJSON();
+        }
+        else{
+            page_cnx.setVisibility(View.VISIBLE);
+            page_consommation.setVisibility(View.GONE);
+            btn_connexion = v.findViewById(R.id.btn_page_cnx);
+            btn_inscription = v.findViewById(R.id.btn_page_incription);
 
-                parseJSON();
-            }
-        });
+            btn_connexion.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Bundle b = new Bundle();
+                    b.putBoolean("fragment", true);
+                    Intent i = new Intent(getContext(), LoginActivity.class);
+                    i.putExtras(b);
+                    startActivityForResult(i, CODE);
+                }
+            });
 
-        parseJSON();
+            btn_inscription.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivityForResult(new Intent(getContext(), RegisterActivity.class), CODE);
+                }
+            });
+        }
 
         return v;
     }
@@ -203,6 +237,14 @@ public class fragmentConsommation extends Fragment {
         };
         requestQueue.add(postRequest);
 
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int
+            resultCode, Intent data) {
+        if (requestCode == CODE && resultCode == RESULT_OK) {
+
+        }
     }
 }
 

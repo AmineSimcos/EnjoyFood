@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
@@ -56,8 +58,12 @@ public class fragmentHistorique extends Fragment {
     private RequestQueue requestQueue, queue;
     private MyRequest request;
     private TextView tv_nbr_produit_scannee,tv_vider_historique;
+    private Button btn_connexion, btn_inscription;
+    private LinearLayout page_cnx;
+    private RelativeLayout page_historique;
     private String id;
     private SessionManager sessionManager;
+    private final int CODE = 1331;
 
 
     @Nullable
@@ -65,43 +71,71 @@ public class fragmentHistorique extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_historique,container,false);
 
+        page_cnx = v.findViewById(R.id.page_cnx);
+        page_historique = v.findViewById(R.id.page_historique);
+
         sessionManager = new SessionManager(getContext());
-        id = sessionManager.getID();
 
-        tv_nbr_produit_scannee = v.findViewById(R.id.tv_nbr_produits_scannee);
-        tv_vider_historique = v.findViewById(R.id.tv_vider_historique);
-        recycler = v.findViewById(R.id.rc_historique);
-        recycler.setHasFixedSize(true);
-        recycler.setLayoutManager(new LinearLayoutManager(getContext()));
+        if(sessionManager.isLogged()){
+            page_cnx.setVisibility(View.GONE);
+            page_historique.setVisibility(View.VISIBLE);
 
-        listeProduits = new ArrayList<>();
-        requestQueue = Volley.newRequestQueue(getContext());
+            id = sessionManager.getID();
 
-        parseJSON();
-        queue = VolleySingleton.getInstance(getContext()).getRequestQueue();
-        request = new MyRequest(getContext(),queue);
+            tv_nbr_produit_scannee = v.findViewById(R.id.tv_nbr_produits_scannee);
+            tv_vider_historique = v.findViewById(R.id.tv_vider_historique);
+            recycler = v.findViewById(R.id.rc_historique);
+            recycler.setHasFixedSize(true);
+            recycler.setLayoutManager(new LinearLayoutManager(getContext()));
+
+            listeProduits = new ArrayList<>();
+            requestQueue = Volley.newRequestQueue(getContext());
+
+            parseJSON();
+            queue = VolleySingleton.getInstance(getContext()).getRequestQueue();
+            request = new MyRequest(getContext(),queue);
 
 
-        tv_vider_historique.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                request.supprimerHistorique(id, new MyRequest.SuppHistoryCallBack() {
-                    @Override
-                    public void onSucces(String message) {
-                        Toast.makeText(getContext(), "bravo!!", Toast.LENGTH_SHORT).show();
-                    }
+            tv_vider_historique.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    request.supprimerHistorique(id, new MyRequest.SuppHistoryCallBack() {
+                        @Override
+                        public void onSucces(String message) {
+                            Toast.makeText(getContext(), "bravo!!", Toast.LENGTH_SHORT).show();
+                        }
 
-                    @Override
-                    public void onError(String message) {
-                        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-                    }
-                });
-                listeProduits.clear();
-                monProduitAdapter = new HistoriqueAdapter(getActivity(), listeProduits);
-                recycler.setAdapter(monProduitAdapter);
-                tv_nbr_produit_scannee.setText(String.valueOf(listeProduits.size()));
-            }
-        });
+                        @Override
+                        public void onError(String message) {
+                            Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    listeProduits.clear();
+                    monProduitAdapter = new HistoriqueAdapter(getActivity(), listeProduits);
+                    recycler.setAdapter(monProduitAdapter);
+                    tv_nbr_produit_scannee.setText(String.valueOf(listeProduits.size()));
+                }
+            });
+        }
+        else{
+            page_cnx.setVisibility(View.VISIBLE);
+            page_historique.setVisibility(View.GONE);
+            btn_connexion = v.findViewById(R.id.btn_page_cnx);
+            btn_inscription = v.findViewById(R.id.btn_page_incription);
+            btn_connexion.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivityForResult(new Intent(getContext(), LoginActivity.class), CODE);
+                }
+            });
+
+            btn_inscription.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivityForResult(new Intent(getContext(), RegisterActivity.class), CODE);
+                }
+            });
+        }
 
         return v;
     }

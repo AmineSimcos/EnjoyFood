@@ -29,7 +29,7 @@
     <group android:checkableBehavior="single">
         <item android:title="Profile">
             <menu>
-                <group android:checkableBehavior="single">
+
                 <item
                     android:id="@+id/nav_login"
                     android:icon="@drawable/ic_log"
@@ -42,7 +42,7 @@
                     android:id="@+id/nav_logout"
                     android:icon="@drawable/ic_logout"
                     android:title="@string/menu_logout" />
-                </group>
+
             </menu>
 
         </item>
