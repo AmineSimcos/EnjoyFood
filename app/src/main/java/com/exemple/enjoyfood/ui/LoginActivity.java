@@ -28,7 +28,7 @@ import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
 public class LoginActivity extends AppCompatActivity {
 
     private TextInputLayout til_pseudo_login, til_password_login;
-    private TextView tv_sinscrir;
+    private TextView tv_sinscrir, tv_ignorer;
     private RequestQueue queue;
     private MyRequest request;
     private Button btn_send;
@@ -63,6 +63,7 @@ public class LoginActivity extends AppCompatActivity {
         btn_send = findViewById(R.id.seconnecter);
         pb_loader = findViewById(R.id.pb_loader);
         tv_sinscrir = findViewById(R.id.tv_sinscrir);
+        tv_ignorer = findViewById(R.id.tv_ignorer);
 
         // Activer l'animation du boutton
         if(Config.ANIMATION_BUTTON_ACTIVE) {
@@ -87,6 +88,16 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        tv_ignorer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        final Bundle b = new Bundle();
+
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,8 +115,17 @@ public class LoginActivity extends AppCompatActivity {
                                 public void onSucces(String id, String pseudo, String email) {
                                     pb_loader.setVisibility(View.GONE);
                                     sessionManager.insertUser(id, pseudo, email);
-                                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                    startActivity(intent);
+
+                                    if(b.getBoolean("fragment")){
+                                        Intent data = new Intent();
+                                        data.putExtra("cnx", "Connecté avec succée");
+                                        setResult(RESULT_OK, data);
+                                    }
+                                    else {
+                                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                        startActivity(intent);
+                                    };
+
                                     finish();
                                 }
 

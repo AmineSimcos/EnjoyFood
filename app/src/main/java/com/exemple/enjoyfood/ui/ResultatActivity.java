@@ -58,17 +58,54 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultat);
 
+        Bundle b = getIntent().getExtras();
+        final String code_Bar = b.getString("code_bar");
+        final String titre = b.getString("titre");
+        final String description = b.getString("description");
+        final String image = b.getString("image");
+        final String categorie = b.getString("categorie");
+        final double energie = b.getDouble("energie");
+        final double matiere_grasse = b.getDouble("matiere_grasse");
+        final double graisse = b.getDouble("graisse");
+        final double glucide = b.getDouble("glucide");
+        final double sucre = b.getDouble("sucre");
+        final double proteine = b.getDouble("proteine");
+        final double fibre = b.getDouble("fibres");
+        final double sodium = b.getDouble("sodium");
+        final double sel = b.getDouble("sel");
+        final double calicium = b.getDouble("calicium");
+        final int fruits_lesgumes = b.getInt("fruits_lesgumes");
+        final String ingrediant = b.getString("ingrediant");
+
         //Toast.makeText(getApplicationContext(), "Hello", Toast.LENGTH_SHORT).show();
         SessionManager s = new SessionManager(this);
+        if(s.isLogged()){
+            btn_add = findViewById(R.id._btn_add);
+            btn_add.setVisibility(View.VISIBLE);
+            btn_add.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    openDialog();
+                }
+            });
+            id = s.getID();
+            queue = VolleySingleton.getInstance(this).getRequestQueue();
+            request = new MyRequest(this,queue);
+            request.ajouterHistorique(id, code_Bar, new MyRequest.AddHistoryCallBack() {
+                @Override
+                public void onSucces(String message) {
+                    //Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onError(String message) {
+                    Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        btn_add = findViewById(R.id._btn_add);
-        btn_add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openDialog();
-            }
-        });
+
 
         // Activer l'animation du boutton
         if(Config.ANIMATION_BUTTON_ACTIVE) {
@@ -120,40 +157,7 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
         E = findViewById(R.id.E);
         ////////////////////////////////////////////////////////////////////////////////////////////
 
-        Bundle b = getIntent().getExtras();
-        final String code_Bar = b.getString("code_bar");
-        final String titre = b.getString("titre");
-        final String description = b.getString("description");
-        final String image = b.getString("image");
-        final String categorie = b.getString("categorie");
-        final double energie = b.getDouble("energie");
-        final double matiere_grasse = b.getDouble("matiere_grasse");
-        final double graisse = b.getDouble("graisse");
-        final double glucide = b.getDouble("glucide");
-        final double sucre = b.getDouble("sucre");
-        final double proteine = b.getDouble("proteine");
-        final double fibre = b.getDouble("fibres");
-        final double sodium = b.getDouble("sodium");
-        final double sel = b.getDouble("sel");
-        final double calicium = b.getDouble("calicium");
-        final int fruits_lesgumes = b.getInt("fruits_lesgumes");
-        final String ingrediant = b.getString("ingrediant");
 
-
-        id = s.getID();
-        queue = VolleySingleton.getInstance(this).getRequestQueue();
-        request = new MyRequest(this,queue);
-        request.ajouterHistorique(id, code_Bar, new MyRequest.AddHistoryCallBack() {
-            @Override
-            public void onSucces(String message) {
-                //Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onError(String message) {
-                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-            }
-        });
 //        Runnable runnable = new Runnable(){
 //            @Override
 //            public void run(){
