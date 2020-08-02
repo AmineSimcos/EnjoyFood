@@ -96,8 +96,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        final Bundle b = new Bundle();
-
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,7 +113,7 @@ public class LoginActivity extends AppCompatActivity {
                                 public void onSucces(String id, String pseudo, String email) {
                                     pb_loader.setVisibility(View.GONE);
                                     sessionManager.insertUser(id, pseudo, email);
-
+                                    Bundle b = new Bundle();
                                     if(b.getBoolean("fragment")){
                                         Intent data = new Intent();
                                         data.putExtra("cnx", "Connecté avec succée");

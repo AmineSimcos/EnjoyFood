@@ -102,20 +102,21 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
                     Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
                 }
             });
+            // Activer l'animation du boutton
+            if(Config.ANIMATION_BUTTON_ACTIVE) {
+                PushDownAnim.setPushDownAnimTo(btn_add)
+                        .setScale(MODE_SCALE, 0.89f)
+                        .setDurationPush(PushDownAnim.DEFAULT_PUSH_DURATION)
+                        .setDurationRelease(PushDownAnim.DEFAULT_RELEASE_DURATION)
+                        .setInterpolatorPush(PushDownAnim.DEFAULT_INTERPOLATOR)
+                        .setInterpolatorRelease(PushDownAnim.DEFAULT_INTERPOLATOR);
+            }
         }
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        // Activer l'animation du boutton
-        if(Config.ANIMATION_BUTTON_ACTIVE) {
-            PushDownAnim.setPushDownAnimTo(btn_add)
-                    .setScale(MODE_SCALE, 0.89f)
-                    .setDurationPush(PushDownAnim.DEFAULT_PUSH_DURATION)
-                    .setDurationRelease(PushDownAnim.DEFAULT_RELEASE_DURATION)
-                    .setInterpolatorPush(PushDownAnim.DEFAULT_INTERPOLATOR)
-                    .setInterpolatorRelease(PushDownAnim.DEFAULT_INTERPOLATOR);
-        }
+
 
         iv = findViewById(R.id.iv);
         pg = findViewById(R.id.pg_image_produit_resultat);

@@ -52,8 +52,9 @@ public class IntroActivity extends AppCompatActivity {
         // when this activity is about to be launch we need to check if its opened before or not
 
         if(restorePrefData()){
-
-            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+            Bundle b = new Bundle();
+            b.putBoolean("fragment", false);
+            startActivity(new Intent(getApplicationContext(), LoginActivity.class).putExtras(b));
             finish();
         }
         else{
@@ -70,10 +71,10 @@ public class IntroActivity extends AppCompatActivity {
         btn_anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_animation);
 
         final List<ScreenItem> mList = new ArrayList<>();
-        mList.add(new ScreenItem("Bienvenue !", "Bienvenue ! Prêt(e) à changer certaines de vos habitudes et faire plus atention lors de vos achats et consommations ?", R.drawable.bienvenue, R.raw.a));
-        mList.add(new ScreenItem("EnjoyFood", "Enjoy Food est une application conçu pour vous aider a mieux choisir les bons produits et a gérer vos consommations", R.drawable.faiza, R.raw.b));
-        mList.add(new ScreenItem("Scannez", "Récupérez facilement toutes les informations nutritionnelles d'un produit alimentaire et décider rééllement de ce que vous voulez dans votre assiette", R.drawable.text3, R.raw.c));
-        mList.add(new ScreenItem("Consommation", "Notez et calculez vos consommations journalières, hebdomadaires ou mensuelles", R.drawable.e, R.raw.d));
+        mList.add(new ScreenItem("Bienvenue !", "Bienvenue ! Prêt(e) à changer certaines de vos habitudes et faire plus atention lors de vos achats et consommations ?", R.drawable.intro1, R.raw.a));
+        mList.add(new ScreenItem("EnjoyFood", "Enjoy Food est une application conçu pour vous aider a mieux choisir les bons produits et a gérer vos consommations", R.drawable.intro2, R.raw.b));
+        mList.add(new ScreenItem("Scannez", "Récupérez facilement toutes les informations nutritionnelles d'un produit alimentaire et décider rééllement de ce que vous voulez dans votre assiette", R.drawable.intro3, R.raw.c));
+        mList.add(new ScreenItem("Consommation", "Notez et calculez vos consommations journalières, hebdomadaires ou mensuelles", R.drawable.intro4, R.raw.d));
         mList.add(new ScreenItem("", "", R.drawable.d, -1));
 
         screenPager = findViewById(R.id.vp_screen_pager);

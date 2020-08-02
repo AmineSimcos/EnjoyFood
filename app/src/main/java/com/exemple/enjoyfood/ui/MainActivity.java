@@ -66,9 +66,21 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 sessionManager.logout();
+                finish();
+                startActivity(getIntent());
 
-//                setContentView(R.layout.activity_main);
-//                NavigationView navigationView1 = findViewById(R.id.nav_view);
+                return true;
+            }
+        });
+
+        menu.findItem(R.id.nav_login).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Bundle b = new Bundle();
+                b.putBoolean("fragment", true);
+                Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+                i.putExtras(b);
+                startActivityForResult(i, 1331);
                 return true;
             }
         });
