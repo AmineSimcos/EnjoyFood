@@ -19,7 +19,8 @@
     <string name="connecter">Se connecter</string>
     <string name="logout">Se déconnecter</string>
 
-    <string name="version">Version: 1.0</string>
+    <string name="version">Version v.1.0 \n \n \n Auteurs : \n \n BAICH Mohammed Amine \n\n OUDJEDI DAMERDJI Faiza</string>
+    <string name="droits">Droits d'auteur 2020, EnjoyFood \n Tous droits réservés</string>
     <string name="populaire">Catégorie</string>
     <string name="categorie">Par catégorie</string>
     <string name="bienvenue">Bienvenue sur</string>
