@@ -20,7 +20,7 @@ public class Tab1 extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private TextView txtTitre, txtDescription, txtValeur_nutri_1, txtValeur_nutri_2;
+    private TextView txtValeur_nutri_1, txtValeur_nutri_2;
     private TextView txtEnergie, txtEnergieKJ, txtEnergieKJ250, txtMatiereGrasse, txtGrasseS, txtGlucide, txtSucre, txtProteine, txtFibre, txtSodium, txtSel, txtCalicium, txtFruitsLesgumes, txtIngrediant;
     private TextView txtEnergie250, txtMatiereGrasse250, txtGrasseS250, txtGlucide250, txtSucre250, txtProteine250, txtFibre250, txtSodium250, txtSel250, txtCalicium250, txtFruitsLesgumes250;
     private LinearLayout ligneEnergie1, ligneEnergie2, ligneMatiereGrasse, ligneGrasseS, ligneGlucide, ligneSucre, ligneProteine, ligneFibre, ligneSodium, ligneSel, ligneCalicium, ligneFruitsLesgumes;

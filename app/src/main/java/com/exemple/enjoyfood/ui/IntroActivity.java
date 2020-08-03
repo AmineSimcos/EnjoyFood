@@ -71,10 +71,10 @@ public class IntroActivity extends AppCompatActivity {
         btn_anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_animation);
 
         final List<ScreenItem> mList = new ArrayList<>();
-        mList.add(new ScreenItem("Bienvenue !", "Bienvenue ! Prêt(e) à changer certaines de vos habitudes et faire plus atention lors de vos achats et consommations ?", R.drawable.intro1, R.raw.a));
-        mList.add(new ScreenItem("EnjoyFood", "Enjoy Food est une application conçu pour vous aider a mieux choisir les bons produits et a gérer vos consommations", R.drawable.intro2, R.raw.b));
-        mList.add(new ScreenItem("Scannez", "Récupérez facilement toutes les informations nutritionnelles d'un produit alimentaire et décider rééllement de ce que vous voulez dans votre assiette", R.drawable.intro3, R.raw.c));
-        mList.add(new ScreenItem("Consommation", "Notez et calculez vos consommations journalières, hebdomadaires ou mensuelles", R.drawable.intro4, R.raw.d));
+        mList.add(new ScreenItem(getResources().getString(R.string.bienvenue), getResources().getStringArray(R.array.intro)[0], R.drawable.intro1, R.raw.a));
+        mList.add(new ScreenItem(getResources().getString(R.string.app_name), getResources().getStringArray(R.array.intro)[1], R.drawable.intro2, R.raw.b));
+        mList.add(new ScreenItem(getResources().getString(R.string.scan), getResources().getStringArray(R.array.intro)[2], R.drawable.intro3, R.raw.c));
+        mList.add(new ScreenItem(getResources().getString(R.string.menu_consommations), getResources().getStringArray(R.array.intro)[3], R.drawable.intro4, R.raw.d));
         mList.add(new ScreenItem("", "", R.drawable.d, -1));
 
         screenPager = findViewById(R.id.vp_screen_pager);

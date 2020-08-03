@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
             android:paddingHorizontal="20dp"
-            android:text="Se connecter"
+            android:text="@string/login"
             android:textSize="20sp"
             android:textAllCaps="false"
             android:background="@drawable/btn_accueil"
@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
-            android:text="S'inscrire"
+            android:text="@string/register"
             android:textSize="20sp"
             android:paddingHorizontal="20dp"
             android:textAllCaps="false"
@@ -108,7 +108,7 @@
                     android:id="@+id/tv_label_calorie"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Calorie"
+                    android:text="@string/calorie"
                     android:paddingStart="30dp"
                     android:textSize="20sp" />
 
@@ -132,7 +132,7 @@
                     android:id="@+id/tv_label_glucide"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Glucide"
+                    android:text="@string/glucide"
                     android:paddingStart="30dp"
                     android:textSize="20sp" />
 
@@ -156,7 +156,7 @@
                     android:id="@+id/tv_label_sucre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sucre"
+                    android:text="@string/sucre"
                     android:paddingStart="30dp"
                     android:textSize="20sp" />
 
@@ -180,7 +180,7 @@
                     android:id="@+id/tv_label_fibre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fibre"
+                    android:text="@string/fibre"
                     android:paddingStart="30dp"
                     android:textSize="20sp" />
 
@@ -204,7 +204,7 @@
                     android:id="@+id/tv_label_matiere_grasse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Matiere grasse"
+                    android:text="@string/mati_res_grasse"
                     android:paddingStart="30dp"
                     android:textSize="20sp" />
 
@@ -228,7 +228,7 @@
                     android:id="@+id/tv_label_graisse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Graisse"
+                    android:text="@string/graisse"
                     android:paddingStart="30dp"
                     android:textSize="20sp" />
 
@@ -252,7 +252,7 @@
                     android:id="@+id/tv_label_proteine"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Protéine"
+                    android:text="@string/proteine"
                     android:paddingStart="30dp"
                     android:textSize="20sp" />
 
@@ -276,7 +276,7 @@
                     android:id="@+id/tv_label_sodium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sodium"
+                    android:text="@string/sodium"
                     android:paddingStart="30dp"
                     android:textSize="20sp" />
 
@@ -300,7 +300,7 @@
                     android:id="@+id/tv_label_sel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sel"
+                    android:text="@string/sel"
                     android:paddingStart="30dp"
                     android:textSize="20sp" />
 
@@ -323,7 +323,7 @@
                     android:id="@+id/tv_label_cacium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Calcium"
+                    android:text="@string/calcium"
                     android:paddingStart="30dp"
                     android:textSize="20sp" />
 

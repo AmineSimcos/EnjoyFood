@@ -118,7 +118,7 @@ public class RegisterActivity extends AppCompatActivity {
                     });
                 }
                 else{
-                    Toast.makeText(getApplicationContext(),"Veillez remplir tous les champs",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),getResources().getString(R.string.verification),Toast.LENGTH_SHORT).show();
                 }
             }
         });

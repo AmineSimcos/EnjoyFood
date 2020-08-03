@@ -148,10 +148,46 @@ public class fragmentProduit extends Fragment {
                 boutton("Eau");
             }
         });
-
-        gv.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        monProduitAdapter = new GridViewAdapter(getActivity(), listeProduits);
+        gv.setAdapter(monProduitAdapter);
+//        gv.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                Toast.makeText(getContext(), "Ne fonctionne pas!", Toast.LENGTH_SHORT).show();
+//                final Intent i = new Intent(getContext(), ResultatActivity.class);
+//                Produit produit = listeProduits.get(position);
+//                Bundle b = new Bundle();
+//                b.putString("code_bar",produit.getCode_bar());
+//                b.putString("titre",produit.getTitre());
+//                b.putString("description",produit.getDescription());
+//                b.putString("image",produit.getImage());
+//                b.putString("categorie",produit.getCategorie());
+//                b.putDouble("energie",produit.getEnergie());
+//                b.putDouble("matiere_grasse",produit.getMatiere_grasse());
+//                b.putDouble("graisse",produit.getGraisse());
+//                b.putDouble("glucide",produit.getGlucide());
+//                b.putDouble("sucre",produit.getSucre());
+//                b.putDouble("proteine",produit.getProteine());
+//                b.putDouble("fibres",produit.getFibre());
+//                b.putDouble("sodium",produit.getSodium());
+//                b.putDouble("sel",produit.getSel());
+//                b.putDouble("calicium",produit.getCalicium());
+//                b.putInt("fruits_lesgumes",produit.getFruits_legumes());
+//                b.putString("ingrediant",produit.getIngrediant());
+//                i.putExtras(b);
+//                Toast.makeText(getContext(), "Remplir bundle", Toast.LENGTH_SHORT).show();
+//                startActivity(i);
+//
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
+        gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getContext(), "Ne fonctionne pas!", Toast.LENGTH_SHORT).show();
                 final Intent i = new Intent(getContext(), ResultatActivity.class);
                 Produit produit = listeProduits.get(position);
@@ -174,13 +210,8 @@ public class fragmentProduit extends Fragment {
                 b.putInt("fruits_lesgumes",produit.getFruits_legumes());
                 b.putString("ingrediant",produit.getIngrediant());
                 i.putExtras(b);
+                Toast.makeText(getContext(), "Remplir bundle", Toast.LENGTH_SHORT).show();
                 startActivity(i);
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
             }
         });
         return v;
@@ -206,6 +237,7 @@ public class fragmentProduit extends Fragment {
                                     String description = obj.getString("description");
                                     String image = obj.getString("image");
                                     String code_bar = obj.getString("code_bar");
+                                    String cat = obj.getString("categorie");
                                     double energie = obj.getDouble("energie");
                                     double matiere_grasse = obj.getDouble("matiere_grasse");
                                     double graisse = obj.getDouble("graisse");
@@ -218,11 +250,11 @@ public class fragmentProduit extends Fragment {
                                     double calicium = obj.getDouble("calicium");
                                     int fruits_lesgumes = obj.getInt("fruits_lesgumes");
                                     String ingrediant = obj.getString("ingrediant");
-                                    listeProduits.add(new Produit(code_bar, titre, description, image, categorie, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant));
+                                    listeProduits.add(new Produit(code_bar, titre, description, image, cat, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant));
                                     pg.setVisibility(View.GONE);
                                     //Log.e("Fragment", listeProduits.get(0).getImage());
-                                    monProduitAdapter = new GridViewAdapter(getActivity(), listeProduits);
-                                    gv.setAdapter(monProduitAdapter);
+//                                    monProduitAdapter = new GridViewAdapter(getActivity(), listeProduits);
+//                                    gv.setAdapter(monProduitAdapter);
                                     pg.setVisibility(View.GONE);
                                     gv.setVisibility(View.VISIBLE);
 
@@ -233,7 +265,7 @@ public class fragmentProduit extends Fragment {
                                 e.printStackTrace();
                                 pg.setVisibility(View.GONE);
                                 tv_msg.setVisibility(View.VISIBLE);
-                                tv_msg.setText("Aucun produit se trouvé");
+                                tv_msg.setText(getResources().getString(R.string.verification));
                             }
                         }
                     },
@@ -245,7 +277,7 @@ public class fragmentProduit extends Fragment {
                             Log.d("Error.Response", "Erreur");
                             pg.setVisibility(View.GONE);
                             tv_msg.setVisibility(View.VISIBLE);
-                            tv_msg.setText("Problem de connexion");
+                            tv_msg.setText(getResources().getString(R.string.error_cnx));
                         }
                     }
             ) {

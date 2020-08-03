@@ -172,7 +172,7 @@ public class fragmentConsommation extends Fragment {
                                 LocalDateTime date = LocalDateTime.parse(obj.getString("date_cons"), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
                                 Duration diff = Duration.between(date, d2);
                                 long diffDays = diff.toDays();
-                                Log.e("diff", String.valueOf(diffDays));
+                                //Log.e("diff", String.valueOf(diffDays));
                                 if(diffDays <= time){
                                     double energie = Double.parseDouble(obj.getString("energie"));
                                     double matiere_grasse = Double.parseDouble(obj.getString("matiere_grasse"));
@@ -223,7 +223,7 @@ public class fragmentConsommation extends Fragment {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // error
-                        Log.d("Error.Response", "Erreur");
+                        //Log.d("Error.Response", "Erreur");
                     }
                 }
         ) {

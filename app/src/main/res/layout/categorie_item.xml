@@ -33,6 +33,7 @@
                 android:layout_alignBottom="@id/iv_adapter"
                 android:background="#6D000000"
                 android:text="titre"
+                android:paddingVertical="4dp"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp" />

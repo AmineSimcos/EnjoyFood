@@ -111,7 +111,6 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
-                        Toast.makeText(getApplicationContext(), "JSON object mabghach", Toast.LENGTH_SHORT).show();
                         finish();
                     }
                 }
@@ -120,11 +119,11 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
                 public void onErrorResponse(VolleyError error) {
                     error.printStackTrace();
                     if(error instanceof NetworkError){
-                        Toast.makeText(getApplicationContext(), "Impossible de se connecter", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.error_cnx), Toast.LENGTH_SHORT).show();
                         finish();
                     }
                     else if(error instanceof VolleyError){
-                        Toast.makeText(getApplicationContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.error), Toast.LENGTH_SHORT).show();
                         finish();
                     }
                 }

@@ -84,7 +84,7 @@
                 android:textAllCaps="false"
                 android:textColor="#ffffff"
                 android:background="@drawable/btn_login_color"
-                android:text="@string/connecter"/>
+                android:text="@string/login"/>
 
             <TextView
                 android:layout_marginTop="10dp"
@@ -115,7 +115,7 @@
             android:textSize="15sp"
             android:layout_gravity="end"
             android:textColor="#333333"
-            android:text="Ignorer"/>
+            android:text="@string/skip"/>
 
     </LinearLayout>
 

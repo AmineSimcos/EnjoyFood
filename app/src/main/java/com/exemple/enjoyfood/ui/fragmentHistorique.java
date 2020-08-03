@@ -102,7 +102,7 @@ public class fragmentHistorique extends Fragment {
                     request.supprimerHistorique(id, new MyRequest.SuppHistoryCallBack() {
                         @Override
                         public void onSucces(String message) {
-                            Toast.makeText(getContext(), "bravo!!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), getResources().getString(R.string.historique_empty), Toast.LENGTH_SHORT).show();
                         }
 
                         @Override
