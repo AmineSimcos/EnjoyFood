@@ -1,66 +1,84 @@
 <resources>
     <string name="app_name">EnjoyFood</string>
-    <string name="action_settings">Parametres</string>
+    <string name="action_settings">Settings</string>
 
-    <string name="menu_accueil">Acueil</string>
-    <string name="menu_produit">Produits</string>
-    <string name="menu_consommations">Consommations</string>
-    <string name="menu_partager">Partager</string>
-    <string name="menu_apropos">A propos</string>
+    <string name="menu_accueil">Home</string>
+    <string name="menu_produit">Products</string>
+    <string name="menu_consommations">Consumption</string>
 
-    <string name="login">Se connecter</string>
-    <string name="register">S\'inscrire</string>
-    <string name="register_title">Inscription</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="register_title">Registration</string>
     <string name="pseudo">Pseudo</string>
     <string name="email">Email</string>
-    <string name="password">Mot de passe</string>
-    <string name="password2">Retaper votre mot de passe</string>
-    <string name="login_title">Connexion</string>
-    <string name="connecter">Se connecter</string>
-    <string name="logout">Se déconnecter</string>
+    <string name="password">Password</string>
+    <string name="logout">Logout</string>
 
-    <string name="version">Version v.1.0 \n \n \n Auteurs : \n \n BAICH Mohammed Amine \n\n OUDJEDI DAMERDJI Faiza</string>
-    <string name="droits">Droits d'auteur 2020, EnjoyFood \n Tous droits réservés</string>
-    <string name="populaire">Catégorie</string>
-    <string name="categorie">Par catégorie</string>
-    <string name="bienvenue">Bienvenue sur</string>
-    <string name="composition_nutrisionnelle">Composition nutrisionnelle</string>
+    <string name="version">Version v.1.0 \n \n \n Authors : \n \n BAICH Mohammed Amine \n\n OUDJEDI DAMERDJI Faiza</string>
+    <string name="droits">Copyright 2020, EnjoyFood\nAll rights reserved</string>
+    <string name="populaire">Category</string>
+    <string name="categorie">By category</string>
+    <string name="bienvenue">Welcome !</string>
+    <string name="composition_nutrisionnelle">Nutritional composition</string>
     <string name="pour_n100_ml">Pour\n100 ml</string>
-    <string name="par_portion_250_ml">Par portion (250 ml)</string>
+    <string name="par_portion_250_ml">Per portion (250 ml)</string>
     <string name="energie">Energie</string>
     <string name="mati_res_grasses">Matières grasses</string>
-    <string name="graisses_satur_es">Dont graisses saturées</string>
+    <string name="graisses_satur_es">Of which saturated fat</string>
     <string name="glucides">Glucides</string>
-    <string name="prot_ines">Protéines</string>
+    <string name="prot_ines">Protein</string>
     <string name="fibres">Fibres</string>
     <string name="sodium">Sodium</string>
     <string name="sel">Sel</string>
-    <string name="calicium">Calicium</string>
+    <string name="calcium">Calcium</string>
     <string name="fruits_l_gumes">Fruits, légumes (%)</string>
-    <string name="ingrediant">Ingrediant</string>
-    <string name="sucres">Dont sucres</string>
+    <string name="ingrediant">Ingredient</string>
+    <string name="sucres">With sugar</string>
     <string name="nutrition">Nutrition</string>
-    <string name="title_activity_main">EnjoyFood</string>
     <string name="unity_g">g</string>
     <string name="unity_kj">KJ</string>
     <string name="unity_kcal">KCal</string>
     <string name="for100ml">Pour\n100 ml</string>
-    <string name="for250ml">Par portion (250 ml)</string>
+    <string name="for250ml">Per portion (250 ml)</string>
     <string name="for100g">Pour\n100 g</string>
-    <string name="for250g">Par portion (250 g)</string>
+    <string name="for250g">Per portion (250 g)</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="nav_header_title">username</string>
-    <string name="nav_header_subtitle">Email</string>
     <string name="menu_login">Login</string>
     <string name="menu_profile">Profile</string>
-    <string name="menu_logout">Logout</string>
-    <string name="menu_historique">Historique</string>
+    <string name="menu_historique">Historical</string>
+    <string name="go">To your caddies!</string>
+    <string name="scan">Scan</string>
+    <string name="skip">Skip</string>
+    <string name="verification">Please fill in all fields</string>
+    <string name="menu">Menu</string>
+    <string name="empty">No product found</string>
+    <string name="calorie">Sugar</string>
+    <string name="glucide">Glucide</string>
+    <string name="sucre">Sugar</string>
+    <string name="fibre">Fiber</string>
+    <string name="mati_res_grasse">Fat</string>
+    <string name="graisse">saturated fat</string>
+    <string name="proteine">Protein</string>
+
+    <string name="error">An error has occurred</string>
+    <string name="error_cnx">Impossible to connect</string>
+    <string name="historique_empty">Empty history</string>
 
     <string-array name="bilan">
-        <item>Jour</item>
-        <item>Semaine</item>
-        <item>Mois</item>
+        <item>Day</item>
+        <item>Week</item>
+        <item>Month</item>
     </string-array>
+
+    <string-array name="intro">
+        <item>Welcome ! Ready to change some of your habits and pay more attention when shopping and consuming?</item>
+        <item>Enjoy Food is an application designed to help you better choose the right products and manage your consumption</item>
+        <item>Easily retrieve all the nutritional information of a food product and decide what you want on your plate</item>
+        <item>Note and calculate your daily, weekly or monthly consumption</item>
+    </string-array>
+    <string name="about">About</string>
+    <string name="password2">Retype your password</string>
+    <string name="login_title">Connection</string>
+    <string name="next">Next</string>
 </resources>
