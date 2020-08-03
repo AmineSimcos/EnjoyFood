@@ -5,7 +5,6 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/nav_accueil">
 
-
     <fragment
         android:id="@+id/nav_accueil"
         android:name="com.exemple.enjoyfood.ui.fragmentAccueil"
