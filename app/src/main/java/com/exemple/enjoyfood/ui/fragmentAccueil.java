@@ -25,8 +25,16 @@ import com.exemple.enjoyfood.R;
 import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
 
 public class fragmentAccueil  extends Fragment {
+
+
     private Button btn, btn_produit, btn_consommation, btn_historique, btn_apropos;
-    private int images[] = {R.drawable.test, R.drawable.testa,R.drawable.testb,R.drawable.testc,R.drawable.testd,R.drawable.teste};
+
+    private int images[] = {R.drawable.test,
+            R.drawable.accueil_img2,
+            R.drawable.testb,
+            R.drawable.testc,
+            R.drawable.testd,
+            R.drawable.teste};
     private ViewFlipper v_flipper;
 
     @Nullable

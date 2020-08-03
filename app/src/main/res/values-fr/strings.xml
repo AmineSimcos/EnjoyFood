@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">EnjoyFood</string>
-    <string name="action_settings">Parametres</string>
-    <string name="menu_accueil">Acueil</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="menu_accueil">Accueil</string>
     <string name="menu_produit">Produits</string>
     <string name="menu_consommations">Consommations</string>
     <string name="about">Â propos</string>
     <string name="version">Version v.1.0 \n \n \n Auteurs : \n \n BAICH Mohammed Amine \n\n OUDJEDI DAMERDJI Faiza</string>
-    <string name="populaire">Catégorie</string>
-    <string name="categorie">Par catégorie</string>
+    <string name="populaire">Catégories</string>
     <string name="bienvenue">Bienvenue !</string>
     <string name="composition_nutrisionnelle">Composition nutrisionnelle</string>
-    <string name="pour_n100_ml">Pour\\n100 ml</string>
-    <string name="par_portion_250_ml">Par portion (250 ml)</string>
+    <string name="pour_n100_ml">Pour \n 100 ml</string>
+    <string name="par_portion_250_ml">Par portion de (250 ml)</string>
     <string name="energie">Energie</string>
     <string name="mati_res_grasses">Matières grasses</string>
     <string name="graisses_satur_es">Dont graisses saturées</string>
@@ -21,10 +20,10 @@
     <string name="fibres">Fibres</string>
     <string name="sodium">Sodium</string>
     <string name="sel">Sel</string>
-    <string name="calcium">Calcium</string>
+    <string name="calicium">Calcium</string>
     <string name="fruits_l_gumes">Fruits, légumes (%)</string>
-    <string name="ingrediant">Ingrediant</string>
-    <string name="sucres">Dont sucres</string>
+    <string name="ingrediant">Ingrediants</string>
+    <string name="sucres">Dont sucre</string>
     <string name="nutrition">Nutrition</string>
     <string name="unity_g">g</string>
     <string name="unity_kj">KJ</string>
@@ -40,22 +39,22 @@
     <string name="proteine">Protéine</string>
     <string name="historique_empty">Historique vide</string>
     <string name="error_cnx">Impossible de se connecter</string>
-    <string name="error">Une erreur s\'est produite</string>
-    <string name="verification">Veillez remplir tous les champs</string>
+    <string name="error">Une erreure s\'est produite</string>
+    <string name="verification">Veuillez remplir tous les champs</string>
     <string name="skip">Ignorer</string>
-    <string name="scan">Scannez</string>
+    <string name="scan">Scanné</string>
     <string name="next">Suivant</string>
     <string name="go">A vos caddies !</string>
     <string name="menu_historique">Historique</string>
-    <string name="menu_profile">Profile</string>
     <string name="menu_login">Se connecter</string>
-    <string name="for250g">Par portion (250 g)</string>
+    <string name="for250g">Par portion de (250 g)</string>
     <string name="for100g">Pour</string>
-    <string name="for250ml">Par portion (250 ml)</string>
+    <string name="for250ml">Par portion de (250 ml)</string>
     <string name="for100ml">Pour</string>
-    <string name="droits">Droits d\'auteur 2020, EnjoyFood\nTous droits réservés</string>
+    <string name="droits">Droits d\'auteur 2020, EnjoyFood \n Tous droits réservés</string>
     <string name="logout">Se déconnecter</string>
     <string name="login_title">Connexion</string>
+
     <string name="password2">Retaper votre mot de passe</string>
     <string name="password">Mot de passe</string>
     <string name="email">Email</string>
@@ -74,6 +73,6 @@
         <item>Bienvenue ! Prêt(e) à changer certaines de vos habitudes et faire plus atention lors de vos achats et consommations ?</item>
         <item>Enjoy Food est une application conçu pour vous aider a mieux choisir les bons produits et a gérer vos consommations</item>
         <item>Récupérez facilement toutes les informations nutritionnelles d\'un produit alimentaire et décider rééllement de ce que vous voulez dans votre assiette</item>
-        <item>Notez et:× calculez vos consommations journalières, hebdomadaires ou mensuelles</item>
+        <item>Notez et calculez vos consommations journalières, hebdomadaires ou mensuelles</item>
     </string-array>
 </resources>

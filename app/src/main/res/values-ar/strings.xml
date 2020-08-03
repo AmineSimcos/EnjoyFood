@@ -5,62 +5,60 @@
     <string name="menu_accueil">الرئيسية</string>
     <string name="menu_consommations">استهلاك</string>
     <string name="action_settings">اعدادات</string>
-    <string name="about">عن التطبيق</string>
-    <string name="version">"الإصدار v.1.0 \nالمؤلفون:\nبعيش محمد الأمين\n وجدي دامرجي فائزة"</string>
-    <string name="populaire">الفئة</string>
-    <string name="categorie">حسب الصنف</string>
-    <string name="bienvenue">مرحبا بكم في</string>
+    <string name="about">حول التطبيق</string>
+    <string name="version">"الإصدار v.1.0 \nالمؤلفون:\nبعيش محمد الأمين\n وجدي دمرجي فايزة"</string>
+    <string name="populaire">"الفئات"</string>
+    <string name="bienvenue">مرحبا !</string>
     <string name="composition_nutrisionnelle">المحتوى الغذائي</string>
-    <string name="pour_n100_ml">ل 100 مل</string>
-    <string name="par_portion_250_ml">ل 250 مل</string>
-    <string name="energie">السعرة الطاقوية</string>
+    <string name="pour_n100_ml">لكل 100 مل</string>
+    <string name="par_portion_250_ml">لكل 250 مل</string>
+    <string name="energie">الطاقة</string>
     <string name="mati_res_grasses">مواد دهنية</string>
     <string name="glucides">غلوسيدات</string>
     <string name="prot_ines">بروتينات</string>
     <string name="fibres">ألياف</string>
     <string name="sodium">صوديوم</string>
     <string name="sel">ملح</string>
-    <string name="calcium">كاليسيوم</string>
+    <string name="calicium">كالسيوم</string>
     <string name="fruits_l_gumes">فواكه، خضر (%)</string>
-    <string name="ingrediant">محتويات</string>
-    <string name="sucres">منها السكريات</string>
-    <string name="graisses_satur_es">منها الأحماض الدهنية المشبعة</string>
+    <string name="ingrediant">المكونات</string>
+    <string name="sucres">السكريات</string>
+    <string name="graisses_satur_es">الدهون المشبعة</string>
     <string name="nutrition">العناصر الغذائية</string>
     <string name="unity_g">غ</string>
     <string name="unity_kj">كيلو جول</string>
     <string name="unity_kcal">كيلو حريرة</string>
-    <string name="for100ml">ل 100 مل</string>
-    <string name="for100g">ل 100 غ</string>
-    <string name="for250ml">ل 250 مل</string>
-    <string name="for250g">ل 250 غ</string>
+    <string name="for100ml">لكل 100 مل</string>
+    <string name="for100g">لكل 100 غ</string>
+    <string name="for250ml">لكل 250 مل</string>
+    <string name="for250g">لكل 250 غ</string>
     <string name="historique_empty">سجل فارغ</string>
-    <string name="error_cnx">من المستحيل الاتصال</string>
+    <string name="error_cnx">الاتصال غير ممكن</string>
     <string name="error">وقع خطأ ما</string>
     <string name="proteine">بروتين</string>
-    <string name="graisse">الدهون المشبعة</string>
-    <string name="mati_res_grasse">سمنة</string>
+    <string name="graisse">دهون</string>
+    <string name="mati_res_grasse">مواد دهنية</string>
     <string name="fibre">ألياف</string>
-    <string name="sucre">سكريات</string>
-    <string name="glucide">غلوسيدات</string>
-    <string name="droits">حقوق الطبع والنشر 2020 ، EnjoyFood</string>
+    <string name="sucre">سكر</string>
+    <string name="glucide">غلوسيد</string>
+    <string name="droits">حقوق المؤلف 2020 ، EnjoyFood جميع الحقوق محفوظة</string>
     <string name="login">دخول</string>
     <string name="register">تسجيل</string>
     <string name="register_title">تسجيل الدخول</string>
     <string name="password">كلمة المرور</string>
-    <string name="email">بريدك الالكتروني</string>
-    <string name="pseudo">اسمك الكامل</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="pseudo">الاسم الكامل</string>
     <string name="logout">خروج</string>
-    <string name="go">لأصدقائك!</string>
+    <string name="go">لنذهب الى التسوق !</string>
     <string name="next">التالي</string>
-    <string name="scan">فحص</string>
+    <string name="scan">مسح</string>
     <string name="skip">تجاهل</string>
     <string name="verification">يرجى تعبئة جميع الحقول</string>
     <string name="menu">القائمة</string>
-    <string name="empty">لم يتم العثور على منتج</string>
-    <string name="calorie">السكر</string>
+    <string name="empty">لم يتم العثور على المنتوج</string>
+    <string name="calorie">وحدة حرارية</string>
     <string name="password2">أعد كتابة كلمة المرور الخاصة بك</string>
     <string name="login_title">تسجيل الدخول</string>
-    <string name="menu_profile">الملف الشخصي</string>
     <string name="menu_historique">تاريخي</string>
     <string name="menu_login">دخول</string>
 
@@ -71,9 +69,9 @@
     </string-array>
 
     <string-array name="intro">
-        <item>مرحبا ! هل أنت مستعد لتغيير بعض عاداتك وإيلاء المزيد من الاهتمام عند التسوق والاستهلاك؟</item>
+        <item>مرحبا ! هل أنت مستعد لتغيير بعض عاداتك وإيلاء المزيد من الاهتمام عند التسوق والاستهلاك ؟</item>
         <item>Enjoy Food هو تطبيق مصمم لمساعدتك على اختيار المنتجات المناسبة بشكل أفضل وإدارة استهلاكك</item>
         <item>استرجع بسهولة جميع المعلومات الغذائية لمنتج غذائي وحدد في الواقع ما تريده على طبقك</item>
-        <item>لاحظ وحساب استهلاكك اليومي أو الأسبوعي أو الشهري</item>
+        <item>سجل و احسب استهلاكك اليومي أو الأسبوعي أو الشهري</item>
     </string-array>
 </resources>
