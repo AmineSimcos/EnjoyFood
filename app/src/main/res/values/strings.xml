@@ -2,6 +2,7 @@
 
     <string name="app_name">EnjoyFood</string>
     <string name="action_settings">Settings</string>
+    <string name="menu_ profile">Profile</string>
     <string name="menu_accueil">Home</string>
     <string name="menu_produit">Products</string>
     <string name="menu_consommations">Consumption</string>
@@ -39,6 +40,7 @@
     <string name="for250ml">Per portion (250 ml)</string>
     <string name="for100g">for\n100 g</string>
     <string name="for250g">Per portion (250 g)</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="menu_login">Login</string>
