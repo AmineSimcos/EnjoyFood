@@ -209,7 +209,7 @@ public class fragmentHistorique extends Fragment {
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    Toast.makeText(getContext(), "JSON object mabghach", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getContext(), "Problème de JSON", Toast.LENGTH_SHORT).show();
                 }
             }
         }, new Response.ErrorListener() {

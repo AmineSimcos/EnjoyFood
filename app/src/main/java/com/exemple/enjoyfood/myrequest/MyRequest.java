@@ -49,7 +49,7 @@ public class MyRequest {
                         if(messages.has("email")){
                             errors.put("email",messages.getString("email"));
                         }
-                        if(messages.has("pseudo")){
+                        if(messages.has("password")){
                             errors.put("password",messages.getString("password"));
                         }
                         callback.inputErrors(errors);
@@ -91,7 +91,7 @@ public class MyRequest {
         void onError(String message);
     }
 
-    public void connection(final String pseudo, final String password, final LoginCallBack callback){
+    public void connection(final String email, final String password, final LoginCallBack callback){
 
         StringRequest request = new StringRequest(Request.Method.POST, Config.URL_LOGIN, new Response.Listener<String>() {
             @Override
@@ -132,7 +132,7 @@ public class MyRequest {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> map = new HashMap<>();
-                map.put("pseudo", pseudo);
+                map.put("email", email);
                 map.put("password", password);
                 return map;
             }

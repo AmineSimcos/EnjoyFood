@@ -33,19 +33,19 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_marginTop="10dp"
-                android:id="@+id/til_pseudo_login"
+                android:id="@+id/til_email_login"
                 android:layout_width="250dp"
                 android:textColorHint="#333333"
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/pseudo"
+                    android:id="@+id/email"
                     android:paddingStart="10dp"
                     android:background="@drawable/btn_login"
                     android:layout_width="250dp"
                     android:layout_height="40dp"
-                    android:drawableStart="@drawable/ic_login"
-                    android:hint="@string/pseudo"
+                    android:drawableStart="@drawable/ic_mail"
+                    android:hint="@string/email"
                     android:imeOptions="actionNext"
                     android:inputType="text"
                     android:autofillHints="" />
