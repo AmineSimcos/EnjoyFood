@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_ name">Enjoy Food</string>
+    <string name="app_name">Enjoy Food</string>
     <string name="menu_produit">منتجات</string>
     <string name="menu_accueil">الرئيسية</string>
     <string name="menu_consommations">استهلاك</string>
@@ -19,7 +19,7 @@
     <string name="fibres">ألياف</string>
     <string name="sodium">صوديوم</string>
     <string name="sel">ملح</string>
-    <string name="calicium">كالسيوم</string>
+    <string name="calcium">كالسيوم</string>
     <string name="fruits_l_gumes">فواكه، خضر (%)</string>
     <string name="ingrediant">المكونات</string>
     <string name="sucres">السكريات</string>

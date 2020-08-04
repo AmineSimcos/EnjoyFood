@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_ name">EnjoyFood</string>
+    <string name="app_name">EnjoyFood</string>
     <string name="action_settings">Paramètres</string>
     <string name="menu_accueil">Accueil</string>
     <string name="menu_produit">Produits</string>
@@ -20,7 +20,7 @@
     <string name="fibres">Fibres</string>
     <string name="sodium">Sodium</string>
     <string name="sel">Sel</string>
-    <string name="calicium">Calcium</string>
+    <string name="calcium">Calcium</string>
     <string name="fruits_l_gumes">Fruits, légumes (%)</string>
     <string name="ingrediant">Ingrediants</string>
     <string name="sucres">Dont sucre</string>

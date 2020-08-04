@@ -19,7 +19,7 @@
         <item
             android:id="@+id/nav_historique"
             android:icon="@drawable/ic_history"
-            android:title="Historique" />
+            android:title="his" />
         <item
             android:id="@+id/nav_apropos"
             android:icon="@drawable/ic_apropos"
@@ -35,7 +35,14 @@
                     android:id="@+id/nav_login"
                     android:icon="@drawable/ic_log"
                     android:title="@string/menu_login" />
-
+                <item
+                    android:id="@+id/nav_profile"
+                    android:icon="@drawable/ic_log"
+                    android:title="@string/menu_login" />
+                <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/ic_log"
+                    android:title="@string/menu_login" />
 
 
             </menu>
