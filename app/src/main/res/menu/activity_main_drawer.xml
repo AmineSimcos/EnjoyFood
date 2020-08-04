@@ -19,7 +19,7 @@
         <item
             android:id="@+id/nav_historique"
             android:icon="@drawable/ic_history"
-            android:title="his" />
+            android:title="@string/menu_historique" />
         <item
             android:id="@+id/nav_apropos"
             android:icon="@drawable/ic_apropos"
@@ -28,7 +28,8 @@
 
 
     <group android:checkableBehavior="single">
-        <item android:title="Profile">
+        <item android:title="@string/menu_profile">
+
             <menu>
 
                 <item
@@ -37,13 +38,12 @@
                     android:title="@string/menu_login" />
                 <item
                     android:id="@+id/nav_profile"
-                    android:icon="@drawable/ic_log"
-                    android:title="@string/menu_login" />
+                    android:icon="@drawable/ic_profile"
+                    android:title="@string/menu_profile" />
                 <item
                     android:id="@+id/nav_logout"
-                    android:icon="@drawable/ic_log"
-                    android:title="@string/menu_login" />
-
+                    android:icon="@drawable/ic_logout"
+                    android:title="@string/logout" />
 
             </menu>
 
