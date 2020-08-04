@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">EnjoyFood</string>
     <string name="action_settings">Paramètres</string>
     <string name="menu_accueil">Accueil</string>
+    <string name="menu_profile">Profile</string>
     <string name="menu_produit">Produits</string>
     <string name="menu_consommations">Consommations</string>
     <string name="about">Â propos</string>

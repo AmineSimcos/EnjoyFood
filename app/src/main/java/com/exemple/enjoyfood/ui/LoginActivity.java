@@ -27,7 +27,7 @@ import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private TextInputLayout til_pseudo_login, til_password_login;
+    private TextInputLayout til_email_login, til_password_login;
     private TextView tv_sinscrir, tv_ignorer;
     private RequestQueue queue;
     private MyRequest request;
@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), intent.getStringExtra("REGISTER"), Toast.LENGTH_SHORT).show();
         }
 
-        til_pseudo_login = findViewById(R.id.til_pseudo_login);
+        til_email_login = findViewById(R.id.til_email_login);
         til_password_login = findViewById(R.id.til_pass_login);
         btn_send = findViewById(R.id.seconnecter);
         pb_loader = findViewById(R.id.pb_loader);
@@ -99,16 +99,16 @@ public class LoginActivity extends AppCompatActivity {
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String pseudo = til_pseudo_login.getEditText().getText().toString().trim();
+                final String email = til_email_login.getEditText().getText().toString().trim();
                 final String password = til_password_login.getEditText().getText().toString().trim();
 
                 pb_loader.setVisibility(View.VISIBLE);
 
-                if(pseudo.length() > 0 && password.length() > 0) {
+                if(email.length() > 0 && password.length() > 0) {
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            request.connection(pseudo, password, new MyRequest.LoginCallBack() {
+                            request.connection(email, password, new MyRequest.LoginCallBack() {
                                 @Override
                                 public void onSucces(String id, String pseudo, String email) {
                                     pb_loader.setVisibility(View.GONE);
