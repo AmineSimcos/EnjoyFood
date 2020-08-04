@@ -3,6 +3,7 @@
     <string name="app_name">Enjoy Food</string>
     <string name="menu_produit">منتجات</string>
     <string name="menu_accueil">الرئيسية</string>
+    <string name="menu_profile">الملف الشخصي</string>
     <string name="menu_consommations">استهلاك</string>
     <string name="action_settings">اعدادات</string>
     <string name="about">حول التطبيق</string>
