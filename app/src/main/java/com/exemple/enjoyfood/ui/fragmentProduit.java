@@ -87,7 +87,7 @@ public class fragmentProduit extends Fragment {
         tv_msg.setVisibility(View.INVISIBLE);
         categorie = "Boissons";
         tv_subTitle.setText(categorie);
-        parseJSON();
+        parseJSON(categorie);
 
         // Activer l'animation du boutton
         if(Config.ANIMATION_BUTTON_ACTIVE) {
@@ -217,7 +217,7 @@ public class fragmentProduit extends Fragment {
         return v;
     }
 
-    private void parseJSON(){
+    private void parseJSON(final String categorie){
         String url = Config.URL_ALL_PRODUCT;
         tv_msg.setVisibility(View.GONE);
         gv.setVisibility(View.GONE);
@@ -294,9 +294,9 @@ public class fragmentProduit extends Fragment {
         }
         private void boutton(String categorie){
             listeProduits.clear();
-            this.categorie = categorie;
+            //this.categorie = categorie;
             tv_subTitle.setText(categorie);
-            parseJSON();
+            parseJSON(categorie);
         }
 
 

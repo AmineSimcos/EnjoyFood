@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
@@ -22,14 +23,30 @@ import com.thekhaeng.pushdownanim.PushDownAnim;
 
 import com.exemple.enjoyfood.R;
 
+import java.util.ArrayList;
+import java.util.Locale;
+
 import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
 
 public class fragmentAccueil  extends Fragment {
 
 
     private Button btn, btn_produit, btn_consommation, btn_historique, btn_apropos;
-
-    private int images[] = {R.drawable.test,
+    private int images[] = new int[6];
+    // TODO hna dakhli les images taw3ek , bon tableau lewel ta3 anglais w zawej ta3 francais w talet bel 3arbiya
+    private int images_en[] = {R.drawable.test,
+            R.drawable.accueil_img2,
+            R.drawable.testb,
+            R.drawable.testc,
+            R.drawable.testd,
+            R.drawable.teste};
+    private int images_fr[] = {R.drawable.test,
+            R.drawable.accueil_img2,
+            R.drawable.testb,
+            R.drawable.testc,
+            R.drawable.testd,
+            R.drawable.teste};
+    private int images_ar[] = {R.drawable.test,
             R.drawable.accueil_img2,
             R.drawable.testb,
             R.drawable.testc,
@@ -41,7 +58,7 @@ public class fragmentAccueil  extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_accueil,container,false);
-
+        Toast.makeText(getContext(), Locale.getDefault().getLanguage(), Toast.LENGTH_LONG).show();
         btn = v.findViewById(R.id.btn_scanner);
         btn_produit = v.findViewById(R.id.btn_produit);
         btn_consommation = v.findViewById(R.id.btn_consommation);
@@ -50,6 +67,30 @@ public class fragmentAccueil  extends Fragment {
 
 
         v_flipper = v.findViewById(R.id.v_fliper);
+        if(Locale.getDefault().getLanguage().equals("en")){
+            images[0] = R.drawable.test;
+            images[1] = R.drawable.accueil_img2;
+            images[2] = R.drawable.testb;
+            images[3] = R.drawable.testc;
+            images[4] = R.drawable.testd;
+            images[5] = R.drawable.teste;
+        }
+        else if (Locale.getDefault().getLanguage().equals("fr")){
+            images[0] = R.drawable.test;
+            images[1] = R.drawable.accueil_img2;
+            images[2] = R.drawable.testb;
+            images[3] = R.drawable.testc;
+            images[4] = R.drawable.testd;
+            images[5] = R.drawable.teste;
+        }
+        else if (Locale.getDefault().getLanguage().equals("ar")){
+            images[0] = R.drawable.test;
+            images[1] = R.drawable.accueil_img2;
+            images[2] = R.drawable.testb;
+            images[3] = R.drawable.testc;
+            images[4] = R.drawable.testd;
+            images[5] = R.drawable.teste;
+        }
 
         for (int image : images) {
             flipperImages(image);

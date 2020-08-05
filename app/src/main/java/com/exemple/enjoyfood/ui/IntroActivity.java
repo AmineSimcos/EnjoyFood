@@ -20,6 +20,7 @@ import com.thekhaeng.pushdownanim.PushDownAnim;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import com.exemple.enjoyfood.R;
 import com.exemple.enjoyfood.model.ScreenItem;
@@ -36,6 +37,8 @@ public class IntroActivity extends AppCompatActivity {
     private int position = 0;
     private Animation btn_anim;
     private MediaPlayer mediaplayer;
+    private int sound[] = new int[4];
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,11 +73,32 @@ public class IntroActivity extends AppCompatActivity {
         btn__getStarted = findViewById(R.id.btn_get_started);
         btn_anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_animation);
 
+        // TODO hna dakhli les sons taw3ek rani msemihom donk b9a 3lik ghi t7otihom fi raw kima rani msemihom ana
+        if(Locale.getDefault().getLanguage().equals("en")){
+            sound[0] = R.raw.intro1_en;
+            sound[1] = R.raw.intro2_en;
+            sound[2] = R.raw.intro3_en;
+            sound[3] = R.raw.intro4_en;
+        }
+        else if(Locale.getDefault().getLanguage().equals("fr")){
+            sound[0] = R.raw.intro1_fr;
+            sound[1] = R.raw.intro2_fr;
+            sound[2] = R.raw.intro3_fr;
+            sound[3] = R.raw.intro4_fr;
+        }
+        else if(Locale.getDefault().getLanguage().equals("ar")){
+            sound[0] = R.raw.intro1_ar;
+            sound[1] = R.raw.intro2_ar;
+            sound[2] = R.raw.intro3_ar;
+            sound[3] = R.raw.intro4_ar;
+        }
+
         final List<ScreenItem> mList = new ArrayList<>();
-        mList.add(new ScreenItem(getResources().getString(R.string.bienvenue), getResources().getStringArray(R.array.intro)[0], R.drawable.intro1, R.raw.a));
-        mList.add(new ScreenItem(getResources().getString(R.string.app_name), getResources().getStringArray(R.array.intro)[1], R.drawable.intro2, R.raw.b));
-        mList.add(new ScreenItem(getResources().getString(R.string.scan), getResources().getStringArray(R.array.intro)[2], R.drawable.intro3, R.raw.c));
-        mList.add(new ScreenItem(getResources().getString(R.string.menu_consommations), getResources().getStringArray(R.array.intro)[3], R.drawable.intro4, R.raw.d));
+
+        mList.add(new ScreenItem(getResources().getString(R.string.bienvenue), getResources().getStringArray(R.array.intro)[0], R.drawable.intro1, sound[0]));
+        mList.add(new ScreenItem(getResources().getString(R.string.app_name), getResources().getStringArray(R.array.intro)[1], R.drawable.intro2, sound[1]));
+        mList.add(new ScreenItem(getResources().getString(R.string.scan), getResources().getStringArray(R.array.intro)[2], R.drawable.intro3, sound[2]));
+        mList.add(new ScreenItem(getResources().getString(R.string.menu_consommations), getResources().getStringArray(R.array.intro)[3], R.drawable.intro4, sound[3]));
         mList.add(new ScreenItem("", "", R.drawable.d, -1));
 
         screenPager = findViewById(R.id.vp_screen_pager);
