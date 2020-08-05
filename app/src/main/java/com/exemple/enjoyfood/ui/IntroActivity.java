@@ -73,6 +73,7 @@ public class IntroActivity extends AppCompatActivity {
         btn__getStarted = findViewById(R.id.btn_get_started);
         btn_anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_animation);
 
+        // TODO hna dakhli les sons taw3ek rani msemihom donk b9a 3lik ghi t7otihom fi raw kima rani msemihom ana
         if(Locale.getDefault().getLanguage().equals("en")){
             sound[0] = R.raw.intro1_en;
             sound[1] = R.raw.intro2_en;

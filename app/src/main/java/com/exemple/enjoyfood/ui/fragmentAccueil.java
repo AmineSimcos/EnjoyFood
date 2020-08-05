@@ -33,6 +33,7 @@ public class fragmentAccueil  extends Fragment {
 
     private Button btn, btn_produit, btn_consommation, btn_historique, btn_apropos;
     private int images[] = new int[6];
+    // TODO hna dakhli les images taw3ek , bon tableau lewel ta3 anglais w zawej ta3 francais w talet bel 3arbiya
     private int images_en[] = {R.drawable.test,
             R.drawable.accueil_img2,
             R.drawable.testb,
