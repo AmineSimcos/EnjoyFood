@@ -109,6 +109,8 @@
         android:layout_below="@id/tv_subTitle"
         android:layout_marginTop="10dp"
         android:divider="@android:color/darker_gray"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         android:dividerHeight="0.5dp" />
     <ProgressBar
         android:id="@+id/progress_for_grid"
