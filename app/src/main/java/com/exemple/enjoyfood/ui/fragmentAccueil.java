@@ -23,7 +23,6 @@ import com.thekhaeng.pushdownanim.PushDownAnim;
 
 import com.exemple.enjoyfood.R;
 
-import java.util.ArrayList;
 import java.util.Locale;
 
 import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
@@ -34,24 +33,24 @@ public class fragmentAccueil  extends Fragment {
     private Button btn, btn_produit, btn_consommation, btn_historique, btn_apropos;
     private int images[] = new int[6];
     // TODO hna dakhli les images taw3ek , bon tableau lewel ta3 anglais w zawej ta3 francais w talet bel 3arbiya
-    private int images_en[] = {R.drawable.test,
-            R.drawable.accueil_img2,
-            R.drawable.testb,
-            R.drawable.testc,
-            R.drawable.testd,
-            R.drawable.teste};
-    private int images_fr[] = {R.drawable.test,
-            R.drawable.accueil_img2,
-            R.drawable.testb,
-            R.drawable.testc,
-            R.drawable.testd,
-            R.drawable.teste};
-    private int images_ar[] = {R.drawable.test,
-            R.drawable.accueil_img2,
-            R.drawable.testb,
-            R.drawable.testc,
-            R.drawable.testd,
-            R.drawable.teste};
+    private int images_en[] = {R.drawable.img1_slide1_en,
+            R.drawable.img2_slide2_en,
+            R.drawable.img3_slide3_en,
+            R.drawable.img4_slide4_en,
+            R.drawable.img5_slide5_en,
+            R.drawable.img6_slide6_en};
+    private int images_fr[] = {R.drawable.img1_slide1_fr,
+            R.drawable.img2_slide2_fr,
+            R.drawable.img3_slide3_fr,
+            R.drawable.img4_slide4_fr,
+            R.drawable.img5_slide5_fr,
+            R.drawable.img6_slide6_fr};
+    private int images_ar[] = {R.drawable.img1_slide1_ar,
+            R.drawable.img2_slide2_ar,
+            R.drawable.img3_slide3_ar,
+            R.drawable.img4_slide4_ar,
+            R.drawable.img5_slide5_ar,
+            R.drawable.img6_slide6_ar};
     private ViewFlipper v_flipper;
 
     @Nullable
@@ -68,28 +67,28 @@ public class fragmentAccueil  extends Fragment {
 
         v_flipper = v.findViewById(R.id.v_fliper);
         if(Locale.getDefault().getLanguage().equals("en")){
-            images[0] = R.drawable.test;
-            images[1] = R.drawable.accueil_img2;
-            images[2] = R.drawable.testb;
-            images[3] = R.drawable.testc;
-            images[4] = R.drawable.testd;
-            images[5] = R.drawable.teste;
+            images[0] = R.drawable.img1_slide1_en;
+            images[1] = R.drawable.img2_slide2_en;
+            images[2] = R.drawable.img3_slide3_en;
+            images[3] = R.drawable.img4_slide4_en;
+            images[4] = R.drawable.img5_slide5_en;
+            images[5] = R.drawable.img6_slide6_en;
         }
         else if (Locale.getDefault().getLanguage().equals("fr")){
-            images[0] = R.drawable.test;
-            images[1] = R.drawable.accueil_img2;
-            images[2] = R.drawable.testb;
-            images[3] = R.drawable.testc;
-            images[4] = R.drawable.testd;
-            images[5] = R.drawable.teste;
+            images[0] = R.drawable.img1_slide1_fr;
+            images[1] = R.drawable.img2_slide2_fr;
+            images[2] = R.drawable.img3_slide3_fr;
+            images[3] = R.drawable.img4_slide4_fr;
+            images[4] = R.drawable.img5_slide5_fr;
+            images[5] = R.drawable.img6_slide6_fr;
         }
         else if (Locale.getDefault().getLanguage().equals("ar")){
-            images[0] = R.drawable.test;
-            images[1] = R.drawable.accueil_img2;
-            images[2] = R.drawable.testb;
-            images[3] = R.drawable.testc;
-            images[4] = R.drawable.testd;
-            images[5] = R.drawable.teste;
+            images[0] = R.drawable.img1_slide1_ar;
+            images[1] = R.drawable.img2_slide2_ar;
+            images[2] = R.drawable.img3_slide3_ar;
+            images[3] = R.drawable.img4_slide4_ar;
+            images[4] = R.drawable.img5_slide5_ar;
+            images[5] = R.drawable.img6_slide6_ar;
         }
 
         for (int image : images) {
