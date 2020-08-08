@@ -10,7 +10,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.MenuItemCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -23,7 +25,7 @@ import com.shreyaspatil.material.navigationview.MaterialNavigationView;
 
 import com.exemple.enjoyfood.SessionManager;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener{
 
     private AppBarConfiguration mAppBarConfiguration;
     private SessionManager sessionManager;
@@ -127,6 +129,11 @@ public class MainActivity extends AppCompatActivity{
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_bar, menu);
+        MenuItem recherche = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(recherche);
+        if (searchView != null) {
+            searchView.setOnQueryTextListener(this);
+        }
         return true;
     }
 
@@ -145,6 +152,22 @@ public class MainActivity extends AppCompatActivity{
         NavigationView navigationView = this.findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) MainActivity.this);
 
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        Intent intent = new Intent(this, ListeProduitsActivity.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        Bundle b = new Bundle();
+        b.putString("query", query);
+        b.putString("categorie","");
+        intent.putExtras(b);
+        startActivity(intent);
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        return false;
     }
 
 }

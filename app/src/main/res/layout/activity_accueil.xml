@@ -19,14 +19,14 @@
     <androidx.cardview.widget.CardView
         android:layout_weight="60"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
         app:cardCornerRadius="20dp"
         android:layout_marginStart="-20dp"
         android:layout_marginEnd="30dp">
         <ViewFlipper
             android:id="@+id/v_fliper"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="200dp"
             android:layout_marginStart="20dp"/>
     </androidx.cardview.widget.CardView>
 
