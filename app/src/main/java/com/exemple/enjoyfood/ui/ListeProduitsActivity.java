@@ -51,7 +51,7 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
     private RequestQueue requestQueue, queue;
     private MyRequest request;
     private ProgressBar pg;
-    private String titre = "";
+    private String query = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,9 +66,8 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
         listeProduits = new ArrayList<>();
         requestQueue = Volley.newRequestQueue(this);
         Bundle b = getIntent().getExtras();
-        titre = b.getString("titre").trim();
-        String query = b.getString("query");
-
+        query = b.getString("query").trim();
+        Toast.makeText(getApplicationContext(), query, Toast.LENGTH_LONG).show();
         //Toast.makeText(this, query, Toast.LENGTH_SHORT).show();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -81,7 +80,7 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
 
     private void parseJSON(){
         String url = Config.URL_ALL_PRODUCT;
-        if(!titre.isEmpty()){
+        if(!query.isEmpty()){
             StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                     new Response.Listener<String>()
                     {
@@ -124,12 +123,12 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
                 protected Map<String, String> getParams()
                 {
                     Map<String, String>  params = new HashMap<String, String>();
-                    params.put("titre", titre);
+                    params.put("titre", query);
                     return params;
                 }
             };
             requestQueue.add(postRequest);
-            getSupportActionBar().setTitle(titre);
+            getSupportActionBar().setTitle(query);
         }
         else {
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
