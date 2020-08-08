@@ -51,7 +51,7 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
     private RequestQueue requestQueue, queue;
     private MyRequest request;
     private ProgressBar pg;
-    private String categorie = "";
+    private String titre = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +66,7 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
         listeProduits = new ArrayList<>();
         requestQueue = Volley.newRequestQueue(this);
         Bundle b = getIntent().getExtras();
-        categorie = b.getString("categorie").trim();
+        titre = b.getString("titre").trim();
         String query = b.getString("query");
 
         //Toast.makeText(this, query, Toast.LENGTH_SHORT).show();
@@ -81,7 +81,7 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
 
     private void parseJSON(){
         String url = Config.URL_ALL_PRODUCT;
-        if(!categorie.isEmpty()){
+        if(!titre.isEmpty()){
             StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                     new Response.Listener<String>()
                     {
@@ -124,12 +124,12 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
                 protected Map<String, String> getParams()
                 {
                     Map<String, String>  params = new HashMap<String, String>();
-                    params.put("categorie", categorie);
+                    params.put("titre", titre);
                     return params;
                 }
             };
             requestQueue.add(postRequest);
-            getSupportActionBar().setTitle(categorie);
+            getSupportActionBar().setTitle(titre);
         }
         else {
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {

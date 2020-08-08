@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         Intent intent = new Intent(this, ListeProduitsActivity.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         Bundle b = new Bundle();
         b.putString("query", query);
-        b.putString("categorie","");
+        b.putString("titre","");
         intent.putExtras(b);
         startActivity(intent);
         return false;
