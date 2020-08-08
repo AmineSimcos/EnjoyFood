@@ -63,50 +63,49 @@ public class GridViewAdapter extends ArrayAdapter<Produit> {
         label.setText(c.getTitre());
         //logo.setImageResource(c.getLogo());
         //logo.setBackgroundResource(c.getImage());
-//        convertView.setOnTouchListener(new View.OnTouchListener() {
-//            @Override
-//            public boolean onTouch(View v, MotionEvent event) {
-//                pg.setVisibility(View.VISIBLE);
-//                label.setVisibility(View.GONE);
-//                logo.setVisibility(View.GONE);
-//                final Intent i = new Intent(getContext(), ResultatActivity.class);
-//                request.informationProduct(code, new MyRequest.InformationCallback() {
-//
-//                    @Override
-//                    public void onSucces(String code_bar, String titre, String description, String image, String categorie, double energie, double matiere_grasse, double graisse, double glucide, double sucre, double proteine,double fibre, double sodium, double sel, double calicium, int fruits_lesgumes, String ingrediant) {
-//                        Bundle b = new Bundle();
-//                        b.putString("code_bar",code_bar);
-//                        b.putString("titre",titre);
-//                        b.putString("description",description);
-//                        b.putString("image",image);
-//                        b.putString("categorie",categorie);
-//                        b.putDouble("energie",energie);
-//                        b.putDouble("matiere_grasse",matiere_grasse);
-//                        b.putDouble("graisse",graisse);
-//                        b.putDouble("glucide",glucide);
-//                        b.putDouble("sucre",sucre);
-//                        b.putDouble("proteine",proteine);
-//                        b.putDouble("fibres",fibre);
-//                        b.putDouble("sodium",sodium);
-//                        b.putDouble("sel",sel);
-//                        b.putDouble("calicium",calicium);
-//                        b.putInt("fruits_lesgumes",fruits_lesgumes);
-//                        b.putString("ingrediant",ingrediant);
-//                        i.putExtras(b);
-//                        context.startActivity(i);
-//                        pg.setVisibility(View.GONE);
-//                        logo.setVisibility(View.VISIBLE);
-//                        label.setVisibility(View.VISIBLE);
-//                    }
-//
-//                    @Override
-//                    public void onError(String message) {
-//                        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-//                    }
-//                });
-//                return false;
-//            }
-//        });
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                pg.setVisibility(View.VISIBLE);
+                label.setVisibility(View.GONE);
+                logo.setVisibility(View.GONE);
+                final Intent i = new Intent(getContext(), ResultatActivity.class);
+                request.informationProduct(code, new MyRequest.InformationCallback() {
+
+                    @Override
+                    public void onSucces(String code_bar, String titre, String description, String image, String categorie, double energie, double matiere_grasse, double graisse, double glucide, double sucre, double proteine,double fibre, double sodium, double sel, double calicium, int fruits_lesgumes, String ingrediant) {
+                        Bundle b = new Bundle();
+                        b.putString("code_bar",code_bar);
+                        b.putString("titre",titre);
+                        b.putString("description",description);
+                        b.putString("image",image);
+                        b.putString("categorie",categorie);
+                        b.putDouble("energie",energie);
+                        b.putDouble("matiere_grasse",matiere_grasse);
+                        b.putDouble("graisse",graisse);
+                        b.putDouble("glucide",glucide);
+                        b.putDouble("sucre",sucre);
+                        b.putDouble("proteine",proteine);
+                        b.putDouble("fibres",fibre);
+                        b.putDouble("sodium",sodium);
+                        b.putDouble("sel",sel);
+                        b.putDouble("calicium",calicium);
+                        b.putInt("fruits_lesgumes",fruits_lesgumes);
+                        b.putString("ingrediant",ingrediant);
+                        i.putExtras(b);
+                        context.startActivity(i);
+                        pg.setVisibility(View.GONE);
+                        logo.setVisibility(View.VISIBLE);
+                        label.setVisibility(View.VISIBLE);
+                    }
+
+                    @Override
+                    public void onError(String message) {
+                        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
 
         return convertView;
     }

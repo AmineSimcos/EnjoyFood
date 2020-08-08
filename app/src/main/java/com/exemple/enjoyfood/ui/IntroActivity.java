@@ -62,13 +62,13 @@ public class IntroActivity extends AppCompatActivity {
         }
         else{
             if(Locale.getDefault().getLanguage().equals("en")){
-                mediaplayer = MediaPlayer.create(getApplicationContext(), R.raw.intro1_en);
+                mediaplayer = MediaPlayer.create(getApplicationContext(), R.raw.son1_en);
             }
             else if(Locale.getDefault().getLanguage().equals("fr")){
-                mediaplayer = MediaPlayer.create(getApplicationContext(), R.raw.intro1_fr);
+                mediaplayer = MediaPlayer.create(getApplicationContext(), R.raw.son1_fr);
             }
             else if(Locale.getDefault().getLanguage().equals("ar")){
-                mediaplayer = MediaPlayer.create(getApplicationContext(), R.raw.intro1_ar);
+                mediaplayer = MediaPlayer.create(getApplicationContext(), R.raw.son1_ar);
             }
             mediaplayer.start();
         }
@@ -83,22 +83,22 @@ public class IntroActivity extends AppCompatActivity {
 
         // TODO hna dakhli les sons taw3ek rani msemihom donk b9a 3lik ghi t7otihom fi raw kima rani msemihom ana
         if(Locale.getDefault().getLanguage().equals("en")){
-            sound[0] = R.raw.intro1_en;
-            sound[1] = R.raw.intro2_en;
-            sound[2] = R.raw.intro3_en;
-            sound[3] = R.raw.intro4_en;
+            sound[0] = R.raw.son1_en;
+            sound[1] = R.raw.son2_en;
+            sound[2] = R.raw.son3_en;
+            sound[3] = R.raw.son4_en;
         }
         else if(Locale.getDefault().getLanguage().equals("fr")){
-            sound[0] = R.raw.intro1_fr;
-            sound[1] = R.raw.intro2_fr;
-            sound[2] = R.raw.intro3_fr;
-            sound[3] = R.raw.intro4_fr;
+            sound[0] = R.raw.son1_fr;
+            sound[1] = R.raw.son2_fr;
+            sound[2] = R.raw.son3_fr;
+            sound[3] = R.raw.son4_fr;
         }
         else if(Locale.getDefault().getLanguage().equals("ar")){
-            sound[0] = R.raw.intro1_ar;
-            sound[1] = R.raw.intro2_ar;
-            sound[2] = R.raw.intro3_ar;
-            sound[3] = R.raw.intro4_ar;
+            sound[0] = R.raw.son1_ar;
+            sound[1] = R.raw.son2_ar;
+            sound[2] = R.raw.son3_ar;
+            sound[3] = R.raw.son4_ar;
         }
 
         final List<ScreenItem> mList = new ArrayList<>();
