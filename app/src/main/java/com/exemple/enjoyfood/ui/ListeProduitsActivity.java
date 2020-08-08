@@ -25,6 +25,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
@@ -32,6 +33,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.exemple.enjoyfood.model.Produit;
 import com.exemple.enjoyfood.R;
@@ -48,6 +51,7 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
     private RequestQueue requestQueue, queue;
     private MyRequest request;
     private ProgressBar pg;
+    private String categorie = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +66,8 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
         listeProduits = new ArrayList<>();
         requestQueue = Volley.newRequestQueue(this);
         Bundle b = getIntent().getExtras();
+        categorie = b.getString("categorie").trim();
+        String query = b.getString("query");
 
         //Toast.makeText(this, query, Toast.LENGTH_SHORT).show();
 
@@ -75,13 +81,64 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
 
     private void parseJSON(){
         String url = Config.URL_ALL_PRODUCT;
+        if(!categorie.isEmpty()){
+            StringRequest postRequest = new StringRequest(Request.Method.POST, url,
+                    new Response.Listener<String>()
+                    {
+                        @Override
+                        public void onResponse(String response) {
+                            try {
+                                JSONObject jsReponse = new JSONObject(response);
+                                JSONArray jsonArray = jsReponse.getJSONArray("result");
+                                for(int i = 0; i < jsonArray.length(); i++){
+                                    JSONObject obj = jsonArray.getJSONObject(i);
+
+                                    String titre = obj.getString("titre");
+                                    String description = obj.getString("description");
+                                    String image = obj.getString("image");
+                                    String code_bar = obj.getString("code_bar");
+                                    listeProduits.add(new Produit(image, titre, description, code_bar));
+                                    monProduitAdapter = new MonProduitAdapter(ListeProduitsActivity.this, listeProduits);
+                                    recycler.setAdapter(monProduitAdapter);
+                                    pg.setVisibility(View.GONE);
+                                    recycler.setVisibility(View.VISIBLE);
+                                    monProduitAdapter.setOnItemClickListener(ListeProduitsActivity.this);
+
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                            //Log.d("Response", response);
+                        }
+                    },
+                    new Response.ErrorListener()
+                    {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            // error
+                            //Log.d("Error.Response", "Erreur");
+                        }
+                    }
+            ) {
+                @Override
+                protected Map<String, String> getParams()
+                {
+                    Map<String, String>  params = new HashMap<String, String>();
+                    params.put("categorie", categorie);
+                    return params;
+                }
+            };
+            requestQueue.add(postRequest);
+            getSupportActionBar().setTitle(categorie);
+        }
+        else {
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(JSONObject response) {
                     try {
                         JSONArray jsonArray = response.getJSONArray("result");
 
-                        for(int i = 0; i < jsonArray.length(); i++){
+                        for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject obj = jsonArray.getJSONObject(i);
 
                             String titre = obj.getString("titre");
@@ -118,11 +175,10 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     error.printStackTrace();
-                    if(error instanceof NetworkError){
+                    if (error instanceof NetworkError) {
                         Toast.makeText(getApplicationContext(), getResources().getString(R.string.error_cnx), Toast.LENGTH_SHORT).show();
                         finish();
-                    }
-                    else if(error instanceof VolleyError){
+                    } else if (error instanceof VolleyError) {
                         Toast.makeText(getApplicationContext(), getResources().getString(R.string.error), Toast.LENGTH_SHORT).show();
                         finish();
                     }
@@ -130,7 +186,7 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
             });
             requestQueue.add(request);
             getSupportActionBar().setTitle("Résultat");
-
+        }
 
     }
 

@@ -61,7 +61,15 @@ public class IntroActivity extends AppCompatActivity {
             finish();
         }
         else{
-            mediaplayer = MediaPlayer.create(getApplicationContext(), R.raw.a);
+            if(Locale.getDefault().getLanguage().equals("en")){
+                mediaplayer = MediaPlayer.create(getApplicationContext(), R.raw.intro1_en);
+            }
+            else if(Locale.getDefault().getLanguage().equals("fr")){
+                mediaplayer = MediaPlayer.create(getApplicationContext(), R.raw.intro1_fr);
+            }
+            else if(Locale.getDefault().getLanguage().equals("ar")){
+                mediaplayer = MediaPlayer.create(getApplicationContext(), R.raw.intro1_ar);
+            }
             mediaplayer.start();
         }
 
