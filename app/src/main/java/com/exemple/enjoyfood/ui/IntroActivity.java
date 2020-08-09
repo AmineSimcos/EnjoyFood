@@ -5,6 +5,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -80,6 +81,12 @@ public class IntroActivity extends AppCompatActivity {
         btn_next = findViewById(R.id.btn_nxt);
         btn__getStarted = findViewById(R.id.btn_get_started);
         btn_anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_animation);
+
+        if(Locale.getDefault().getLanguage().equals("ar")){
+            Drawable img = getApplicationContext().getResources().getDrawable(R.drawable.ic_baseline_arrow_back);
+            img.setBounds(0, 0, 60, 60);
+            btn_next.setCompoundDrawables(img, null, null, null);
+        }
 
         // TODO hna dakhli les sons taw3ek rani msemihom donk b9a 3lik ghi t7otihom fi raw kima rani msemihom ana
         if(Locale.getDefault().getLanguage().equals("en")){
