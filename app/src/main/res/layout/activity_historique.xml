@@ -81,7 +81,7 @@
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Produits scannées"/>
+            android:text="@string/scanned"/>
 
         <View
             android:layout_marginHorizontal="10dp"
@@ -100,7 +100,7 @@
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/ic_baseline_delete_24"
             android:layout_below="@id/tv_produits_scannee"
-            android:text="Vider l'historique"/>
+            android:text="@string/clear_history"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rc_historique"
@@ -111,10 +111,6 @@
             android:layout_below="@id/tv_vider_historique"/>
 
     </RelativeLayout>
-
-
-
-
-
+    
 
 </LinearLayout>

@@ -77,4 +77,7 @@
         <item>Récupérez facilement toutes les informations nutritionnelles d\'un produit alimentaire et décider réellement de ce que vous voulez dans votre assiette </item>
         <item>Notez et calculez vos consommations journalières, hebdomadaires ou mensuelles</item>
     </string-array>
+    <string name="consomme">Consommé</string>
+    <string name="scanned">Produit(s) scanné(s)</string>
+    <string name="clear_history">Vider l\'historique</string>
 </resources>

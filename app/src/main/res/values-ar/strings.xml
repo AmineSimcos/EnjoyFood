@@ -76,4 +76,7 @@
         <item>استرجع بسهولة جميع المعلومات الغذائية للمنتج الغذائي و حدد  ما تريده على طبقك</item>
         <item>سجل و احسب استهلاكك اليومي الأسبوعي أو الشهري</item>
     </string-array>
+    <string name="scanned">منتج ممسوح</string>
+    <string name="clear_history">حذف التاريخ</string>
+    <string name="consomme">تم استهلاكه</string>
 </resources>

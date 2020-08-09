@@ -78,4 +78,7 @@
     <string name="password2">Retype your password</string>
     <string name="login_title">Connection</string>
     <string name="next">Next</string>
+    <string name="consomme">Consumed</string>
+    <string name="scanned">Scanned product(s)</string>
+    <string name="clear_history">Clear history</string>
 </resources>

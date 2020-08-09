@@ -289,7 +289,7 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
         request.ajouterConsommation(id, code_Bar, String.valueOf(nbr), new MyRequest.AddConsCallBack() {
             @Override
             public void onSucces(String message) {
-                Toast.makeText(getApplicationContext(), "bravo!!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.consomme), Toast.LENGTH_SHORT).show();
             }
 
             @Override
