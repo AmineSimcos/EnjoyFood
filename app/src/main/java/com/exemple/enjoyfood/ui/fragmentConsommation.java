@@ -203,16 +203,16 @@ public class fragmentConsommation extends Fragment {
 
                             }
 
-                            tv_cal.setText(String.format("%.2f", Nenergie) + " KJ");
-                            tv_glucide.setText(String.format("%.2f", Nglucide) + " g");
-                            tv_sucre.setText(String.format("%.2f", Nsucre) + " g");
-                            tv_matiere_grasse.setText(String.format("%.2f", Nmatiere_grasse) + " g");
-                            tv_graisse.setText(String.format("%.2f", Ngraisee) + " g");
-                            tv_proteine.setText(String.format("%.2f", Nproteine) + " g");
-                            tv_fibre.setText(String.format("%.2f", Nfibre) + " g");
-                            tv_sodium.setText(String.format("%.2f", Nsodium) + " g");
+                            tv_cal.setText(String.format("%.2f", Nenergie) + " KJ" + getResources().getString(R.string.unity_kcal));
+                            tv_glucide.setText(String.format("%.2f", Nglucide) + " " + getResources().getString(R.string.unity_g));
+                            tv_sucre.setText(String.format("%.2f", Nsucre) + " ");
+                            tv_matiere_grasse.setText(String.format("%.2f", Nmatiere_grasse) + " " + getResources().getString(R.string.unity_g));
+                            tv_graisse.setText(String.format("%.2f", Ngraisee) + " " + getResources().getString(R.string.unity_g));
+                            tv_proteine.setText(String.format("%.2f", Nproteine) + " " + getResources().getString(R.string.unity_g));
+                            tv_fibre.setText(String.format("%.2f", Nfibre) + " " + getResources().getString(R.string.unity_g));
+                            tv_sodium.setText(String.format("%.2f", Nsodium) + " " + getResources().getString(R.string.unity_g));
                             tv_sel.setText(String.format("%.2f", Nsel) + " g");
-                            tv_calcium.setText(String.format("%.2f", Ncalcium) + " g");
+                            tv_calcium.setText(String.format("%.2f", Ncalcium) + " " + getResources().getString(R.string.unity_g));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
