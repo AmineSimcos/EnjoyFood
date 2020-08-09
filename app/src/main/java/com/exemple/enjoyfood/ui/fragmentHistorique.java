@@ -95,27 +95,30 @@ public class fragmentHistorique extends Fragment {
             queue = VolleySingleton.getInstance(getContext()).getRequestQueue();
             request = new MyRequest(getContext(),queue);
 
+            // Vérifier si l'historique est vide, la touche ne fonctionne pas
+            if(!listeProduits.isEmpty()){
+                tv_vider_historique.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        request.supprimerHistorique(id, new MyRequest.SuppHistoryCallBack() {
+                            @Override
+                            public void onSucces(String message) {
+                                Toast.makeText(getContext(), getResources().getString(R.string.historique_empty), Toast.LENGTH_SHORT).show();
+                            }
 
-            tv_vider_historique.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    request.supprimerHistorique(id, new MyRequest.SuppHistoryCallBack() {
-                        @Override
-                        public void onSucces(String message) {
-                            Toast.makeText(getContext(), getResources().getString(R.string.historique_empty), Toast.LENGTH_SHORT).show();
-                        }
+                            @Override
+                            public void onError(String message) {
+                                Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                        listeProduits.clear();
+                        monProduitAdapter = new HistoriqueAdapter(getActivity(), listeProduits);
+                        recycler.setAdapter(monProduitAdapter);
+                        tv_nbr_produit_scannee.setText(String.valueOf(listeProduits.size()));
+                    }
+                });
+            }
 
-                        @Override
-                        public void onError(String message) {
-                            Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                    listeProduits.clear();
-                    monProduitAdapter = new HistoriqueAdapter(getActivity(), listeProduits);
-                    recycler.setAdapter(monProduitAdapter);
-                    tv_nbr_produit_scannee.setText(String.valueOf(listeProduits.size()));
-                }
-            });
         }
         else{
             page_cnx.setVisibility(View.VISIBLE);
