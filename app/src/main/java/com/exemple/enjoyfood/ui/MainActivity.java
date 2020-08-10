@@ -157,9 +157,9 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     @Override
     public boolean onQueryTextSubmit(String query) {
         Intent intent = new Intent(this, ListeProduitsActivity.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-        Bundle b = new Bundle();
-        b.putString("query", query);
-        intent.putExtras(b);
+        //Bundle b = new Bundle();
+        //b.putString("query", query);
+        intent.putExtra("query", query);
         startActivity(intent);
         return false;
     }

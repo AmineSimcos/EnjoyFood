@@ -51,7 +51,7 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
     private RequestQueue requestQueue, queue;
     private MyRequest request;
     private ProgressBar pg;
-    private String query = "";
+    private String query;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,9 +65,23 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
 
         listeProduits = new ArrayList<>();
         requestQueue = Volley.newRequestQueue(this);
-        Bundle b = getIntent().getExtras();
-        query = b.getString("query").trim();
-        Toast.makeText(getApplicationContext(), query, Toast.LENGTH_LONG).show();
+
+//        Bundle b = getIntent().getExtras();
+//        if(b.isEmpty()){
+//            query = "";
+//        }
+//        else {
+//            query = b.getString("query");
+//        }
+        Intent intent = getIntent();
+
+        if (intent.hasExtra("query")) {
+            query = intent.getStringExtra("query");
+        } else {
+            query = "";
+        }
+
+        //Toast.makeText(getApplicationContext(), query, Toast.LENGTH_LONG).show();
         //Toast.makeText(this, query, Toast.LENGTH_SHORT).show();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
