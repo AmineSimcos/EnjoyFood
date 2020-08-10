@@ -66,13 +66,6 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
         listeProduits = new ArrayList<>();
         requestQueue = Volley.newRequestQueue(this);
 
-//        Bundle b = getIntent().getExtras();
-//        if(b.isEmpty()){
-//            query = "";
-//        }
-//        else {
-//            query = b.getString("query");
-//        }
         Intent intent = getIntent();
 
         if (intent.hasExtra("query")) {
@@ -80,9 +73,6 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
         } else {
             query = "";
         }
-
-        //Toast.makeText(getApplicationContext(), query, Toast.LENGTH_LONG).show();
-        //Toast.makeText(this, query, Toast.LENGTH_SHORT).show();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -248,13 +238,8 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
             }
         });
 
-        ActionBar actionBar = getActionBar();
-        //actionBar.setHomeButtonEnabled(true);
-        //actionBar.setDisplayShowTitleEnabled(true);
-//        SearchView searchView = (SearchView) MenuItemCompat.getActionView(recherche);
-//        if (searchView != null) {
-//            searchView.setOnQueryTextListener((SearchView.OnQueryTextListener) this);
-//        }
+        getActionBar();
+
         return true;
     }
 
