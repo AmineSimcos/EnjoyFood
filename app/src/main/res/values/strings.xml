@@ -86,12 +86,12 @@
     // les categories
     <array name="categories">
         <item>Drinks</item>
-        <item>Dairy products</item>
+        <item>Milk products</item>
         <item>Fat</item>
         <item>Sweet products</item>
-        <item>Cereals starches</item>
-        <item>Fruits vegetables</item>
-        <item>water</item>
+        <item>Cereals/Starches</item>
+        <item>Fruits/Vegetables</item>
+        <item>Water</item>
     </array>
 
 </resources>
