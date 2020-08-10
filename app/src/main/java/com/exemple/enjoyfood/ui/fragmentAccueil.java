@@ -33,31 +33,13 @@ public class fragmentAccueil  extends Fragment {
     private Button btn, btn_produit, btn_consommation, btn_historique, btn_apropos;
     private int images[] = new int[6];
     // TODO hna dakhli les images taw3ek , bon tableau lewel ta3 anglais w zawej ta3 francais w talet bel 3arbiya
-    private int images_en[] = {R.drawable.img1_slide1_en,
-            R.drawable.img2_slide2_en,
-            R.drawable.img3_slide3_en,
-            R.drawable.img4_slide4_en,
-            R.drawable.img5_slide5_en,
-            R.drawable.img6_slide6_en};
-    private int images_fr[] = {R.drawable.img1_slide1_fr,
-            R.drawable.img2_slide2_fr,
-            R.drawable.img3_slide3_fr,
-            R.drawable.img4_slide4_fr,
-            R.drawable.img5_slide5_fr,
-            R.drawable.img6_slide6_fr};
-    private int images_ar[] = {R.drawable.img1_slide1_ar,
-            R.drawable.img2_slide2_ar,
-            R.drawable.img3_slide3_ar,
-            R.drawable.img4_slide4_ar,
-            R.drawable.img5_slide5_ar,
-            R.drawable.img6_slide6_ar};
     private ViewFlipper v_flipper;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_accueil,container,false);
-        Toast.makeText(getContext(), Locale.getDefault().getLanguage(), Toast.LENGTH_LONG).show();
+
         btn = v.findViewById(R.id.btn_scanner);
         btn_produit = v.findViewById(R.id.btn_produit);
         btn_consommation = v.findViewById(R.id.btn_consommation);
