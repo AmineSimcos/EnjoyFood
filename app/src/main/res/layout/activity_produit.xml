@@ -76,6 +76,7 @@
                 android:layout_height="90dp"
                 android:id="@+id/iv_all_product"
                 android:text="@string/all"
+                android:textStyle="bold"
                 android:textSize="30sp"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
