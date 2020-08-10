@@ -77,7 +77,7 @@ public class fragmentProduit extends Fragment {
         tv_subTitle = v.findViewById(R.id.tv_subTitle);
         tv_msg = v.findViewById(R.id.tv_msg);
         tv_msg.setVisibility(View.INVISIBLE);
-        categorie = "Boissons";
+        categorie = getResources().getStringArray(R.array.categories)[0];
         tv_subTitle.setText(cle_categorie.get(categorie));
         parseJSON(categorie);
 
