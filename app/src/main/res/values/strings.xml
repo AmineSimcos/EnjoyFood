@@ -81,6 +81,7 @@
     <string name="consomme">Consumed</string>
     <string name="scanned">Scanned product(s)</string>
     <string name="clear_history">Clear history</string>
+    <string name="all">All</string>
 
     // les categories
     <array name="categories">

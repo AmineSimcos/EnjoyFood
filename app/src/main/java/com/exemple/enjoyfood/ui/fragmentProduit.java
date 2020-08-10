@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -42,7 +43,8 @@ public class fragmentProduit extends Fragment {
 
     private String categorie;
     private GridView gv;
-    private CircleImageView allProducts, iv_Boissons, iv_sucre, iv_fruits_legumes, iv_feculents, iv_lait, iv_gras, iv_eau;
+    private CircleImageView iv_Boissons, iv_sucre, iv_fruits_legumes, iv_feculents, iv_lait, iv_gras, iv_eau;
+    private Button allProducts;
     private TextView tv_subTitle, tv_msg;
     private GridViewAdapter monProduitAdapter;
     private ArrayList<Produit> listeProduits;
