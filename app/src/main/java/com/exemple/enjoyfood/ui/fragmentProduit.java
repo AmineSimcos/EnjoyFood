@@ -78,7 +78,7 @@ public class fragmentProduit extends Fragment {
         tv_msg = v.findViewById(R.id.tv_msg);
         tv_msg.setVisibility(View.INVISIBLE);
         categorie = "Boissons";
-        tv_subTitle.setText(categorie);
+        tv_subTitle.setText(cle_categorie.get(categorie));
         parseJSON(categorie);
 
         // Activer l'animation du boutton
