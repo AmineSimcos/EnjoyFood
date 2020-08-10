@@ -39,19 +39,19 @@
                 android:layout_marginHorizontal="8dp"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/yaourt_cremes_desserts"/>
+                android:src="@drawable/lait"/>
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_gras"
                 android:layout_marginHorizontal="8dp"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/beurres"/>
+                android:src="@drawable/gras"/>
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_sucre"
                 android:layout_marginHorizontal="8dp"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/beurres"/>
+                android:src="@drawable/sucre"/>
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_feculents"
                 android:layout_marginHorizontal="8dp"
@@ -63,7 +63,7 @@
                 android:layout_marginHorizontal="8dp"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/fhjfgjhfghg"/>
+                android:src="@drawable/fruitslegume"/>
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_eau"
                 android:layout_marginHorizontal="8dp"
