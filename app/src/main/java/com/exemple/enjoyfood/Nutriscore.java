@@ -13,18 +13,10 @@ public class Nutriscore {
         ////// Etape 1  ///////////////////////////////////////////////////////////////
         //                          calcules les point en communs
         //***** parraport les boissons ******
-        ArrayList<String> listeBoissons, listeGrassse;
-        listeBoissons = new ArrayList<>();
-        listeGrassse = new ArrayList<>();
 
-        listeBoissons.add("Jus");
-        listeBoissons.add("Gaz");
 
-        listeGrassse.add("Viandes, poissons, oeufs");
-        listeGrassse.add("Corps gras");
-
-        int point = 0, point_N = 0, point_P = 0, fruits_legumesScore = 0, fibreScore = 0;
-        if(produit.getCategorie().equals("Boissons")) {
+        int point, point_N = 0, point_P = 0, fruits_legumesScore = 0, fibreScore = 0;
+        if(produit.getCategorie().equals(Config.CATEGORIES[0])) {
             // calcul de l'energie
             if (produit.getEnergie() <= 30) point_N += 1;
             else if (produit.getEnergie() <= 60 && produit.getEnergie() > 30) point_N += 2;
@@ -111,7 +103,7 @@ public class Nutriscore {
             else if (produit.getProteine() > 8) point_N += 5;
         }
         //****Parraport les matieres grasses ********************
-        else if(listeGrassse.contains(produit.getCategorie())){
+        else if(produit.getCategorie().equals(Config.CATEGORIES[2])){
             //L'énergie
             if (produit.getEnergie() > 335 && produit.getEnergie() <= 670) point_N += 1;
             else if (produit.getEnergie() > 670 && produit.getEnergie() <= 1005) point_N += 2;
@@ -299,7 +291,7 @@ public class Nutriscore {
             point = point_N - point_P;
         }
         ////////// Etape 3 //////////////////////////////////////////////////////////////////////
-        if(produit.getCategorie().equals("Boissons")){
+        if(produit.getCategorie().equals(Config.CATEGORIES[0])){
             if (point < 1){
                 return "B";
             }
@@ -313,7 +305,7 @@ public class Nutriscore {
                 return "E";
             }
         }
-        else if(produit.getCategorie().equals("Eau")){
+        else if(produit.getCategorie().equals(Config.CATEGORIES[7])){
             return "A";
         }
         else{

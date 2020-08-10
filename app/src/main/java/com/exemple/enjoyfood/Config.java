@@ -1,7 +1,7 @@
 package com.exemple.enjoyfood;
 
 public class Config {
-    public static final String ADRESSE_IP = "192.168.42.127";
+    public static final String ADRESSE_IP = "192.168.43.89";
     public static final String ROOT_URL = "http://" + ADRESSE_IP + "/enjoyfood/";
     public static final String URL_PRODUCT = ROOT_URL + "getProduct.php";
     public static final String URL_ALL_PRODUCT = ROOT_URL + "getAll.php";
@@ -16,6 +16,8 @@ public class Config {
 
     public static final int SPALSH_SCREEN_TIMEOUT = 1500;
     public static final boolean ANIMATION_BUTTON_ACTIVE = true;
+
+    public static final String CATEGORIES[] = { "Boissons", "Produits laitiers", "Matières grasses", "Produits sucrés", "Céréales et féculents", "Fruits et Legumes", "Eau"};
 
 
 }

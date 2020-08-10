@@ -35,11 +35,23 @@
                 android:layout_height="90dp"
                 android:src="@drawable/boissons"/>
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/iv_fruitlegumes"
+                android:id="@+id/iv_laitieres"
                 android:layout_marginHorizontal="8dp"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/fhjfgjhfghg"/>
+                android:src="@drawable/yaourt_cremes_desserts"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_gras"
+                android:layout_marginHorizontal="8dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:src="@drawable/beurres"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_sucre"
+                android:layout_marginHorizontal="8dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:src="@drawable/beurres"/>
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_feculents"
                 android:layout_marginHorizontal="8dp"
@@ -47,23 +59,11 @@
                 android:layout_height="90dp"
                 android:src="@drawable/cereales"/>
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/iv_laitieres"
+                android:id="@+id/iv_fruit_legumes"
                 android:layout_marginHorizontal="8dp"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/yaourt_cremes_desserts"/>
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/iv_viandes"
-                android:layout_marginHorizontal="8dp"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:src="@drawable/cachir"/>
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/iv_gras"
-                android:layout_marginHorizontal="8dp"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:src="@drawable/beurres"/>
+                android:src="@drawable/fhjfgjhfghg"/>
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_eau"
                 android:layout_marginHorizontal="8dp"

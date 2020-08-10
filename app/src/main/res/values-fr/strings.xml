@@ -80,4 +80,14 @@
     <string name="consomme">Consommé</string>
     <string name="scanned">Produit(s) scanné(s)</string>
     <string name="clear_history">Vider l\'historique</string>
+
+    <array name="categories">
+        <item>Boissons</item>
+        <item>Produits laitiers</item>
+        <item>Matières grasses</item>
+        <item>Produits sucrés</item>
+        <item>Céréales et féculents</item>
+        <item>Fruits et Legumes</item>
+        <item>Eau</item>
+    </array>
 </resources>

@@ -79,4 +79,14 @@
     <string name="scanned">منتج ممسوح</string>
     <string name="clear_history">حذف التاريخ</string>
     <string name="consomme">تم استهلاكه</string>
+
+    <array name="categories">
+        <item>مشروبات</item>
+        <item>منتجات الألبان</item>
+        <item>دهن</item>
+        <item>منتجات حلوة</item>
+        <item>الحبوب والنشويات</item>
+        <item>فواكه و خضر</item>
+        <item>ماء</item>
+    </array>
 </resources>

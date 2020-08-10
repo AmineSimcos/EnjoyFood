@@ -81,4 +81,16 @@
     <string name="consomme">Consumed</string>
     <string name="scanned">Scanned product(s)</string>
     <string name="clear_history">Clear history</string>
+
+    // les categories
+    <array name="categories">
+        <item>clear history</item>
+        <item>Dairy products</item>
+        <item>Fat</item>
+        <item>Sweet products</item>
+        <item>Cereals starches</item>
+        <item>Fruits vegetables</item>
+        <item>water</item>
+    </array>
+
 </resources>

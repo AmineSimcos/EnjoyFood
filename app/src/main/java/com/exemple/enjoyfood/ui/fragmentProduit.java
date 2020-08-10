@@ -1,19 +1,14 @@
 package com.exemple.enjoyfood.ui;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,6 +19,11 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.exemple.enjoyfood.Config;
+import com.exemple.enjoyfood.R;
+import com.exemple.enjoyfood.VolleySingleton;
+import com.exemple.enjoyfood.model.Produit;
+import com.exemple.enjoyfood.myadapter.GridViewAdapter;
 import com.thekhaeng.pushdownanim.PushDownAnim;
 
 import org.json.JSONArray;
@@ -35,34 +35,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import com.exemple.enjoyfood.Config;
-import com.exemple.enjoyfood.VolleySingleton;
-import com.exemple.enjoyfood.R;
-import com.exemple.enjoyfood.model.Produit;
-import com.exemple.enjoyfood.myadapter.GridViewAdapter;
-import com.exemple.enjoyfood.myadapter.MonProduitAdapter;
-import com.exemple.enjoyfood.myrequest.MyRequest;
 
 import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
 
 public class fragmentProduit extends Fragment {
 
     private String categorie;
-    private RequestQueue queue;
-    private MyRequest request;
-    private ListView listView;
-    private MonProduitAdapter adapter;
-    private LinearLayout exp;
     private GridView gv;
-    private CircleImageView allProducts, iv_Boissons, iv_fruitsLegumes, iv_feculents, iv_lait, iv_viandes, iv_gras, iv_eau;
-    TextView tv_subTitle, tv_msg;
+    private CircleImageView allProducts, iv_Boissons, iv_sucre, iv_fruits_legumes, iv_feculents, iv_lait, iv_gras, iv_eau;
+    private TextView tv_subTitle, tv_msg;
     private GridViewAdapter monProduitAdapter;
     private ArrayList<Produit> listeProduits;
     private RequestQueue requestQueue;
-    ProgressBar pg;
-    Context context;
-    private int layoutResourceId;
-
+    private ProgressBar pg;
+    private HashMap<String, String> cle_categorie = new HashMap<>();
 
     @Nullable
     @Override
@@ -72,14 +58,18 @@ public class fragmentProduit extends Fragment {
         allProducts = v.findViewById(R.id.iv_all_product);
         listeProduits = new ArrayList<>();
 
+        for (int i = 0; i < Config.CATEGORIES.length - 1; i++){
+            cle_categorie.put(Config.CATEGORIES[i], getResources().getStringArray(R.array.categories)[i]);
+        }
 
         iv_Boissons = v.findViewById(R.id.iv_boisssons);
-        iv_fruitsLegumes = v.findViewById(R.id.iv_fruitlegumes);
+        iv_fruits_legumes = v.findViewById(R.id.iv_fruit_legumes);
         iv_feculents = v.findViewById(R.id.iv_feculents);
         iv_lait = v.findViewById(R.id.iv_laitieres);
-        iv_viandes = v.findViewById(R.id.iv_viandes);
+        iv_sucre = v.findViewById(R.id.iv_sucre);
         iv_gras = v.findViewById(R.id.iv_gras);
         iv_eau = v.findViewById(R.id.iv_eau);
+
         gv = v.findViewById(R.id.gridListView);
         pg = v.findViewById(R.id.progress_for_grid);
         tv_subTitle = v.findViewById(R.id.tv_subTitle);
@@ -91,7 +81,7 @@ public class fragmentProduit extends Fragment {
 
         // Activer l'animation du boutton
         if(Config.ANIMATION_BUTTON_ACTIVE) {
-            PushDownAnim.setPushDownAnimTo(allProducts, iv_Boissons, iv_fruitsLegumes, iv_feculents, iv_lait, iv_viandes, iv_gras, iv_eau)
+            PushDownAnim.setPushDownAnimTo(allProducts, iv_Boissons, iv_fruits_legumes, iv_feculents, iv_lait, iv_sucre, iv_gras, iv_eau)
                     .setScale(MODE_SCALE, 0.89f)
                     .setDurationPush(PushDownAnim.DEFAULT_PUSH_DURATION)
                     .setDurationRelease(PushDownAnim.DEFAULT_RELEASE_DURATION)
@@ -106,48 +96,56 @@ public class fragmentProduit extends Fragment {
                 startActivity(new Intent(getContext(),ListeProduitsActivity.class));
             }
         });
+
         iv_Boissons.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boutton("Boissons");
+                boutton(Config.CATEGORIES[0]);
             }
         });
-        iv_fruitsLegumes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boutton("Fruits et légumes");
-            }
-        });
-        iv_feculents.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boutton("Céréales et féculents");
-            }
-        });
+
         iv_lait.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boutton("Produits laitieres");
+                boutton(Config.CATEGORIES[1]);
             }
         });
-        iv_viandes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boutton("Viandes, poissons, oeufs");
-            }
-        });
+
         iv_gras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boutton("Corps gras");
+                boutton(Config.CATEGORIES[2]);
             }
         });
+
+        iv_sucre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boutton(Config.CATEGORIES[3]);
+            }
+        });
+
+        iv_feculents.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boutton(Config.CATEGORIES[4]);
+            }
+        });
+
+        iv_fruits_legumes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boutton(Config.CATEGORIES[5]);
+            }
+        });
+
         iv_eau.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boutton("Eau");
+                boutton(Config.CATEGORIES[6]);
             }
         });
+
         monProduitAdapter = new GridViewAdapter(getActivity(), listeProduits);
         gv.setAdapter(monProduitAdapter);
 //        gv.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -185,35 +183,35 @@ public class fragmentProduit extends Fragment {
 //
 //            }
 //        });
-        gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getContext(), "Ne fonctionne pas!", Toast.LENGTH_SHORT).show();
-                final Intent i = new Intent(getContext(), ResultatActivity.class);
-                Produit produit = listeProduits.get(position);
-                Bundle b = new Bundle();
-                b.putString("code_bar",produit.getCode_bar());
-                b.putString("titre",produit.getTitre());
-                b.putString("description",produit.getDescription());
-                b.putString("image",produit.getImage());
-                b.putString("categorie",produit.getCategorie());
-                b.putDouble("energie",produit.getEnergie());
-                b.putDouble("matiere_grasse",produit.getMatiere_grasse());
-                b.putDouble("graisse",produit.getGraisse());
-                b.putDouble("glucide",produit.getGlucide());
-                b.putDouble("sucre",produit.getSucre());
-                b.putDouble("proteine",produit.getProteine());
-                b.putDouble("fibres",produit.getFibre());
-                b.putDouble("sodium",produit.getSodium());
-                b.putDouble("sel",produit.getSel());
-                b.putDouble("calicium",produit.getCalicium());
-                b.putInt("fruits_lesgumes",produit.getFruits_legumes());
-                b.putString("ingrediant",produit.getIngrediant());
-                i.putExtras(b);
-                Toast.makeText(getContext(), "Remplir bundle", Toast.LENGTH_SHORT).show();
-                startActivity(i);
-            }
-        });
+//        gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Toast.makeText(getContext(), "Ne fonctionne pas!", Toast.LENGTH_SHORT).show();
+//                final Intent i = new Intent(getContext(), ResultatActivity.class);
+//                Produit produit = listeProduits.get(position);
+//                Bundle b = new Bundle();
+//                b.putString("code_bar",produit.getCode_bar());
+//                b.putString("titre",produit.getTitre());
+//                b.putString("description",produit.getDescription());
+//                b.putString("image",produit.getImage());
+//                b.putString("categorie",produit.getCategorie());
+//                b.putDouble("energie",produit.getEnergie());
+//                b.putDouble("matiere_grasse",produit.getMatiere_grasse());
+//                b.putDouble("graisse",produit.getGraisse());
+//                b.putDouble("glucide",produit.getGlucide());
+//                b.putDouble("sucre",produit.getSucre());
+//                b.putDouble("proteine",produit.getProteine());
+//                b.putDouble("fibres",produit.getFibre());
+//                b.putDouble("sodium",produit.getSodium());
+//                b.putDouble("sel",produit.getSel());
+//                b.putDouble("calicium",produit.getCalicium());
+//                b.putInt("fruits_lesgumes",produit.getFruits_legumes());
+//                b.putString("ingrediant",produit.getIngrediant());
+//                i.putExtras(b);
+//                Toast.makeText(getContext(), "Remplir bundle", Toast.LENGTH_SHORT).show();
+//                startActivity(i);
+//            }
+//        });
         return v;
     }
 
@@ -295,7 +293,7 @@ public class fragmentProduit extends Fragment {
         private void boutton(String categorie){
             listeProduits.clear();
             //this.categorie = categorie;
-            tv_subTitle.setText(categorie);
+            tv_subTitle.setText(cle_categorie.get(categorie));
             parseJSON(categorie);
         }
 
