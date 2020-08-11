@@ -116,7 +116,7 @@ public class LoginActivity extends AppCompatActivity {
                                     Bundle b = new Bundle();
                                     if(b.getBoolean("fragment")){
                                         Intent data = new Intent();
-                                        data.putExtra("cnx", "Connecté avec succée");
+                                        data.putExtra("cnx", getResources().getString(R.string.succes_cnx));
                                         setResult(RESULT_OK, data);
                                     }
                                     else {

@@ -94,4 +94,6 @@
         <item>Water</item>
     </array>
 
+    <string name="succes_cnx">Successfully connected</string>
+
 </resources>

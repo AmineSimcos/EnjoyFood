@@ -91,4 +91,5 @@
         <item>Eau</item>
     </array>
     <string name="all">Tous</string>
+    <string name="succes_cnx">Connecté avec succée</string>
 </resources>
