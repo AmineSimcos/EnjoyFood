@@ -305,7 +305,7 @@ public class Nutriscore {
                 return "E";
             }
         }
-        else if(produit.getCategorie().equals(Config.CATEGORIES[7])){
+        else if(produit.getCategorie().equals(Config.CATEGORIES[6])){
             return "A";
         }
         else{

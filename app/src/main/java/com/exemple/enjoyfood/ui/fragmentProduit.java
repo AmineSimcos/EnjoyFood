@@ -148,8 +148,7 @@ public class fragmentProduit extends Fragment {
             }
         });
 
-        monProduitAdapter = new GridViewAdapter(getActivity(), listeProduits);
-        gv.setAdapter(monProduitAdapter);
+
 //        gv.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 //            @Override
 //            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -257,10 +256,11 @@ public class fragmentProduit extends Fragment {
 //                                    gv.setAdapter(monProduitAdapter);
                                     pg.setVisibility(View.GONE);
                                     gv.setVisibility(View.VISIBLE);
-
 //                                    monProduitAdapter.setOnItemClickListener(ResultatActivity.this);
-
                                 }
+                                monProduitAdapter = new GridViewAdapter(getActivity(), listeProduits);
+                                gv.setAdapter(monProduitAdapter);
+
                             } catch (JSONException e) {
                                 e.printStackTrace();
                                 pg.setVisibility(View.GONE);
