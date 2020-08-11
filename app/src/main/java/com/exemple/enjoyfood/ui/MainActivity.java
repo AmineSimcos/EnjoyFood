@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,9 +41,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         navigationView.setItemStyle(MaterialNavigationView.ITEM_STYLE_ROUND_RIGHT);
         View v = navigationView.getHeaderView(0);
 
-        //tv_name = v.findViewById(R.id.tv_name);
-        //tv_logout = v.findViewById(R.id.btn_logout);
-        //tv_email = v.findViewById(R.id.tv_email);
         Menu menu = navigationView.getMenu();
         sessionManager = new SessionManager(this);
         if(sessionManager.isLogged()){
@@ -100,16 +96,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                 return true;
             }
         });
-//        tv_logout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                sessionManager.logout();
-//                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//        });
-
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -157,8 +143,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     @Override
     public boolean onQueryTextSubmit(String query) {
         Intent intent = new Intent(this, ListeProduitsActivity.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-        //Bundle b = new Bundle();
-        //b.putString("query", query);
         intent.putExtra("query", query);
         startActivity(intent);
         return false;
