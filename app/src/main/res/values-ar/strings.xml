@@ -79,7 +79,7 @@
     <string name="scanned">منتج ممسوح</string>
     <string name="clear_history">حذف التاريخ</string>
     <string name="consomme">تم استهلاكه</string>
-    <string name="autres">فئات \n أخرى</string>
+    <string name="autres">فئات\nأخرى</string>
 
     <array name="categories">
         <item>مشروبات</item>
