@@ -29,9 +29,9 @@
             <TextView
                 android:id="@+id/tv_adapter"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="26dp"
                 android:layout_alignBottom="@id/iv_adapter"
-                android:background="#6D000000"
+                android:background="#3D000000"
                 android:text="titre"
                 android:paddingVertical="4dp"
                 android:textAlignment="center"
