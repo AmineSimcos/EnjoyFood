@@ -79,6 +79,7 @@
     <string name="scanned">منتج ممسوح</string>
     <string name="clear_history">حذف التاريخ</string>
     <string name="consomme">تم استهلاكه</string>
+    <string name="autres">فئات \n أخرى</string>
 
     <array name="categories">
         <item>مشروبات</item>
@@ -88,6 +89,7 @@
         <item>الحبوب و النشويات</item>
         <item>فواكه و خضر</item>
         <item>ماء</item>
+        <item>أخرى</item>
     </array>
     <string name="all">الكل</string>
     <string name="succes_cnx">تم الاتصال بنجاح</string>

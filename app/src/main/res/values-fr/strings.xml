@@ -6,7 +6,7 @@
     <string name="menu_accueil">Accueil</string>
 
     <string name="menu_produit">Produits</string>
-    <string name="menu_consommations">Consommations</string>
+    <string name="menu_consommations">Consommation</string>
     <string name="about">Â propos</string>
     <string name="version">Version v.1.0 \n \n \n Auteurs : \n \n BAICH Mohammed Amine \n\n OUDJEDI DAMERDJI Faiza</string>
     <string name="populaire">Catégories</string>
@@ -72,7 +72,7 @@
     </string-array>
 
     <string-array name="intro">
-        <item>Bienvenue ! Prêt(e) à changer certaines de vos habitudes et faire plus atention lors de vos achats et consommations ?</item>
+        <item>Bienvenue ! Prêt(e) à changer certaines de vos habitudes et faire plus attention lors de vos achats et consommations ?</item>
         <item>Enjoy Food est une application conçu pour vous aider a mieux choisir les bons produits et a gérer vos consommations</item>
         <item>Récupérez facilement toutes les informations nutritionnelles d\'un produit alimentaire et décider réellement de ce que vous voulez dans votre assiette </item>
         <item>Notez et calculez vos consommations journalières, hebdomadaires ou mensuelles</item>
@@ -80,6 +80,8 @@
     <string name="consomme">Consommé</string>
     <string name="scanned">Produit(s) scanné(s)</string>
     <string name="clear_history">Vider l\'historique</string>
+    <string name="autres">Autres</string>
+
 
     <array name="categories">
         <item>Boissons</item>
@@ -89,6 +91,7 @@
         <item>Céréales et féculents</item>
         <item>Fruits et Legumes</item>
         <item>Eau</item>
+        <item>Autres</item>
     </array>
     <string name="all">Tous</string>
     <string name="succes_cnx">Connecté avec succée</string>

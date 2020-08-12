@@ -17,7 +17,7 @@ public class Config {
     public static final int SPALSH_SCREEN_TIMEOUT = 1500;
     public static final boolean ANIMATION_BUTTON_ACTIVE = true;
 
-    public static final String CATEGORIES[] = { "Boissons", "Produits laitiers", "Matières grasses", "Produits sucrés", "Céréales et féculents", "Fruits et Legumes", "Eau"};
+    public static final String CATEGORIES[] = { "Boissons", "Produits laitiers", "Matières grasses", "Produits sucrés", "Céréales et féculents", "Fruits et Legumes", "Eau","Autres"};
 
 
 }

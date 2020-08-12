@@ -82,6 +82,8 @@
     <string name="scanned">Scanned product(s)</string>
     <string name="clear_history">Clear history</string>
     <string name="all">All</string>
+    <string name="autres">Others</string>
+
 
     // les categories
     <array name="categories">
@@ -92,6 +94,7 @@
         <item>Cereals/Starches</item>
         <item>Fruits/Vegetables</item>
         <item>Water</item>
+        <item>Authers</item>
     </array>
 
     <string name="succes_cnx">Successfully connected</string>

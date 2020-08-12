@@ -44,7 +44,7 @@ public class fragmentProduit extends Fragment {
     private String categorie;
     private GridView gv;
     private CircleImageView iv_Boissons, iv_sucre, iv_fruits_legumes, iv_feculents, iv_lait, iv_gras, iv_eau;
-    private Button allProducts;
+    private Button allProducts,iv_autres;
     private TextView tv_subTitle, tv_msg;
     private GridViewAdapter monProduitAdapter;
     private ArrayList<Produit> listeProduits;
@@ -58,6 +58,7 @@ public class fragmentProduit extends Fragment {
         View v = inflater.inflate(R.layout.activity_produit,container,false);
         requestQueue = VolleySingleton.getInstance(getContext()).getRequestQueue();
         allProducts = v.findViewById(R.id.iv_all_product);
+        iv_autres = v.findViewById(R.id.iv_autres);
         listeProduits = new ArrayList<>();
 
         for (int i = 0; i < Config.CATEGORIES.length - 1; i++){
@@ -72,6 +73,7 @@ public class fragmentProduit extends Fragment {
         iv_gras = v.findViewById(R.id.iv_gras);
         iv_eau = v.findViewById(R.id.iv_eau);
 
+
         gv = v.findViewById(R.id.gridListView);
         pg = v.findViewById(R.id.progress_for_grid);
         tv_subTitle = v.findViewById(R.id.tv_subTitle);
@@ -83,7 +85,7 @@ public class fragmentProduit extends Fragment {
 
         // Activer l'animation du boutton
         if(Config.ANIMATION_BUTTON_ACTIVE) {
-            PushDownAnim.setPushDownAnimTo(allProducts, iv_Boissons, iv_fruits_legumes, iv_feculents, iv_lait, iv_sucre, iv_gras, iv_eau)
+            PushDownAnim.setPushDownAnimTo(allProducts, iv_Boissons, iv_fruits_legumes, iv_feculents, iv_lait, iv_sucre, iv_gras, iv_eau, iv_autres)
                     .setScale(MODE_SCALE, 0.89f)
                     .setDurationPush(PushDownAnim.DEFAULT_PUSH_DURATION)
                     .setDurationRelease(PushDownAnim.DEFAULT_RELEASE_DURATION)
@@ -145,6 +147,13 @@ public class fragmentProduit extends Fragment {
             @Override
             public void onClick(View v) {
                 boutton(Config.CATEGORIES[6]);
+            }
+        });
+
+        iv_autres.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boutton(Config.CATEGORIES[7]);
             }
         });
 
