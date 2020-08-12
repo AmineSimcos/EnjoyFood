@@ -259,22 +259,22 @@ public class fragmentProduit extends Fragment {
                                     int fruits_lesgumes = obj.getInt("fruits_lesgumes");
                                     String ingrediant = obj.getString("ingrediant");
                                     listeProduits.add(new Produit(code_bar, titre, description, image, cat, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant));
-                                    pg.setVisibility(View.GONE);
                                     //Log.e("Fragment", listeProduits.get(0).getImage());
 //                                    monProduitAdapter = new GridViewAdapter(getActivity(), listeProduits);
 //                                    gv.setAdapter(monProduitAdapter);
-                                    pg.setVisibility(View.GONE);
-                                    gv.setVisibility(View.VISIBLE);
+
 //                                    monProduitAdapter.setOnItemClickListener(ResultatActivity.this);
                                 }
+
                                 monProduitAdapter = new GridViewAdapter(getActivity(), listeProduits);
                                 gv.setAdapter(monProduitAdapter);
-
+                                pg.setVisibility(View.GONE);
+                                gv.setVisibility(View.VISIBLE);
                             } catch (JSONException e) {
                                 e.printStackTrace();
                                 pg.setVisibility(View.GONE);
                                 tv_msg.setVisibility(View.VISIBLE);
-                                tv_msg.setText(getResources().getString(R.string.verification));
+                                tv_msg.setText(getResources().getString(R.string.empty));
                             }
                         }
                     },
