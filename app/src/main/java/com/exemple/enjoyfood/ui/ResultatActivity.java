@@ -26,6 +26,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.thekhaeng.pushdownanim.PushDownAnim;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import com.exemple.enjoyfood.DownLoadImageTask;
@@ -156,6 +157,12 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
         C = findViewById(R.id.C);
         D = findViewById(R.id.D);
         E = findViewById(R.id.E);
+
+        // hadi ta3 in7inae min ykoun en arabe
+        if(Locale.getDefault().getLanguage().equals("ar")){
+            A.setBackground(getResources().getDrawable(R.drawable.bg_rounded_a_arabe));
+            E.setBackground(getResources().getDrawable(R.drawable.bg_rounded_e_arabe));
+        }
         ////////////////////////////////////////////////////////////////////////////////////////////
 
 

@@ -93,4 +93,9 @@
     </array>
     <string name="all">الكل</string>
     <string name="succes_cnx">تم الاتصال بنجاح</string>
+    <string name="a">أ</string>
+    <string name="b">ب</string>
+    <string name="c">ج</string>
+    <string name="d">د</string>
+    <string name="e">ه</string>
 </resources>
