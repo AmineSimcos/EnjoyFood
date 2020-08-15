@@ -203,7 +203,7 @@ public class fragmentConsommation extends Fragment {
 
                             }
 
-                            tv_cal.setText(String.format("%.2f", Nenergie) + " KJ" + getResources().getString(R.string.unity_kcal));
+                            tv_cal.setText(String.format("%.2f", Nenergie) + " " + getResources().getString(R.string.unity_kcal));
                             tv_glucide.setText(String.format("%.2f", Nglucide) + " " + getResources().getString(R.string.unity_g));
                             tv_sucre.setText(String.format("%.2f", Nsucre) + " ");
                             tv_matiere_grasse.setText(String.format("%.2f", Nmatiere_grasse) + " " + getResources().getString(R.string.unity_g));
