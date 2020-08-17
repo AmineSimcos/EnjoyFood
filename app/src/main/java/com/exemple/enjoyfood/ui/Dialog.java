@@ -34,7 +34,7 @@ public class Dialog extends AppCompatDialogFragment {
     private CircleImageView btn_plus, btn_moin;
     private DialogListener listener;
     private LinearLayout layoutQt1, layoutQt2, btns;
-    private ImageView img_icone, img_icone2;
+    private ImageView img_icone;
     private EditText et_qt;
     private String categorie;
     private int volume;
@@ -55,7 +55,6 @@ public class Dialog extends AppCompatDialogFragment {
         layoutQt2 = view.findViewById(R.id.layout_qt2);
         btns = view.findViewById(R.id.btns_plus_moin);
         img_icone = view.findViewById(R.id.img_icone);
-        img_icone2 = view.findViewById(R.id.img_icone2);
         tv_img_icone = view.findViewById(R.id.tv_img_icone);
         et_qt = view.findViewById(R.id.et_qt);
         layoutQt1.setVisibility(View.VISIBLE);
