@@ -32,7 +32,7 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
         request.informationProduct(result.getText(), new MyRequest.InformationCallback() {
 
             @Override
-            public void onSucces(String code_bar, String titre, String description, String image, String categorie, double energie, double matiere_grasse, double graisse, double glucide, double sucre, double proteine,double fibre, double sodium, double sel, double calicium, int fruits_lesgumes, String ingrediant) {
+            public void onSucces(String code_bar, String titre, String description, String image, String categorie, double energie, double matiere_grasse, double graisse, double glucide, double sucre, double proteine,double fibre, double sodium, double sel, double calicium, int fruits_lesgumes, String ingrediant, int volume) {
                 Bundle b = new Bundle();
                 b.putString("code_bar",code_bar);
                 b.putString("titre",titre);
@@ -51,6 +51,7 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
                 b.putDouble("calicium",calicium);
                 b.putInt("fruits_lesgumes",fruits_lesgumes);
                 b.putString("ingrediant",ingrediant);
+                b.putInt("volume",volume);
                 i.putExtras(b);
                 i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(i);

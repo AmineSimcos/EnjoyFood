@@ -52,7 +52,8 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
     private CircleImageView btn_add;
     private RequestQueue queue;
     private MyRequest request;
-    private String id;
+    private String id, categorie;
+    private int volume;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +78,9 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
         final double calicium = b.getDouble("calicium");
         final int fruits_lesgumes = b.getInt("fruits_lesgumes");
         final String ingrediant = b.getString("ingrediant");
-
+        final int volume = b.getInt("volume");
+        this.categorie = categorie;
+        this.volume = volume;
         //Toast.makeText(getApplicationContext(), "Hello", Toast.LENGTH_SHORT).show();
         SessionManager s = new SessionManager(this);
         if(s.isLogged()){
@@ -177,7 +180,7 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
 //        };
 
 
-        produit = new Produit (code_Bar, titre, description, image, categorie, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant);
+        produit = new Produit (code_Bar, titre, description, image, categorie, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant, volume);
         getSupportActionBar().setTitle(titre);
 
 
@@ -283,6 +286,10 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
 
     public void openDialog(){
         Dialog dialog = new Dialog();
+        Bundle args = new Bundle();
+        args.putString("categorie", categorie);
+        args.putInt("volume", volume);
+        dialog.setArguments(args);
         dialog.show(getSupportFragmentManager(), "example dialog");
     }
 

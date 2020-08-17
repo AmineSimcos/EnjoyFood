@@ -174,7 +174,8 @@ public class fragmentHistorique extends Fragment {
                         double calicium = obj.getDouble("calicium");
                         int fruits_lesgumes = obj.getInt("fruits_lesgumes");
                         String ingrediant = obj.getString("ingrediant");
-                        listeProduits.add(new Produit(code_bar, titre, description, image, categorie, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant));
+                        int volume = obj.getInt("volume");
+                        listeProduits.add(new Produit(code_bar, titre, description, image, categorie, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant, volume));
                         monProduitAdapter = new HistoriqueAdapter(getActivity(), listeProduits);
                         monProduitAdapter.setOnItemClickListener(new HistoriqueAdapter.onItemClickListenr() {
                             @Override
@@ -199,6 +200,7 @@ public class fragmentHistorique extends Fragment {
                                 b.putDouble("calicium",produit.getCalicium());
                                 b.putInt("fruits_lesgumes",produit.getFruits_legumes());
                                 b.putString("ingrediant",produit.getIngrediant());
+                                b.putInt("volume",produit.getVolume());
                                 i.putExtras(b);
                                 startActivity(i);
                             }

@@ -176,7 +176,8 @@ public class MyRequest {
                             double calicium = json.getDouble("calicium");
                             int fruits_lesgumes = json.getInt("fruits_lesgumes");
                             String ingrediant = json.getString("ingrediant");
-                            callback.onSucces(code_bar, titre, description, image, categorie, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant);
+                            int volume = json.getInt("volume");
+                            callback.onSucces(code_bar, titre, description, image, categorie, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant, volume);
                         } else {
                             callback.onError(json.getString("message"));
                         }
@@ -210,7 +211,7 @@ public class MyRequest {
     }
 
     public interface InformationCallback{
-        void onSucces(String code_bar, String titre, String description, String image, String categorie, double energie, double matiere_grasse, double graisse, double glucide, double sucre, double proteine, double fibre, double sodium, double sel, double calicium, int fruits_lesgumes, String ingrediant);
+        void onSucces(String code_bar, String titre, String description, String image, String categorie, double energie, double matiere_grasse, double graisse, double glucide, double sucre, double proteine, double fibre, double sodium, double sel, double calicium, int fruits_lesgumes, String ingrediant, int volume);
         void onError(String message);
     }
 

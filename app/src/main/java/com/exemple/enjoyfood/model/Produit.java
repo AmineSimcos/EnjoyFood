@@ -18,6 +18,7 @@ public class Produit {
     private double calicium;
     private int fruits_legumes;
     private String ingrediant;
+    private int volume;
 
     public Produit(String image, String titre, String description, String code_bar) {
         this.titre = titre;
@@ -26,7 +27,7 @@ public class Produit {
         this.code_bar = code_bar;
     }
 
-    public Produit(String code_bar, String titre, String description, String image, String categorie, double energie, double matiere_grasse, double graisse, double glucide, double sucre, double proteine, double fibre, double sodium, double sel, double calicium, int fruits_legumes, String ingrediant) {
+    public Produit(String code_bar, String titre, String description, String image, String categorie, double energie, double matiere_grasse, double graisse, double glucide, double sucre, double proteine, double fibre, double sodium, double sel, double calicium, int fruits_legumes, String ingrediant, int volume) {
         this.code_bar = code_bar;
         this.titre = titre;
         this.description = description;
@@ -44,6 +45,7 @@ public class Produit {
         this.calicium = calicium;
         this.fruits_legumes = fruits_legumes;
         this.ingrediant = ingrediant;
+        this.volume = volume;
     }
 
     public String getCategorie() {
@@ -180,5 +182,13 @@ public class Produit {
 
     public void setCode_bar(String code_bar) {
         this.code_bar = code_bar;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
     }
 }

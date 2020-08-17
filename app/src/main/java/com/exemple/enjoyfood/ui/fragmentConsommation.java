@@ -187,16 +187,16 @@ public class fragmentConsommation extends Fragment {
                                     double nombre = Double.parseDouble(obj.getString("nombre"));
                                     //Log.e("glucide", String.valueOf(glucide));
 
-                                    Nenergie += energie * nombre;
-                                    Nmatiere_grasse += matiere_grasse * nombre;
-                                    Ngraisee += graisse * nombre;
-                                    Nglucide += glucide * nombre;
-                                    Nsucre += sucre * nombre;
-                                    Nproteine += proteine * nombre;
-                                    Nfibre += fibres * nombre;
-                                    Nsodium += sodium * nombre;
-                                    Nsel += sel * nombre;
-                                    Ncalcium += calicium * nombre;
+                                    Nenergie += energie * nombre / 100;
+                                    Nmatiere_grasse += matiere_grasse * nombre / 100;
+                                    Ngraisee += graisse * nombre / 100;
+                                    Nglucide += glucide * nombre / 100;
+                                    Nsucre += sucre * nombre / 100;
+                                    Nproteine += proteine * nombre / 100;
+                                    Nfibre += fibres * nombre / 100;
+                                    Nsodium += sodium * nombre / 100;
+                                    Nsel += sel * nombre / 100;
+                                    Ncalcium += calicium * nombre / 100;
                                     //Log.e("Nglucide", String.valueOf(Nglucide));
 //                                Log.e("Fragment", calorie);
                                 }

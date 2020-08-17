@@ -257,8 +257,9 @@ public class fragmentProduit extends Fragment {
                                     double sel = obj.getDouble("sel");
                                     double calicium = obj.getDouble("calicium");
                                     int fruits_lesgumes = obj.getInt("fruits_lesgumes");
+                                    int volume = obj.getInt("volume");
                                     String ingrediant = obj.getString("ingrediant");
-                                    listeProduits.add(new Produit(code_bar, titre, description, image, cat, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant));
+                                    listeProduits.add(new Produit(code_bar, titre, description, image, cat, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant, volume));
                                     //Log.e("Fragment", listeProduits.get(0).getImage());
 //                                    monProduitAdapter = new GridViewAdapter(getActivity(), listeProduits);
 //                                    gv.setAdapter(monProduitAdapter);

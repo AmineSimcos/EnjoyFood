@@ -104,4 +104,14 @@
     <string name="d">D</string>
     <string name="e">E</string>
 
+    <string-array name="echel">
+        <item>Paquet/Emballage</item>
+        <item>Portion</item>
+        <item>Cuillere 3 g</item>
+        <item>Cuillere 25 g</item>
+        <item>Verre 250 ml</item>
+        <item>Bol 250 g</item>
+    </string-array>
+
+
 </resources>
