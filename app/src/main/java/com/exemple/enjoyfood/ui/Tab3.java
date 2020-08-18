@@ -75,7 +75,7 @@ public class Tab3 extends Fragment {
         PieData pieData = new PieData(dataSet);
         pieChart.setData(pieData);
         pieChart.getDescription().setEnabled(false);
-        pieChart.setCenterText("Nutrition");
+        pieChart.setCenterText(getResources().getString(R.string.nutrition));
         pieChart.animate();
         pieChart.setRotationEnabled(true);
         pieChart.setUsePercentValues(true);
