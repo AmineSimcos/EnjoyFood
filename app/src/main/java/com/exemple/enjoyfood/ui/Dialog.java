@@ -30,7 +30,7 @@ import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
 public class Dialog extends AppCompatDialogFragment {
 
     private int nbr = 1, somme, selected;
-    private TextView tv_nbr, tv_img_icone;
+    private TextView tv_nbr, tv_img_icone, tv_result, tv_unity;
     private CircleImageView btn_plus, btn_moin;
     private DialogListener listener;
     private LinearLayout layoutQt1, layoutQt2, btns;
@@ -56,7 +56,13 @@ public class Dialog extends AppCompatDialogFragment {
         btns = view.findViewById(R.id.btns_plus_moin);
         img_icone = view.findViewById(R.id.img_icone);
         tv_img_icone = view.findViewById(R.id.tv_img_icone);
+        tv_result = view.findViewById(R.id.tv_result);
+        tv_unity = view.findViewById(R.id.tv_unity);
         et_qt = view.findViewById(R.id.et_qt);
+        tv_nbr = view.findViewById(R.id.tv_nbr_cons);
+        btn_moin = view.findViewById(R.id.btn_moin);
+        btn_plus = view.findViewById(R.id.btn_plus);
+
         layoutQt1.setVisibility(View.VISIBLE);
         layoutQt2.setVisibility(View.GONE);
         final Spinner spinner = (Spinner) view.findViewById(R.id.echel_spinner);
@@ -81,12 +87,16 @@ public class Dialog extends AppCompatDialogFragment {
                     if(categorie.equals("Boissons") || categorie.equals("Eau")){
                         if(volume >= 1000){
                             tv_img_icone.setText(convertion(volume) + " " + getResources().getString(R.string.unity_litre));
-                            tv_nbr.setText("x  " + nbr + "  = " + convertion(volume) + " " + getResources().getString(R.string.unity_litre));
+                            tv_nbr.setText(nbr);
+                            tv_result.setText(String.valueOf(convertion(volume)));
+                            tv_unity.setText(getResources().getString(R.string.unity_litre));
                             somme = volume;
                         }
                         else{
                             tv_img_icone.setText(volume + " "  + getResources().getString(R.string.unity_ml));
-                            tv_nbr.setText("x  " + nbr + "  = " + volume + " "  + getResources().getString(R.string.unity_ml));
+                            tv_nbr.setText(nbr);
+                            tv_result.setText(String.valueOf(volume));
+                            tv_unity.setText(getResources().getString(R.string.unity_ml));
                             somme = volume;
                         }
 
@@ -155,9 +165,7 @@ public class Dialog extends AppCompatDialogFragment {
             }
         });
 
-        tv_nbr = view.findViewById(R.id.tv_nbr_cons);
-        btn_moin = view.findViewById(R.id.btn_moin);
-        btn_plus = view.findViewById(R.id.btn_plus);
+
 
         // Activer l'animation du boutton
         if(Config.ANIMATION_BUTTON_ACTIVE) {
@@ -267,14 +275,14 @@ public class Dialog extends AppCompatDialogFragment {
             }
         });
 
-        builder.setView(view).setTitle("Confirmer")
-                .setNegativeButton("Annuler", new DialogInterface.OnClickListener() {
+        builder.setView(view).setTitle(getResources().getStringArray(R.array.dialog)[0])
+                .setNegativeButton(getResources().getStringArray(R.array.dialog)[2], new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
                     }
                 })
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                .setPositiveButton(getResources().getStringArray(R.array.dialog)[1], new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         listener.applyNbr(somme);

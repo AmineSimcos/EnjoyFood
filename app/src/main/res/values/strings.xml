@@ -43,6 +43,7 @@
     <string name="for250ml">Per portion (250 ml)</string>
     <string name="for100g">for\n100 g</string>
     <string name="for250g">Per portion (250 g)</string>
+    <string name="par">By</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -116,5 +117,10 @@
         <item>Bol 250 g</item>
     </string-array>
 
+    <string-array name="dialog">
+        <item>Confirm</item>
+        <item>OK</item>
+        <item>Cancel</item>
+    </string-array>
 
 </resources>
