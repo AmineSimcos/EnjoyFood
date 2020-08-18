@@ -64,6 +64,7 @@
     <string name="register_title">Inscription</string>
     <string name="register">S\'inscrire</string>
     <string name="login">Se connecter</string>
+    <string name="par">Par</string>
 
     <string-array name="bilan">
         <item>Jour</item>
@@ -111,5 +112,11 @@
         <item>Cuillère 25 g</item>
         <item>Verre 250 ml</item>
         <item>Bol 250 g</item>
+    </string-array>
+
+    <string-array name="dialog">
+        <item>Confirmer</item>
+        <item>OK</item>
+        <item>Annuler</item>
     </string-array>
 </resources>

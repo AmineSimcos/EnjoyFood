@@ -63,6 +63,7 @@
     <string name="login_title">تسجيل الدخول</string>
     <string name="menu_historique">تاريخي</string>
     <string name="menu_login">دخول</string>
+    <string name="par">ب</string>
 
     <string-array name="bilan">
         <item>يوم</item>
@@ -109,5 +110,11 @@
         <item>ملعقة 25 غ</item>
         <item>كأس 250 مل</item>
         <item>وعاء 250 مل</item>
+    </string-array>
+
+    <string-array name="dialog">
+        <item>تأكيد</item>
+        <item>موافق</item>
+        <item>الغاء</item>
     </string-array>
 </resources>
