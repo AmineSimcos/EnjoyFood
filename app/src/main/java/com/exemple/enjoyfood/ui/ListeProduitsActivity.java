@@ -196,6 +196,7 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
 
     @Override
     public void onItemClick(int position) {
+        
         final Intent i = new Intent(this, ResultatActivity.class);
         Produit produit = listeProduits.get(position);
         Bundle b = new Bundle();

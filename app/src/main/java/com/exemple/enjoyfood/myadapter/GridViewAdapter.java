@@ -27,6 +27,9 @@ import com.exemple.enjoyfood.R;
 import com.exemple.enjoyfood.model.Produit;
 import com.exemple.enjoyfood.myrequest.MyRequest;
 import com.exemple.enjoyfood.ui.ResultatActivity;
+import com.thekhaeng.pushdownanim.PushDownAnim;
+
+import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
 
 public class GridViewAdapter extends ArrayAdapter<Produit> {
 
@@ -61,6 +64,15 @@ public class GridViewAdapter extends ArrayAdapter<Produit> {
         logo.setVisibility(View.VISIBLE);
 
         label.setText(c.getTitre());
+
+        if(Config.ANIMATION_BUTTON_ACTIVE) {
+            PushDownAnim.setPushDownAnimTo(convertView)
+                    .setScale(MODE_SCALE, 0.89f)
+                    .setDurationPush(PushDownAnim.DEFAULT_PUSH_DURATION)
+                    .setDurationRelease(PushDownAnim.DEFAULT_RELEASE_DURATION)
+                    .setInterpolatorPush(PushDownAnim.DEFAULT_INTERPOLATOR)
+                    .setInterpolatorRelease(PushDownAnim.DEFAULT_INTERPOLATOR);
+        }
         //logo.setImageResource(c.getLogo());
         //logo.setBackgroundResource(c.getImage());
         convertView.setOnClickListener(new View.OnClickListener() {
