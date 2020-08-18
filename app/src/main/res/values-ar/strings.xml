@@ -117,4 +117,8 @@
         <item>موافق</item>
         <item>الغاء</item>
     </string-array>
+
+    <string name="tableau">جدول السعرات الحرارية</string>
+    <string name="ingrediants">مكونات</string>
+    <string name="statistique">احصائيات</string>
 </resources>

@@ -119,4 +119,8 @@
         <item>OK</item>
         <item>Annuler</item>
     </string-array>
+
+    <string name="tableau">Tableau calorique</string>
+    <string name="ingrediants">Ingrédiants</string>
+    <string name="statistique">Statistiques</string>
 </resources>

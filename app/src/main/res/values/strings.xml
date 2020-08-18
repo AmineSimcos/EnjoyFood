@@ -123,4 +123,8 @@
         <item>Cancel</item>
     </string-array>
 
+    <string name="tableau">Calorie table</string>
+    <string name="ingrediants">Ingredients</string>
+    <string name="statistique">Statistics</string>
+
 </resources>

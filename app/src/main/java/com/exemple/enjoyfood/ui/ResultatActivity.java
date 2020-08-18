@@ -126,9 +126,9 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
         pg = findViewById(R.id.pg_image_produit_resultat);
 
         TabLayout t = findViewById(R.id.tabLayout);
-        t.addTab(t.newTab().setText("Tableau calorique"));
-        t.addTab(t.newTab().setText("Ingrédients"));
-        t.addTab(t.newTab().setText("Statistique"));
+        t.addTab(t.newTab().setText(getResources().getString(R.string.tableau)));
+        t.addTab(t.newTab().setText(getResources().getString(R.string.ingrediants)));
+        t.addTab(t.newTab().setText(getResources().getString(R.string.statistique)));
         t.setTabGravity(TabLayout.GRAVITY_FILL);
         final ViewPager viewPager = findViewById(R.id.viewPager);
         final PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(),t.getTabCount());
