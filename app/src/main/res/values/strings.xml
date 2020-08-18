@@ -108,12 +108,12 @@
     <string name="e">E</string>
 
     <string-array name="echel">
-        <item>Paquet/Emballage</item>
+        <item>Packet/Bottle</item>
         <item>Portion</item>
-        <item>Cuillere 3 g</item>
-        <item>Cuillere 25 g</item>
-        <item>Verre 250 ml</item>
-        <item>Bol 250 g</item>
+        <item>Spoon 3 g</item>
+        <item>Spoon 25 g</item>
+        <item>Glass 250 ml</item>
+        <item>Bowl 250 g</item>
     </string-array>
 
 

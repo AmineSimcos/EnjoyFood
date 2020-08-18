@@ -71,8 +71,8 @@
     </string-array>
 
     <string-array name="intro">
-        <item>مرحبا ! هل أنت مستعد لتغيير بعض عاداتك وإيلاء المزيد من الاهتمام عند التسوق و الاستهلاك ؟</item>
-        <item>Enjoy Food هو تطبيق مصمم لمساعدتك على اختيار المنتجات المناسبة بشكل أفضل و إدارة استهلاكاتك</item>
+        <item>مرحبا! هل أنت مستعد لتغيير بعض عاداتك و إيلاء المزيد من الاهتمام عند التسوق و الاستهلاك ؟</item>
+        <item> Enjoy Food هو تطبيق مصمم لمساعدتك على اختيار المنتجات المناسبة بشكل أفضل و كدا إدارة استهلاكاتك</item>
         <item>استرجع بسهولة جميع المعلومات الغذائية للمنتج الغذائي و حدد  ما تريده على طبقك</item>
         <item>سجل و احسب استهلاكك اليومي الأسبوعي أو الشهري</item>
     </string-array>
@@ -103,11 +103,11 @@
     <string name="unity_litre">ل</string>
 
     <string-array name="echel">
-        <item>Paquet/Emballage</item>
-        <item>Portion</item>
-        <item>Cuillere 3 g</item>
-        <item>Cuillere 25 g</item>
-        <item>Verre 250 ml</item>
-        <item>Bol 250 g</item>
+        <item>علبة/قارورة</item>
+        <item>جزء</item>
+        <item>ملعقة 3 غ</item>
+        <item>ملعقة 25 غ</item>
+        <item>كأس 250 مل</item>
+        <item>وعاء 250 مل</item>
     </string-array>
 </resources>

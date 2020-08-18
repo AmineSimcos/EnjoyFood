@@ -105,10 +105,10 @@
     <string name="unity_ml">ml</string>
 
     <string-array name="echel">
-        <item>Paquet/Emballage</item>
+        <item>Paquet/Bouteille</item>
         <item>Portion</item>
-        <item>Cuillere 3 g</item>
-        <item>Cuillere 25 g</item>
+        <item>Cuillère 3 g</item>
+        <item>Cuillère 25 g</item>
         <item>Verre 250 ml</item>
         <item>Bol 250 g</item>
     </string-array>
