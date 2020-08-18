@@ -98,4 +98,16 @@
     <string name="c">ج</string>
     <string name="d">د</string>
     <string name="e">ه</string>
+    <string name="unity_kg">كغ</string>
+    <string name="unity_ml">مل</string>
+    <string name="unity_litre">ل</string>
+
+    <string-array name="echel">
+        <item>Paquet/Emballage</item>
+        <item>Portion</item>
+        <item>Cuillere 3 g</item>
+        <item>Cuillere 25 g</item>
+        <item>Verre 250 ml</item>
+        <item>Bol 250 g</item>
+    </string-array>
 </resources>

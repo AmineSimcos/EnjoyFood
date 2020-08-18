@@ -100,4 +100,16 @@
     <string name="c">C</string>
     <string name="d">D</string>
     <string name="e">E</string>
+    <string name="unity_kg">kg</string>
+    <string name="unity_litre">L</string>
+    <string name="unity_ml">ml</string>
+
+    <string-array name="echel">
+        <item>Paquet/Emballage</item>
+        <item>Portion</item>
+        <item>Cuillere 3 g</item>
+        <item>Cuillere 25 g</item>
+        <item>Verre 250 ml</item>
+        <item>Bol 250 g</item>
+    </string-array>
 </resources>
