@@ -104,12 +104,16 @@ public class Dialog extends AppCompatDialogFragment {
                     else{
                         if(volume >= 1000){
                             tv_img_icone.setText(convertion(volume) + " "  + getResources().getString(R.string.unity_kg));
-                            tv_nbr.setText("x  " + nbr + "  = " + convertion(volume) + " "  + getResources().getString(R.string.unity_kg));
+                            tv_nbr.setText(nbr);
+                            tv_result.setText(String.valueOf(convertion(volume)));
+                            tv_unity.setText(getResources().getString(R.string.unity_kg));
                             somme = volume;
                         }
                         else{
                             tv_img_icone.setText(volume + " " + getResources().getString(R.string.unity_g));
-                            tv_nbr.setText("x  " + nbr + "  = " + volume + " " + getResources().getString(R.string.unity_g));
+                            tv_nbr.setText(nbr);
+                            tv_result.setText(String.valueOf(volume));
+                            tv_unity.setText(getResources().getString(R.string.unity_g));
                             somme = volume;
                         }
                     }
@@ -128,7 +132,9 @@ public class Dialog extends AppCompatDialogFragment {
                     tv_img_icone.setText("3 g");
                     selected = 2;
                     somme = nbr * 3;
-                    tv_nbr.setText("x  " + nbr + "  =  " + somme + " " + getResources().getString(R.string.unity_g));
+                    tv_nbr.setText(nbr);
+                    tv_result.setText(String.valueOf(somme));
+                    tv_unity.setText(getResources().getString(R.string.unity_g));
                 }
                 else if(spinner.getAdapter().getItem(position).toString().equals(getResources().getStringArray(R.array.echel)[3])) {
                     layoutQt1.setVisibility(View.VISIBLE);
@@ -137,7 +143,9 @@ public class Dialog extends AppCompatDialogFragment {
                     tv_img_icone.setText("25 "  + getResources().getString(R.string.unity_g));
                     selected = 3;
                     somme = nbr * 25;
-                    tv_nbr.setText("x  " + nbr + "  =  " + somme + " "  + getResources().getString(R.string.unity_g));
+                    tv_nbr.setText(nbr);
+                    tv_result.setText(String.valueOf(somme));
+                    tv_unity.setText(getResources().getString(R.string.unity_g));
                 }
                 else if(spinner.getAdapter().getItem(position).toString().equals(getResources().getStringArray(R.array.echel)[4])) {
                     layoutQt1.setVisibility(View.VISIBLE);
@@ -146,7 +154,9 @@ public class Dialog extends AppCompatDialogFragment {
                     tv_img_icone.setText("250 " + getResources().getString(R.string.unity_ml));
                     selected = 4;
                     somme = nbr * 250;
-                    tv_nbr.setText("x  " + nbr + "  =  " + somme + " " + getResources().getString(R.string.unity_ml));
+                    tv_nbr.setText(nbr);
+                    tv_result.setText(String.valueOf(somme));
+                    tv_unity.setText(getResources().getString(R.string.unity_ml));
                 }
                 else if(spinner.getAdapter().getItem(position).toString().equals(getResources().getStringArray(R.array.echel)[5])) {
                     layoutQt1.setVisibility(View.VISIBLE);
@@ -155,7 +165,9 @@ public class Dialog extends AppCompatDialogFragment {
                     tv_img_icone.setText("250 "  + getResources().getString(R.string.unity_g));
                     selected = 5;
                     somme = nbr * 250;
-                    tv_nbr.setText("x  " + nbr + "  =  " + somme + " " + getResources().getString(R.string.unity_g));
+                    tv_nbr.setText(nbr);
+                    tv_result.setText(String.valueOf(somme));
+                    tv_unity.setText(getResources().getString(R.string.unity_g));
                 }
             }
 
@@ -187,18 +199,26 @@ public class Dialog extends AppCompatDialogFragment {
                         somme = nbr * volume;
                         if(categorie.equals("Boissons") || categorie.equals("Eau")){
                             if(volume >= 1000){
-                                tv_nbr.setText("x  " + nbr + "  = " + nbr * convertion(volume) + " " + getResources().getString(R.string.unity_litre));
+                                tv_nbr.setText(nbr);
+                                tv_result.setText(String.valueOf(nbr * convertion(volume)));
+                                tv_unity.setText(getResources().getString(R.string.unity_litre));
                             }
                             else{
-                                tv_nbr.setText("x  " + nbr + "  = " + somme + " " + getResources().getString(R.string.unity_ml));
+                                tv_nbr.setText(nbr);
+                                tv_result.setText(String.valueOf(somme));
+                                tv_unity.setText(getResources().getString(R.string.unity_ml));
                             }
                         }
                         else{
                             if(volume >= 1000){
-                                tv_nbr.setText("x  " + nbr + "  = " + nbr * convertion(volume) + " " + getResources().getString(R.string.unity_kg));
+                                tv_nbr.setText(nbr);
+                                tv_result.setText(String.valueOf(nbr * convertion(volume)));
+                                tv_unity.setText(getResources().getString(R.string.unity_kg));
                             }
                             else{
-                                tv_nbr.setText("x  " + nbr + "  = " + somme + " " + getResources().getString(R.string.unity_g));
+                                tv_nbr.setText(nbr);
+                                tv_result.setText(String.valueOf(somme));
+                                tv_unity.setText(getResources().getString(R.string.unity_g));
                             }
                         }
 
@@ -207,19 +227,27 @@ public class Dialog extends AppCompatDialogFragment {
                         break;
                     case 2:
                         somme = nbr * 3;
-                        tv_nbr.setText("x  " + nbr + "  =  " + somme + " " + getResources().getString(R.string.unity_g));
+                        tv_nbr.setText(nbr);
+                        tv_result.setText(String.valueOf(somme));
+                        tv_unity.setText(getResources().getString(R.string.unity_g));
                         break;
                     case 3:
                         somme = nbr * 25;
-                        tv_nbr.setText("x  " + nbr + "  =  " + somme + " " + getResources().getString(R.string.unity_g));
+                        tv_nbr.setText(nbr);
+                        tv_result.setText(String.valueOf(somme));
+                        tv_unity.setText(getResources().getString(R.string.unity_g));
                         break;
                     case 4:
                         somme = nbr * 250;
-                        tv_nbr.setText("x  " + nbr + "  =  " + somme + " " + getResources().getString(R.string.unity_ml));
+                        tv_nbr.setText(nbr);
+                        tv_result.setText(String.valueOf(somme));
+                        tv_unity.setText(getResources().getString(R.string.unity_ml));
                         break;
                     case 5:
                         somme = nbr * 250;
-                        tv_nbr.setText("x  " + nbr + "  =  " + somme + " " + getResources().getString(R.string.unity_g));
+                        tv_nbr.setText(nbr);
+                        tv_result.setText(String.valueOf(somme));
+                        tv_unity.setText(getResources().getString(R.string.unity_g));
                         break;
                 }
 
@@ -236,18 +264,26 @@ public class Dialog extends AppCompatDialogFragment {
                             somme = nbr * volume;
                             if(categorie.equals("Boissons") || categorie.equals("Eau")){
                                 if(volume >= 1000){
-                                    tv_nbr.setText("x  " + nbr + "  = " + nbr * convertion(volume) + " " + getResources().getString(R.string.unity_litre));
+                                    tv_nbr.setText(nbr);
+                                    tv_result.setText(String.valueOf(nbr * convertion(volume)));
+                                    tv_unity.setText(getResources().getString(R.string.unity_g));
                                 }
                                 else{
-                                    tv_nbr.setText("x  " + nbr + "  = " + somme + " " + getResources().getString(R.string.unity_ml));
+                                    tv_nbr.setText(nbr);
+                                    tv_result.setText(String.valueOf(somme));
+                                    tv_unity.setText(getResources().getString(R.string.unity_g));
                                 }
                             }
                             else{
                                 if(volume >= 1000){
-                                    tv_nbr.setText("x  " + nbr + "  = " + nbr * convertion(volume) + " " + getResources().getString(R.string.unity_kg));
+                                    tv_nbr.setText(nbr);
+                                    tv_result.setText(String.valueOf(nbr * convertion(volume)));
+                                    tv_unity.setText(getResources().getString(R.string.unity_g));
                                 }
                                 else{
-                                    tv_nbr.setText("x  " + nbr + "  = " + somme + " " + getResources().getString(R.string.unity_g));
+                                    tv_nbr.setText(somme);
+                                    tv_result.setText(String.valueOf(somme));
+                                    tv_unity.setText(getResources().getString(R.string.unity_g));
                                 }
                             }
 
@@ -256,19 +292,27 @@ public class Dialog extends AppCompatDialogFragment {
                             break;
                         case 2:
                             somme = nbr * 3;
-                            tv_nbr.setText("x  " + nbr + "  =  " + somme + " " + getResources().getString(R.string.unity_g));
+                            tv_nbr.setText(nbr);
+                            tv_result.setText(String.valueOf(somme));
+                            tv_unity.setText(getResources().getString(R.string.unity_g));
                             break;
                         case 3:
                             somme = nbr * 25;
-                            tv_nbr.setText("x  " + nbr + "  =  " + somme + " " + getResources().getString(R.string.unity_g));
+                            tv_nbr.setText(nbr);
+                            tv_result.setText(String.valueOf(somme));
+                            tv_unity.setText(getResources().getString(R.string.unity_g));
                             break;
                         case 4:
                             somme = nbr * 250;
-                            tv_nbr.setText("x  " + nbr + "  =  " + somme + " " + getResources().getString(R.string.unity_ml));
+                            tv_nbr.setText(nbr);
+                            tv_result.setText(String.valueOf(somme));
+                            tv_unity.setText(getResources().getString(R.string.unity_ml));
                             break;
                         case 5:
                             somme = nbr * 250;
-                            tv_nbr.setText("x  " + nbr + "  =  " + somme + " " + getResources().getString(R.string.unity_g));
+                            tv_nbr.setText(nbr);
+                            tv_result.setText(String.valueOf(somme));
+                            tv_unity.setText(getResources().getString(R.string.unity_g));
                             break;
                     }
                 }
