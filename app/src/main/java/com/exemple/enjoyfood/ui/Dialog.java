@@ -82,6 +82,7 @@ public class Dialog extends AppCompatDialogFragment {
                 if(spinner.getAdapter().getItem(position).toString().equals(getResources().getStringArray(R.array.echel)[0])) {
                     layoutQt1.setVisibility(View.VISIBLE);
                     layoutQt2.setVisibility(View.GONE);
+                    btns.setVisibility(View.VISIBLE);
                     img_icone.setImageResource(R.drawable.pack);
                     selected = 0;
                     if(categorie.equals("Boissons") || categorie.equals("Eau")){
@@ -128,6 +129,7 @@ public class Dialog extends AppCompatDialogFragment {
                 else if(spinner.getAdapter().getItem(position).toString().equals(getResources().getStringArray(R.array.echel)[2])) {
                     layoutQt1.setVisibility(View.VISIBLE);
                     layoutQt2.setVisibility(View.GONE);
+                    btns.setVisibility(View.VISIBLE);
                     img_icone.setImageResource(R.drawable.icons8spoon00);
                     tv_img_icone.setText("3 g");
                     selected = 2;
@@ -139,6 +141,7 @@ public class Dialog extends AppCompatDialogFragment {
                 else if(spinner.getAdapter().getItem(position).toString().equals(getResources().getStringArray(R.array.echel)[3])) {
                     layoutQt1.setVisibility(View.VISIBLE);
                     layoutQt2.setVisibility(View.GONE);
+                    btns.setVisibility(View.VISIBLE);
                     img_icone.setImageResource(R.drawable.icons8spoon00);
                     tv_img_icone.setText("25 "  + getResources().getString(R.string.unity_g));
                     selected = 3;
@@ -150,6 +153,7 @@ public class Dialog extends AppCompatDialogFragment {
                 else if(spinner.getAdapter().getItem(position).toString().equals(getResources().getStringArray(R.array.echel)[4])) {
                     layoutQt1.setVisibility(View.VISIBLE);
                     layoutQt2.setVisibility(View.GONE);
+                    btns.setVisibility(View.VISIBLE);
                     img_icone.setImageResource(R.drawable.icons8verre64);
                     tv_img_icone.setText("250 " + getResources().getString(R.string.unity_ml));
                     selected = 4;
@@ -161,6 +165,7 @@ public class Dialog extends AppCompatDialogFragment {
                 else if(spinner.getAdapter().getItem(position).toString().equals(getResources().getStringArray(R.array.echel)[5])) {
                     layoutQt1.setVisibility(View.VISIBLE);
                     layoutQt2.setVisibility(View.GONE);
+                    btns.setVisibility(View.VISIBLE);
                     img_icone.setImageResource(R.drawable.icons8_bouillie100);
                     tv_img_icone.setText("250 "  + getResources().getString(R.string.unity_g));
                     selected = 5;
