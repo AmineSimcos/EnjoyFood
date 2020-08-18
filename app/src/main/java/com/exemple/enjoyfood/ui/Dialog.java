@@ -76,7 +76,7 @@ public class Dialog extends AppCompatDialogFragment {
                 if(spinner.getAdapter().getItem(position).toString().equals(getResources().getStringArray(R.array.echel)[0])) {
                     layoutQt1.setVisibility(View.VISIBLE);
                     layoutQt2.setVisibility(View.GONE);
-                    img_icone.setImageResource(R.drawable.paquet);
+                    img_icone.setImageResource(R.drawable.pack);
                     selected = 0;
                     if(categorie.equals("Boissons") || categorie.equals("Eau")){
                         if(volume >= 1000){
