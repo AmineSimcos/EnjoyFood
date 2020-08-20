@@ -12,6 +12,8 @@ import android.widget.TextView;
 import com.exemple.enjoyfood.R;
 import com.exemple.enjoyfood.model.Produit;
 
+import java.util.Locale;
+
 public class Tab2 extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
@@ -72,8 +74,16 @@ public class Tab2 extends Fragment {
 //
 //        Produit produit = new Produit(code_Bar, titre, description, image, categorie, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant);
 
+        if(Locale.getDefault().getLanguage().equals("fr")) {
+            txtIngrediant.setText(ResultatActivity.produit.getIngrediant());
+        }
+        else if(Locale.getDefault().getLanguage().equals("en")) {
+            txtIngrediant.setText(ResultatActivity.produit.getIngrediant_en());
+        }
+        else if(Locale.getDefault().getLanguage().equals("ar")) {
+            txtIngrediant.setText(ResultatActivity.produit.getIngrediant_ar());
+        }
 
-        txtIngrediant.setText(ResultatActivity.produit.getIngrediant());
         return v;
     }
 }

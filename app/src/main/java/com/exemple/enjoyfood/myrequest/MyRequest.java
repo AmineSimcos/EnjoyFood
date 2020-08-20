@@ -161,7 +161,11 @@ public class MyRequest {
                         if (!error) {
                             String code_bar = json.getString("code_bar");
                             String titre = json.getString("titre");
+                            String titre_en = json.getString("titre_en");
+                            String titre_ar = json.getString("titre_ar");
                             String description = json.getString("description");
+                            String desc_en = json.getString("desc_en");
+                            String desc_ar = json.getString("desc_ar");
                             String image = json.getString("image");
                             String categorie = json.getString("categorie");
                             double energie = json.getDouble("energie");
@@ -176,8 +180,10 @@ public class MyRequest {
                             double calicium = json.getDouble("calicium");
                             int fruits_lesgumes = json.getInt("fruits_lesgumes");
                             String ingrediant = json.getString("ingrediant");
+                            String ingrediant_en = json.getString("ingrediant_en");
+                            String ingrediant_ar = json.getString("ingrediant_ar");
                             int volume = json.getInt("volume");
-                            callback.onSucces(code_bar, titre, description, image, categorie, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant, volume);
+                            callback.onSucces(code_bar, titre, titre_en, titre_ar, description, desc_en, desc_ar, image, categorie, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant, ingrediant_en, ingrediant_ar, volume);
                         } else {
                             callback.onError(json.getString("message"));
                         }
@@ -211,7 +217,7 @@ public class MyRequest {
     }
 
     public interface InformationCallback{
-        void onSucces(String code_bar, String titre, String description, String image, String categorie, double energie, double matiere_grasse, double graisse, double glucide, double sucre, double proteine, double fibre, double sodium, double sel, double calicium, int fruits_lesgumes, String ingrediant, int volume);
+        void onSucces(String code_bar, String titre, String titre_en, String titre_ar, String description, String desc_en, String desc_ar, String image, String categorie, double energie, double matiere_grasse, double graisse, double glucide, double sucre, double proteine, double fibre, double sodium, double sel, double calicium, int fruits_lesgumes, String ingrediant, String ingrediant_en, String ingrediant_ar, int volume);
         void onError(String message);
     }
 

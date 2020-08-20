@@ -145,7 +145,11 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
                             JSONObject obj = jsonArray.getJSONObject(i);
 
                             String titre = obj.getString("titre");
+                            String titre_en = obj.getString("titre_en");
+                            String titre_ar = obj.getString("titre_ar");
                             String description = obj.getString("description");
+                            String desc_en = obj.getString("desc_en");
+                            String desc_ar = obj.getString("desc_ar");
                             String image = obj.getString("image");
                             String code_bar = obj.getString("code_bar");
                             String categorie = obj.getString("categorie");
@@ -161,8 +165,10 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
                             double calicium = obj.getDouble("calicium");
                             int fruits_lesgumes = obj.getInt("fruits_lesgumes");
                             String ingrediant = obj.getString("ingrediant");
+                            String ingrediant_en = obj.getString("ingrediant_en");
+                            String ingrediant_ar = obj.getString("ingrediant_ar");
                             int volume = obj.getInt("volume");
-                            listeProduits.add(new Produit(code_bar, titre, description, image, categorie, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant, volume));
+                            listeProduits.add(new Produit(code_bar, titre, titre_en, titre_ar, description, desc_en, desc_ar, image, categorie, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant, ingrediant_en, ingrediant_ar, volume));
                             monProduitAdapter = new MonProduitAdapter(ListeProduitsActivity.this, listeProduits);
                             recycler.setAdapter(monProduitAdapter);
                             pg.setVisibility(View.GONE);
@@ -203,7 +209,11 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
 
         b.putString("code_bar",produit.getCode_bar());
         b.putString("titre",produit.getTitre());
+        b.putString("titre_en",produit.getTitre_en());
+        b.putString("titre_ar",produit.getTitre_ar());
         b.putString("description",produit.getDescription());
+        b.putString("desc_en",produit.getDesc_en());
+        b.putString("desc_ar",produit.getDesc_ar());
         b.putString("image",produit.getImage());
         b.putString("categorie",produit.getCategorie());
         b.putDouble("energie",produit.getEnergie());
@@ -218,6 +228,8 @@ public class ListeProduitsActivity extends AppCompatActivity implements MonProdu
         b.putDouble("calicium",produit.getCalicium());
         b.putInt("fruits_lesgumes",produit.getFruits_legumes());
         b.putString("ingrediant",produit.getIngrediant());
+        b.putString("ingrediant_en",produit.getIngrediant_en());
+        b.putString("ingrediant_ar",produit.getIngrediant_ar());
         b.putInt("volume",produit.getVolume());
         i.putExtras(b);
         startActivity(i);

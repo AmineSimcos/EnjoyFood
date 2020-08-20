@@ -63,7 +63,11 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
         Bundle b = getIntent().getExtras();
         final String code_Bar = b.getString("code_bar");
         final String titre = b.getString("titre");
+        final String titre_en = b.getString("titre_en");
+        final String titre_ar = b.getString("titre_ar");
         final String description = b.getString("description");
+        final String desc_en = b.getString("desc_en");
+        final String desc_ar = b.getString("desc_ar");
         final String image = b.getString("image");
         final String categorie = b.getString("categorie");
         final double energie = b.getDouble("energie");
@@ -78,6 +82,8 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
         final double calicium = b.getDouble("calicium");
         final int fruits_lesgumes = b.getInt("fruits_lesgumes");
         final String ingrediant = b.getString("ingrediant");
+        final String ingrediant_en = b.getString("ingrediant_en");
+        final String ingrediant_ar = b.getString("ingrediant_ar");
         final int volume = b.getInt("volume");
         this.categorie = categorie;
         this.volume = volume;
@@ -180,7 +186,7 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
 //        };
 
 
-        produit = new Produit (code_Bar, titre, description, image, categorie, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant, volume);
+        produit = new Produit (code_Bar, titre, titre_en, titre_ar, description, desc_en, desc_ar, image, categorie, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant, ingrediant_en, ingrediant_ar, volume);
         getSupportActionBar().setTitle(titre);
 
 
@@ -200,9 +206,18 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
 
 
         /////////////////////////// Partie 2 //////////////////////////////////////
-        txtTitre.setText(produit.getTitre());
-        txtDescription.setText(produit.getDescription());
-
+        if(Locale.getDefault().getLanguage().equals("fr")) {
+            txtTitre.setText(produit.getTitre());
+            txtDescription.setText(produit.getDescription());
+        }
+        else if(Locale.getDefault().getLanguage().equals("en")){
+            txtTitre.setText(produit.getTitre_en());
+            txtDescription.setText(produit.getDesc_en());
+        }
+        else if(Locale.getDefault().getLanguage().equals("ar")){
+            txtTitre.setText(produit.getTitre_ar());
+            txtDescription.setText(produit.getDesc_ar());
+        }
 
         /////// Vérification Nutri-Score /////////////////////////////////////////////////////////
         String alphabet = Nutriscore.calcul(produit);

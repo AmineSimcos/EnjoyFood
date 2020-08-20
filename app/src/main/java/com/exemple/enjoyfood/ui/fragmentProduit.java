@@ -242,10 +242,14 @@ public class fragmentProduit extends Fragment {
                                     JSONObject obj = jsonArray.getJSONObject(i);
 
                                     String titre = obj.getString("titre");
+                                    String titre_en = obj.getString("titre_en");
+                                    String titre_ar = obj.getString("titre_ar");
                                     String description = obj.getString("description");
+                                    String desc_en = obj.getString("desc_en");
+                                    String desc_ar = obj.getString("desc_ar");
                                     String image = obj.getString("image");
                                     String code_bar = obj.getString("code_bar");
-                                    String cat = obj.getString("categorie");
+                                    String categorie = obj.getString("categorie");
                                     double energie = obj.getDouble("energie");
                                     double matiere_grasse = obj.getDouble("matiere_grasse");
                                     double graisse = obj.getDouble("graisse");
@@ -257,9 +261,11 @@ public class fragmentProduit extends Fragment {
                                     double sel = obj.getDouble("sel");
                                     double calicium = obj.getDouble("calicium");
                                     int fruits_lesgumes = obj.getInt("fruits_lesgumes");
-                                    int volume = obj.getInt("volume");
                                     String ingrediant = obj.getString("ingrediant");
-                                    listeProduits.add(new Produit(code_bar, titre, description, image, cat, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant, volume));
+                                    String ingrediant_en = obj.getString("ingrediant_en");
+                                    String ingrediant_ar = obj.getString("ingrediant_ar");
+                                    int volume = obj.getInt("volume");
+                                    listeProduits.add(new Produit(code_bar, titre, titre_en, titre_ar, description, desc_en, desc_ar, image, categorie, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant, ingrediant_en, ingrediant_ar, volume));
                                     //Log.e("Fragment", listeProduits.get(0).getImage());
 //                                    monProduitAdapter = new GridViewAdapter(getActivity(), listeProduits);
 //                                    gv.setAdapter(monProduitAdapter);

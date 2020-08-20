@@ -3,7 +3,11 @@ package com.exemple.enjoyfood.model;
 public class Produit {
     private String code_bar;
     private String titre;
+    private String titre_en;
+    private String titre_ar;
     private String description;
+    private String desc_en;
+    private String desc_ar;
     private String image;
     private String categorie;
     private double energie;
@@ -18,6 +22,8 @@ public class Produit {
     private double calicium;
     private int fruits_legumes;
     private String ingrediant;
+    private String ingrediant_en;
+    private String ingrediant_ar;
     private int volume;
 
     public Produit(String image, String titre, String description, String code_bar) {
@@ -27,10 +33,14 @@ public class Produit {
         this.code_bar = code_bar;
     }
 
-    public Produit(String code_bar, String titre, String description, String image, String categorie, double energie, double matiere_grasse, double graisse, double glucide, double sucre, double proteine, double fibre, double sodium, double sel, double calicium, int fruits_legumes, String ingrediant, int volume) {
+    public Produit(String code_bar, String titre, String titre_en, String titre_ar, String description, String desc_en, String desc_ar, String image, String categorie, double energie, double matiere_grasse, double graisse, double glucide, double sucre, double proteine, double fibre, double sodium, double sel, double calicium, int fruits_legumes, String ingrediant, String ingrediant_en, String ingrediant_ar, int volume) {
         this.code_bar = code_bar;
         this.titre = titre;
+        this.titre_en = titre_en;
+        this.titre_ar = titre_ar;
         this.description = description;
+        this.desc_en = desc_en;
+        this.desc_ar = desc_ar;
         this.image = image;
         this.categorie = categorie;
         this.energie = energie;
@@ -45,6 +55,8 @@ public class Produit {
         this.calicium = calicium;
         this.fruits_legumes = fruits_legumes;
         this.ingrediant = ingrediant;
+        this.ingrediant_en = ingrediant_en;
+        this.ingrediant_ar = ingrediant_ar;
         this.volume = volume;
     }
 
@@ -190,5 +202,53 @@ public class Produit {
 
     public void setVolume(int volume) {
         this.volume = volume;
+    }
+
+    public String getDesc_ar() {
+        return desc_ar;
+    }
+
+    public void setDesc_ar(String desc_ar) {
+        this.desc_ar = desc_ar;
+    }
+
+    public String getTitre_en() {
+        return titre_en;
+    }
+
+    public void setTitre_en(String titre_en) {
+        this.titre_en = titre_en;
+    }
+
+    public String getTitre_ar() {
+        return titre_ar;
+    }
+
+    public void setTitre_ar(String titre_ar) {
+        this.titre_ar = titre_ar;
+    }
+
+    public String getDesc_en() {
+        return desc_en;
+    }
+
+    public void setDesc_en(String desc_en) {
+        this.desc_en = desc_en;
+    }
+
+    public String getIngrediant_en() {
+        return ingrediant_en;
+    }
+
+    public void setIngrediant_en(String ingrediant_en) {
+        this.ingrediant_en = ingrediant_en;
+    }
+
+    public String getIngrediant_ar() {
+        return ingrediant_ar;
+    }
+
+    public void setIngrediant_ar(String ingrediant_ar) {
+        this.ingrediant_ar = ingrediant_ar;
     }
 }

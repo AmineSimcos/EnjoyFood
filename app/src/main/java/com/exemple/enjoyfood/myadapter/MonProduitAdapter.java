@@ -18,6 +18,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Locale;
 
 import com.exemple.enjoyfood.Config;
 import com.exemple.enjoyfood.model.Produit;
@@ -91,8 +92,21 @@ public class MonProduitAdapter extends RecyclerView.Adapter<MonProduitAdapter.Pr
     public void onBindViewHolder(@NonNull ProduitViewHolder holder, int position) {
         Produit p = mProduit.get(position);
         String imgURL = Config.URL_PHOTO + p.getImage();
-        String name = p.getTitre();
-        String description = p.getDescription();
+        String name = "";
+        String description = "";
+        if(Locale.getDefault().getLanguage().equals("fr")){
+            name = p.getTitre();
+            description = p.getDescription();
+        }
+        else if(Locale.getDefault().getLanguage().equals("en")){
+            name = p.getTitre_en();
+            description = p.getDesc_en();
+        }
+        else if(Locale.getDefault().getLanguage().equals("ar")){
+            name = p.getTitre_ar();
+            description = p.getDesc_ar();
+        }
+
         holder.mTextNameProduct.setText(name);
         holder.mTextDescriptionProduit.setText(description);
         Picasso.with(mContext).load(imgURL).fit().centerInside().into(holder.mImageView);

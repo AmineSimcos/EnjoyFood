@@ -20,6 +20,7 @@ import com.android.volley.RequestQueue;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 import com.exemple.enjoyfood.Config;
 import com.exemple.enjoyfood.VolleySingleton;
@@ -63,7 +64,15 @@ public class GridViewAdapter extends ArrayAdapter<Produit> {
         pg.setVisibility(View.GONE);
         logo.setVisibility(View.VISIBLE);
 
-        label.setText(c.getTitre());
+        if(Locale.getDefault().getLanguage().equals("fr")){
+            label.setText(c.getTitre());
+        }
+        else if(Locale.getDefault().getLanguage().equals("en")){
+            label.setText(c.getTitre_en());
+        }
+        else if(Locale.getDefault().getLanguage().equals("ar")){
+            label.setText(c.getTitre_ar());
+        }
 
         if(Config.ANIMATION_BUTTON_ACTIVE) {
             PushDownAnim.setPushDownAnimTo(convertView)
@@ -85,11 +94,15 @@ public class GridViewAdapter extends ArrayAdapter<Produit> {
                 request.informationProduct(code, new MyRequest.InformationCallback() {
 
                     @Override
-                    public void onSucces(String code_bar, String titre, String description, String image, String categorie, double energie, double matiere_grasse, double graisse, double glucide, double sucre, double proteine,double fibre, double sodium, double sel, double calicium, int fruits_lesgumes, String ingrediant, int volume) {
+                    public void onSucces(String code_bar, String titre, String titre_en, String titre_ar, String description, String desc_en, String desc_ar, String image, String categorie, double energie, double matiere_grasse, double graisse, double glucide, double sucre, double proteine,double fibre, double sodium, double sel, double calicium, int fruits_lesgumes, String ingrediant, String ingrediant_en, String ingrediant_ar, int volume) {
                         Bundle b = new Bundle();
                         b.putString("code_bar",code_bar);
                         b.putString("titre",titre);
+                        b.putString("titre_en",titre_en);
+                        b.putString("titre_ar",titre_ar);
                         b.putString("description",description);
+                        b.putString("desc_en",desc_en);
+                        b.putString("desc_ar",desc_ar);
                         b.putString("image",image);
                         b.putString("categorie",categorie);
                         b.putDouble("energie",energie);
@@ -105,6 +118,8 @@ public class GridViewAdapter extends ArrayAdapter<Produit> {
                         b.putInt("fruits_lesgumes",fruits_lesgumes);
                         b.putInt("volume",volume);
                         b.putString("ingrediant",ingrediant);
+                        b.putString("ingrediant_en",ingrediant_en);
+                        b.putString("ingrediant_ar",ingrediant_ar);
                         i.putExtras(b);
                         context.startActivity(i);
                         pg.setVisibility(View.GONE);
