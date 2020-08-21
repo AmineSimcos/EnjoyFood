@@ -41,6 +41,7 @@ import com.exemple.enjoyfood.model.Produit;
 import com.exemple.enjoyfood.myadapter.HistoriqueAdapter;
 import com.exemple.enjoyfood.myadapter.MonProduitAdapter;
 import com.exemple.enjoyfood.myrequest.MyRequest;
+import com.thekhaeng.pushdownanim.PushDownAnim;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -49,6 +50,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
 
 public class fragmentHistorique extends Fragment {
 
@@ -95,11 +98,21 @@ public class fragmentHistorique extends Fragment {
             queue = VolleySingleton.getInstance(getContext()).getRequestQueue();
             request = new MyRequest(getContext(),queue);
 
+            if(Config.ANIMATION_BUTTON_ACTIVE) {
+                PushDownAnim.setPushDownAnimTo(tv_vider_historique)
+                        .setScale(MODE_SCALE, 0.89f)
+                        .setDurationPush(PushDownAnim.DEFAULT_PUSH_DURATION)
+                        .setDurationRelease(PushDownAnim.DEFAULT_RELEASE_DURATION)
+                        .setInterpolatorPush(PushDownAnim.DEFAULT_INTERPOLATOR)
+                        .setInterpolatorRelease(PushDownAnim.DEFAULT_INTERPOLATOR);
+            };
+
             // Vérifier si l'historique est vide, la touche ne fonctionne pas
-            if(!listeProduits.isEmpty()){
+
                 tv_vider_historique.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
                         request.supprimerHistorique(id, new MyRequest.SuppHistoryCallBack() {
                             @Override
                             public void onSucces(String message) {
@@ -117,7 +130,7 @@ public class fragmentHistorique extends Fragment {
                         tv_nbr_produit_scannee.setText(String.valueOf(listeProduits.size()));
                     }
                 });
-            }
+
 
         }
         else{
