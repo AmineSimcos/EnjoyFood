@@ -23,6 +23,9 @@ import java.util.Locale;
 import com.exemple.enjoyfood.Config;
 import com.exemple.enjoyfood.model.Produit;
 import com.exemple.enjoyfood.R;
+import com.thekhaeng.pushdownanim.PushDownAnim;
+
+import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
 
 public class MonProduitAdapter extends RecyclerView.Adapter<MonProduitAdapter.ProduitViewHolder> implements Filterable {
 
@@ -135,6 +138,15 @@ public class MonProduitAdapter extends RecyclerView.Adapter<MonProduitAdapter.Pr
             mProgressBar  = itemView.findViewById(R.id.pg_produit_liste);
             mTextNameProduct = itemView.findViewById(R.id.tv_product_name);
             mTextDescriptionProduit = itemView.findViewById(R.id.tv_desctiption_product);
+
+            if(Config.ANIMATION_BUTTON_ACTIVE) {
+                PushDownAnim.setPushDownAnimTo(itemView)
+                        .setScale(MODE_SCALE, 0.89f)
+                        .setDurationPush(PushDownAnim.DEFAULT_PUSH_DURATION)
+                        .setDurationRelease(PushDownAnim.DEFAULT_RELEASE_DURATION)
+                        .setInterpolatorPush(PushDownAnim.DEFAULT_INTERPOLATOR)
+                        .setInterpolatorRelease(PushDownAnim.DEFAULT_INTERPOLATOR);
+            }
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

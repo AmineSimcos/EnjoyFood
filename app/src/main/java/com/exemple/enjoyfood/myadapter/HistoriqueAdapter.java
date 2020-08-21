@@ -18,11 +18,14 @@ import com.exemple.enjoyfood.Nutriscore;
 import com.exemple.enjoyfood.R;
 import com.exemple.enjoyfood.model.Produit;
 import com.squareup.picasso.Picasso;
+import com.thekhaeng.pushdownanim.PushDownAnim;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Locale;
+
+import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
 
 public class HistoriqueAdapter extends RecyclerView.Adapter<HistoriqueAdapter.ProduitViewHolder> implements Filterable {
 
@@ -156,6 +159,15 @@ public class HistoriqueAdapter extends RecyclerView.Adapter<HistoriqueAdapter.Pr
             mTextNameProduct = itemView.findViewById(R.id.titre);
             mTextDescriptionProduit = itemView.findViewById(R.id.descript);
             evaluation = itemView.findViewById(R.id.evaluation);
+
+            if(Config.ANIMATION_BUTTON_ACTIVE) {
+                PushDownAnim.setPushDownAnimTo(itemView)
+                        .setScale(MODE_SCALE, 0.89f)
+                        .setDurationPush(PushDownAnim.DEFAULT_PUSH_DURATION)
+                        .setDurationRelease(PushDownAnim.DEFAULT_RELEASE_DURATION)
+                        .setInterpolatorPush(PushDownAnim.DEFAULT_INTERPOLATOR)
+                        .setInterpolatorRelease(PushDownAnim.DEFAULT_INTERPOLATOR);
+            }
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

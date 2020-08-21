@@ -187,7 +187,7 @@ public class Tab1 extends Fragment {
             txtValeur_nutri_2.setText(R.string.for250g);
         }
         txtEnergie.setText(String.valueOf(ResultatActivity.produit.getEnergie()) + " " + getResources().getString(R.string.unity_kcal));
-        txtEnergieKJ.setText((ResultatActivity.produit.getEnergie() * 4.184) + " " + getResources().getString(R.string.unity_kj));
+        txtEnergieKJ.setText((String.format( "%.2f", (ResultatActivity.produit.getEnergie() * 4.184))) + " " + getResources().getString(R.string.unity_kj));
         txtMatiereGrasse.setText(ResultatActivity.produit.getMatiere_grasse() + " " + getResources().getString(R.string.unity_g));
         txtGrasseS.setText(ResultatActivity.produit.getGraisse() + " " + getResources().getString(R.string.unity_g));
         txtGlucide.setText(ResultatActivity.produit.getGlucide() + " " + getResources().getString(R.string.unity_g));
@@ -200,7 +200,7 @@ public class Tab1 extends Fragment {
         txtFruitsLesgumes.setText(ResultatActivity.produit.getFruits_legumes() + " %");
 
         txtEnergie250.setText(ResultatActivity.produit.getEnergie()*250/100 + " " + getResources().getString(R.string.unity_kcal));
-        txtEnergieKJ250.setText((ResultatActivity.produit.getEnergie() * 4.184)*250/100 + " " + getResources().getString(R.string.unity_kj));
+        txtEnergieKJ250.setText(String.format( "%.2f",(ResultatActivity.produit.getEnergie() * 4.184)*250/100) + " " + getResources().getString(R.string.unity_kj));
         txtMatiereGrasse250.setText(ResultatActivity.produit.getMatiere_grasse()*250/100 + " " + getResources().getString(R.string.unity_g));
         txtGrasseS250.setText(ResultatActivity.produit.getGraisse()*250/100 + " " + getResources().getString(R.string.unity_g));
         txtGlucide250.setText(ResultatActivity.produit.getGlucide()*250/100 + " " + getResources().getString(R.string.unity_g));

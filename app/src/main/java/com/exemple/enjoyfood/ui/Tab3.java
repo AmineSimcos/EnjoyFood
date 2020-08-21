@@ -1,5 +1,6 @@
 package com.exemple.enjoyfood.ui;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -67,7 +68,8 @@ public class Tab3 extends Fragment {
 
         PieDataSet dataSet = new PieDataSet(nutri, getResources().getString(R.string.nutrition));
         dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
-        //dataSet.setValueTextColor(Color.BLACK);
+        //dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+        dataSet.setValueTextColor(Color.WHITE);
         dataSet.setValueTextSize(16f);
         dataSet.setSliceSpace(2);
 
@@ -83,6 +85,7 @@ public class Tab3 extends Fragment {
         pieChart.setTransparentCircleAlpha(20);
         pieChart.setDrawEntryLabels(true);
         pieChart.setEntryLabelTextSize(16);
+        //pieChart.setCenterTextSize(13);
         return v;
     }
 }

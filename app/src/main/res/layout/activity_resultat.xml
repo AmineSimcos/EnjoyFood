@@ -53,14 +53,16 @@
 
                     <TextView
                         android:id="@+id/description"
-                        android:layout_width="wrap_content"
+                        android:layout_width="234dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/titre"
                         android:layout_alignStart="@id/titre"
+                        android:layout_marginEnd="15dp"
+                        android:layout_toStartOf="@+id/_btn_add"
                         android:layout_toEndOf="@id/iv"
                         android:layout_toRightOf="@id/iv"
                         android:text="Description"
-                        android:textSize="16sp" />
+                        android:textSize="13sp" />
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/_btn_add"
