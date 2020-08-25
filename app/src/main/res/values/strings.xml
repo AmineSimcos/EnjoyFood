@@ -118,7 +118,7 @@
     </string-array>
 
     <string-array name="dialog">
-        <item>Confirm</item>
+        <item>Amount</item>
         <item>OK</item>
         <item>Cancel</item>
     </string-array>

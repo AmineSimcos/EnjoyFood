@@ -20,6 +20,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
 import com.exemple.enjoyfood.Config;
+import com.exemple.enjoyfood.DownLoadImageTask;
 import com.thekhaeng.pushdownanim.PushDownAnim;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -36,7 +37,7 @@ public class Dialog extends AppCompatDialogFragment {
     private LinearLayout layoutQt1, layoutQt2, btns;
     private ImageView img_icone;
     private EditText et_qt;
-    private String categorie;
+    private String categorie, image;
     private int volume;
     @NonNull
     @Override
@@ -46,6 +47,7 @@ public class Dialog extends AppCompatDialogFragment {
         //Bundle args = new Bundle();
         //categorie = args.getString("categorie");
         categorie = getArguments().getString("categorie");
+        image = getArguments().getString("image");
         volume = getArguments().getInt("volume");
 
         LayoutInflater inflater = getActivity().getLayoutInflater();
@@ -83,7 +85,8 @@ public class Dialog extends AppCompatDialogFragment {
                     layoutQt1.setVisibility(View.VISIBLE);
                     layoutQt2.setVisibility(View.GONE);
                     btns.setVisibility(View.VISIBLE);
-                    img_icone.setImageResource(R.drawable.pack);
+                    //img_icone.setImageResource(R.drawable.pack);
+                    new DownLoadImageTask(img_icone).execute(Config.URL_PHOTO + image);
                     selected = 0;
                     if(categorie.equals("Boissons") || categorie.equals("Eau")){
                         if(volume >= 1000){

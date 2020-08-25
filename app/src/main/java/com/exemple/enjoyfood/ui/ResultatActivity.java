@@ -52,7 +52,7 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
     private CircleImageView btn_add;
     private RequestQueue queue;
     private MyRequest request;
-    private String id, categorie;
+    private String id, categorie, image;
     private int volume;
 
     @Override
@@ -87,6 +87,7 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
         final int volume = b.getInt("volume");
         this.categorie = categorie;
         this.volume = volume;
+        this.image = image;
         //Toast.makeText(getApplicationContext(), "Hello", Toast.LENGTH_SHORT).show();
         SessionManager s = new SessionManager(this);
         if(s.isLogged()){
@@ -304,6 +305,7 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
         Bundle args = new Bundle();
         args.putString("categorie", categorie);
         args.putInt("volume", volume);
+        args.putString("image", image);
         dialog.setArguments(args);
         dialog.show(getSupportFragmentManager(), "example dialog");
     }

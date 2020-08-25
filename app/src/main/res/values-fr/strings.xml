@@ -12,7 +12,7 @@
     <string name="populaire">Catégories</string>
     <string name="bienvenue">Bienvenue !</string>
     <string name="composition_nutrisionnelle">Composition nutrisionnelle</string>
-    <string name="pour_n100_ml">Pour \n 100 ml</string>
+    <string name="pour_n100_ml">Pour\n100 ml</string>
     <string name="par_portion_250_ml">Par portion de (250 ml)</string>
     <string name="energie">Energie</string>
     <string name="mati_res_grasses">Matières grasses</string>
@@ -50,7 +50,7 @@
     <string name="menu_historique">Historique</string>
     <string name="menu_login">Se connecter</string>
     <string name="for250g">Par portion de (250 g)</string>
-    <string name="for100g">Pour</string>
+    <string name="for100g">Pour\n100 g</string>
     <string name="for250ml">Par portion de (250 ml)</string>
     <string name="for100ml">Pour</string>
     <string name="droits">Droits d\'auteur 2020, EnjoyFood \n Tous droits réservés</string>
@@ -115,7 +115,7 @@
     </string-array>
 
     <string-array name="dialog">
-        <item>Confirmer</item>
+        <item>Quantité</item>
         <item>OK</item>
         <item>Annuler</item>
     </string-array>
