@@ -26,11 +26,15 @@ public class Produit {
     private String ingrediant_ar;
     private int volume;
 
-    public Produit(String image, String titre, String description, String code_bar) {
-        this.titre = titre;
-        this.description = description;
-        this.image = image;
+    public Produit(String code_bar, String titre, String titre_en, String titre_ar, String description, String desc_en, String desc_ar, String image) {
         this.code_bar = code_bar;
+        this.titre = titre;
+        this.titre_en = titre_en;
+        this.titre_ar = titre_ar;
+        this.description = description;
+        this.desc_en = desc_en;
+        this.desc_ar = desc_ar;
+        this.image = image;
     }
 
     public Produit(String code_bar, String titre, String titre_en, String titre_ar, String description, String desc_en, String desc_ar, String image, String categorie, double energie, double matiere_grasse, double graisse, double glucide, double sucre, double proteine, double fibre, double sodium, double sel, double calicium, int fruits_legumes, String ingrediant, String ingrediant_en, String ingrediant_ar, int volume) {

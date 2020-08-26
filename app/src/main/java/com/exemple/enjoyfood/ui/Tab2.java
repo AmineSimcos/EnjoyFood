@@ -75,13 +75,13 @@ public class Tab2 extends Fragment {
 //        Produit produit = new Produit(code_Bar, titre, description, image, categorie, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant);
 
         if(Locale.getDefault().getLanguage().equals("fr")) {
-            txtIngrediant.setText(ResultatActivity.produit.getIngrediant());
+            txtIngrediant.setText(ResultatActivity.ingrediant);
         }
         else if(Locale.getDefault().getLanguage().equals("en")) {
-            txtIngrediant.setText(ResultatActivity.produit.getIngrediant_en());
+            txtIngrediant.setText(ResultatActivity.ingrediant_en);
         }
         else if(Locale.getDefault().getLanguage().equals("ar")) {
-            txtIngrediant.setText(ResultatActivity.produit.getIngrediant_ar());
+            txtIngrediant.setText(ResultatActivity.ingrediant_ar);
         }
 
         return v;

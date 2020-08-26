@@ -35,8 +35,6 @@ import static com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE;
 public class GridViewAdapter extends ArrayAdapter<Produit> {
 
     Context context;
-    private MyRequest request;
-    private RequestQueue queue;
 
     public GridViewAdapter(@NonNull Context context, ArrayList<Produit> items) {
 
@@ -50,8 +48,6 @@ public class GridViewAdapter extends ArrayAdapter<Produit> {
         if(convertView == null){
             convertView = LayoutInflater.from(context).inflate(R.layout.categorie_item, parent, false);
         }
-        queue = VolleySingleton.getInstance(getContext()).getRequestQueue();
-        request = new MyRequest(getContext(),queue);
 
         final Produit c = getItem(position);
         final String code = c.getCode_bar();
@@ -91,47 +87,13 @@ public class GridViewAdapter extends ArrayAdapter<Produit> {
                 label.setVisibility(View.GONE);
                 logo.setVisibility(View.GONE);
                 final Intent i = new Intent(getContext(), ResultatActivity.class);
-                request.informationProduct(code, new MyRequest.InformationCallback() {
-
-                    @Override
-                    public void onSucces(String code_bar, String titre, String titre_en, String titre_ar, String description, String desc_en, String desc_ar, String image, String categorie, double energie, double matiere_grasse, double graisse, double glucide, double sucre, double proteine,double fibre, double sodium, double sel, double calicium, int fruits_lesgumes, String ingrediant, String ingrediant_en, String ingrediant_ar, int volume) {
-                        Bundle b = new Bundle();
-                        b.putString("code_bar",code_bar);
-                        b.putString("titre",titre);
-                        b.putString("titre_en",titre_en);
-                        b.putString("titre_ar",titre_ar);
-                        b.putString("description",description);
-                        b.putString("desc_en",desc_en);
-                        b.putString("desc_ar",desc_ar);
-                        b.putString("image",image);
-                        b.putString("categorie",categorie);
-                        b.putDouble("energie",energie);
-                        b.putDouble("matiere_grasse",matiere_grasse);
-                        b.putDouble("graisse",graisse);
-                        b.putDouble("glucide",glucide);
-                        b.putDouble("sucre",sucre);
-                        b.putDouble("proteine",proteine);
-                        b.putDouble("fibres",fibre);
-                        b.putDouble("sodium",sodium);
-                        b.putDouble("sel",sel);
-                        b.putDouble("calicium",calicium);
-                        b.putInt("fruits_lesgumes",fruits_lesgumes);
-                        b.putInt("volume",volume);
-                        b.putString("ingrediant",ingrediant);
-                        b.putString("ingrediant_en",ingrediant_en);
-                        b.putString("ingrediant_ar",ingrediant_ar);
-                        i.putExtras(b);
-                        context.startActivity(i);
-                        pg.setVisibility(View.GONE);
-                        logo.setVisibility(View.VISIBLE);
-                        label.setVisibility(View.VISIBLE);
-                    }
-
-                    @Override
-                    public void onError(String message) {
-                        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-                    }
-                });
+                Bundle b = new Bundle();
+                b.putString("code_bar",code);
+                i.putExtras(b);
+                context.startActivity(i);
+                pg.setVisibility(View.GONE);
+                logo.setVisibility(View.VISIBLE);
+                label.setVisibility(View.VISIBLE);
             }
         });
 

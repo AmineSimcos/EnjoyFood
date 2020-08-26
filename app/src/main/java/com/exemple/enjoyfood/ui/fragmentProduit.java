@@ -157,71 +157,6 @@ public class fragmentProduit extends Fragment {
             }
         });
 
-
-//        gv.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                Toast.makeText(getContext(), "Ne fonctionne pas!", Toast.LENGTH_SHORT).show();
-//                final Intent i = new Intent(getContext(), ResultatActivity.class);
-//                Produit produit = listeProduits.get(position);
-//                Bundle b = new Bundle();
-//                b.putString("code_bar",produit.getCode_bar());
-//                b.putString("titre",produit.getTitre());
-//                b.putString("description",produit.getDescription());
-//                b.putString("image",produit.getImage());
-//                b.putString("categorie",produit.getCategorie());
-//                b.putDouble("energie",produit.getEnergie());
-//                b.putDouble("matiere_grasse",produit.getMatiere_grasse());
-//                b.putDouble("graisse",produit.getGraisse());
-//                b.putDouble("glucide",produit.getGlucide());
-//                b.putDouble("sucre",produit.getSucre());
-//                b.putDouble("proteine",produit.getProteine());
-//                b.putDouble("fibres",produit.getFibre());
-//                b.putDouble("sodium",produit.getSodium());
-//                b.putDouble("sel",produit.getSel());
-//                b.putDouble("calicium",produit.getCalicium());
-//                b.putInt("fruits_lesgumes",produit.getFruits_legumes());
-//                b.putString("ingrediant",produit.getIngrediant());
-//                i.putExtras(b);
-//                Toast.makeText(getContext(), "Remplir bundle", Toast.LENGTH_SHORT).show();
-//                startActivity(i);
-//
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-//        gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Toast.makeText(getContext(), "Ne fonctionne pas!", Toast.LENGTH_SHORT).show();
-//                final Intent i = new Intent(getContext(), ResultatActivity.class);
-//                Produit produit = listeProduits.get(position);
-//                Bundle b = new Bundle();
-//                b.putString("code_bar",produit.getCode_bar());
-//                b.putString("titre",produit.getTitre());
-//                b.putString("description",produit.getDescription());
-//                b.putString("image",produit.getImage());
-//                b.putString("categorie",produit.getCategorie());
-//                b.putDouble("energie",produit.getEnergie());
-//                b.putDouble("matiere_grasse",produit.getMatiere_grasse());
-//                b.putDouble("graisse",produit.getGraisse());
-//                b.putDouble("glucide",produit.getGlucide());
-//                b.putDouble("sucre",produit.getSucre());
-//                b.putDouble("proteine",produit.getProteine());
-//                b.putDouble("fibres",produit.getFibre());
-//                b.putDouble("sodium",produit.getSodium());
-//                b.putDouble("sel",produit.getSel());
-//                b.putDouble("calicium",produit.getCalicium());
-//                b.putInt("fruits_lesgumes",produit.getFruits_legumes());
-//                b.putString("ingrediant",produit.getIngrediant());
-//                i.putExtras(b);
-//                Toast.makeText(getContext(), "Remplir bundle", Toast.LENGTH_SHORT).show();
-//                startActivity(i);
-//            }
-//        });
         return v;
     }
 
@@ -249,28 +184,7 @@ public class fragmentProduit extends Fragment {
                                     String desc_ar = obj.getString("desc_ar");
                                     String image = obj.getString("image");
                                     String code_bar = obj.getString("code_bar");
-                                    String categorie = obj.getString("categorie");
-                                    double energie = obj.getDouble("energie");
-                                    double matiere_grasse = obj.getDouble("matiere_grasse");
-                                    double graisse = obj.getDouble("graisse");
-                                    double glucide = obj.getDouble("glucide");
-                                    double sucre = obj.getDouble("sucre");
-                                    double proteine = obj.getDouble("proteine");
-                                    double fibre = obj.getDouble("fibres");
-                                    double sodium = obj.getDouble("sodium");
-                                    double sel = obj.getDouble("sel");
-                                    double calicium = obj.getDouble("calicium");
-                                    int fruits_lesgumes = obj.getInt("fruits_lesgumes");
-                                    String ingrediant = obj.getString("ingrediant");
-                                    String ingrediant_en = obj.getString("ingrediant_en");
-                                    String ingrediant_ar = obj.getString("ingrediant_ar");
-                                    int volume = obj.getInt("volume");
-                                    listeProduits.add(new Produit(code_bar, titre, titre_en, titre_ar, description, desc_en, desc_ar, image, categorie, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant, ingrediant_en, ingrediant_ar, volume));
-                                    //Log.e("Fragment", listeProduits.get(0).getImage());
-//                                    monProduitAdapter = new GridViewAdapter(getActivity(), listeProduits);
-//                                    gv.setAdapter(monProduitAdapter);
-
-//                                    monProduitAdapter.setOnItemClickListener(ResultatActivity.this);
+                                    listeProduits.add(new Produit(code_bar, titre, titre_en, titre_ar, description, desc_en, desc_ar, image));
                                 }
 
                                 monProduitAdapter = new GridViewAdapter(getActivity(), listeProduits);
@@ -310,7 +224,6 @@ public class fragmentProduit extends Fragment {
         }
         private void boutton(String categorie){
             listeProduits.clear();
-            //this.categorie = categorie;
             tv_subTitle.setText(cle_categorie.get(categorie));
             parseJSON(categorie);
         }

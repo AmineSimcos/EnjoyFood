@@ -60,10 +60,10 @@ public class Tab3 extends Fragment {
         pieChart = v.findViewById(R.id.pieChart);
 
         ArrayList<PieEntry> nutri = new ArrayList<>();
-        nutri.add(new PieEntry((float) ResultatActivity.produit.getProteine(),getResources().getString(R.string.prot_ines)));
-        nutri.add(new PieEntry((float) ResultatActivity.produit.getMatiere_grasse(),getResources().getString(R.string.mati_res_grasses)));
-        nutri.add(new PieEntry((float) ResultatActivity.produit.getGlucide(),getResources().getString(R.string.glucides)));
-        nutri.add(new PieEntry((float) ResultatActivity.produit.getFibre(),getResources().getString(R.string.fibres)));
+        nutri.add(new PieEntry((float) ResultatActivity.proteine,getResources().getString(R.string.prot_ines)));
+        nutri.add(new PieEntry((float) ResultatActivity.matiere_grasse,getResources().getString(R.string.mati_res_grasses)));
+        nutri.add(new PieEntry((float) ResultatActivity.glucide,getResources().getString(R.string.glucides)));
+        nutri.add(new PieEntry((float) ResultatActivity.fibre,getResources().getString(R.string.fibres)));
         //nutri.add(new PieEntry((float)((fibre + proteine + matiere_grasse + sucre)) ,"Autre"));
 
         PieDataSet dataSet = new PieDataSet(nutri, getResources().getString(R.string.nutrition));

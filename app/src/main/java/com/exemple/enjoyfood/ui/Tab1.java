@@ -127,48 +127,48 @@ public class Tab1 extends Fragment {
         listeGrassse.add("pates à tartines");
 
 
-        if(ResultatActivity.produit.getEnergie() == 0){
+        if(ResultatActivity.energie == 0){
             ligneEnergie1.setVisibility(View.GONE);
             ligneEnergie2.setVisibility(View.GONE);
             separateurEnergie.setVisibility(View.GONE);
         }
-        if(ResultatActivity.produit.getMatiere_grasse() == 0){
+        if(ResultatActivity.matiere_grasse == 0){
             ligneMatiereGrasse.setVisibility(View.GONE);
             separateurMatiereGrasse.setVisibility(View.GONE);
         }
-        if(ResultatActivity.produit.getGraisse() == 0){
+        if(ResultatActivity.graisse == 0){
             ligneGrasseS.setVisibility(View.GONE);
             separateurGrasseS.setVisibility(View.GONE);
         }
-        if(ResultatActivity.produit.getGlucide() == 0){
+        if(ResultatActivity.glucide == 0){
             ligneGlucide.setVisibility(View.GONE);
             separateurGlucide.setVisibility(View.GONE);
         }
-        if(ResultatActivity.produit.getSucre() == 0){
+        if(ResultatActivity.sucre == 0){
             ligneSucre.setVisibility(View.GONE);
             separateurSucre.setVisibility(View.GONE);
         }
-        if(ResultatActivity.produit.getProteine() == 0){
+        if(ResultatActivity.proteine == 0){
             ligneProteine.setVisibility(View.GONE);
             separateurProteine.setVisibility(View.GONE);
         }
-        if(ResultatActivity.produit.getSodium() == 0){
+        if(ResultatActivity.sodium == 0){
             ligneSodium.setVisibility(View.GONE);
             separateurSodium.setVisibility(View.GONE);
         }
-        if(ResultatActivity.produit.getSel() == 0){
+        if(ResultatActivity.sel == 0){
             ligneSel.setVisibility(View.GONE);
             separateurSel.setVisibility(View.GONE);
         }
-        if(ResultatActivity.produit.getFibre() == 0){
+        if(ResultatActivity.fibre == 0){
             ligneFibre.setVisibility(View.GONE);
             separateurFibre.setVisibility(View.GONE);
         }
-        if(ResultatActivity.produit.getCalicium() == 0){
+        if(ResultatActivity.calicium == 0){
             ligneCalicium.setVisibility(View.GONE);
             separateurCalicium.setVisibility(View.GONE);
         }
-        if(ResultatActivity.produit.getFruits_legumes() == 0){
+        if(ResultatActivity.fruits_lesgumes == 0){
             ligneFruitsLesgumes.setVisibility(View.GONE);
             separateurFruitsLesgumes.setVisibility(View.GONE);
         }
@@ -179,37 +179,37 @@ public class Tab1 extends Fragment {
 
         /////////////////////////// Partie 2 //////////////////////////////////////
 
-        if(listeBoissons.contains(ResultatActivity.produit.getCategorie())){
+        if(listeBoissons.contains(ResultatActivity.categorie)){
             txtValeur_nutri_1.setText(R.string.for100ml);
             txtValeur_nutri_2.setText(R.string.for250ml);
         }else{
             txtValeur_nutri_1.setText(R.string.for100g);
             txtValeur_nutri_2.setText(R.string.for250g);
         }
-        txtEnergie.setText(String.valueOf(ResultatActivity.produit.getEnergie()) + " " + getResources().getString(R.string.unity_kcal));
-        txtEnergieKJ.setText((String.format( "%.2f", (ResultatActivity.produit.getEnergie() * 4.184))) + " " + getResources().getString(R.string.unity_kj));
-        txtMatiereGrasse.setText(ResultatActivity.produit.getMatiere_grasse() + " " + getResources().getString(R.string.unity_g));
-        txtGrasseS.setText(ResultatActivity.produit.getGraisse() + " " + getResources().getString(R.string.unity_g));
-        txtGlucide.setText(ResultatActivity.produit.getGlucide() + " " + getResources().getString(R.string.unity_g));
-        txtSucre.setText(ResultatActivity.produit.getSucre() + " " + getResources().getString(R.string.unity_g));
-        txtProteine.setText(ResultatActivity.produit.getProteine() + " " + getResources().getString(R.string.unity_g));
-        txtSodium.setText(ResultatActivity.produit.getSodium() + " " + getResources().getString(R.string.unity_g));
-        txtSel.setText(ResultatActivity.produit.getSel() + " " + getResources().getString(R.string.unity_g));
-        txtFibre.setText(ResultatActivity.produit.getFibre() + " " + getResources().getString(R.string.unity_g));
-        txtCalicium.setText(ResultatActivity.produit.getCalicium() + " " + getResources().getString(R.string.unity_g));
-        txtFruitsLesgumes.setText(ResultatActivity.produit.getFruits_legumes() + " %");
+        txtEnergie.setText(String.valueOf(ResultatActivity.energie) + " " + getResources().getString(R.string.unity_kcal));
+        txtEnergieKJ.setText((String.format( "%.2f", (ResultatActivity.energie * 4.184))) + " " + getResources().getString(R.string.unity_kj));
+        txtMatiereGrasse.setText(ResultatActivity.matiere_grasse + " " + getResources().getString(R.string.unity_g));
+        txtGrasseS.setText(ResultatActivity.graisse + " " + getResources().getString(R.string.unity_g));
+        txtGlucide.setText(ResultatActivity.glucide + " " + getResources().getString(R.string.unity_g));
+        txtSucre.setText(ResultatActivity.sucre + " " + getResources().getString(R.string.unity_g));
+        txtProteine.setText(ResultatActivity.proteine + " " + getResources().getString(R.string.unity_g));
+        txtSodium.setText(ResultatActivity.sodium + " " + getResources().getString(R.string.unity_g));
+        txtSel.setText(ResultatActivity.sel + " " + getResources().getString(R.string.unity_g));
+        txtFibre.setText(ResultatActivity.fibre + " " + getResources().getString(R.string.unity_g));
+        txtCalicium.setText(ResultatActivity.calicium + " " + getResources().getString(R.string.unity_g));
+        txtFruitsLesgumes.setText(ResultatActivity.fruits_lesgumes + " %");
 
-        txtEnergie250.setText(ResultatActivity.produit.getEnergie()*250/100 + " " + getResources().getString(R.string.unity_kcal));
-        txtEnergieKJ250.setText(String.format( "%.2f",(ResultatActivity.produit.getEnergie() * 4.184)*250/100) + " " + getResources().getString(R.string.unity_kj));
-        txtMatiereGrasse250.setText(ResultatActivity.produit.getMatiere_grasse()*250/100 + " " + getResources().getString(R.string.unity_g));
-        txtGrasseS250.setText(ResultatActivity.produit.getGraisse()*250/100 + " " + getResources().getString(R.string.unity_g));
-        txtGlucide250.setText(ResultatActivity.produit.getGlucide()*250/100 + " " + getResources().getString(R.string.unity_g));
-        txtSucre250.setText(ResultatActivity.produit.getSucre()*250/100 + " " + getResources().getString(R.string.unity_g));
-        txtProteine250.setText(ResultatActivity.produit.getProteine()*250/100 + " " + getResources().getString(R.string.unity_g));
-        txtSodium250.setText(ResultatActivity.produit.getSodium()*250/100 + " " + getResources().getString(R.string.unity_g));
-        txtSel250.setText(ResultatActivity.produit.getSel()*250/100 + " " + getResources().getString(R.string.unity_g));
-        txtFibre250.setText(ResultatActivity.produit.getFibre()*250/100 + " " + getResources().getString(R.string.unity_g));
-        txtCalicium250.setText(ResultatActivity.produit.getCalicium()*250/100 + " " + getResources().getString(R.string.unity_g));
+        txtEnergie250.setText(ResultatActivity.energie*250/100 + " " + getResources().getString(R.string.unity_kcal));
+        txtEnergieKJ250.setText(String.format( "%.2f",(ResultatActivity.energie * 4.184)*250/100) + " " + getResources().getString(R.string.unity_kj));
+        txtMatiereGrasse250.setText(ResultatActivity.matiere_grasse*250/100 + " " + getResources().getString(R.string.unity_g));
+        txtGrasseS250.setText(ResultatActivity.graisse*250/100 + " " + getResources().getString(R.string.unity_g));
+        txtGlucide250.setText(ResultatActivity.glucide*250/100 + " " + getResources().getString(R.string.unity_g));
+        txtSucre250.setText(ResultatActivity.sucre*250/100 + " " + getResources().getString(R.string.unity_g));
+        txtProteine250.setText(ResultatActivity.proteine*250/100 + " " + getResources().getString(R.string.unity_g));
+        txtSodium250.setText(ResultatActivity.sodium*250/100 + " " + getResources().getString(R.string.unity_g));
+        txtSel250.setText(ResultatActivity.sel*250/100 + " " + getResources().getString(R.string.unity_g));
+        txtFibre250.setText(ResultatActivity.fibre*250/100 + " " + getResources().getString(R.string.unity_g));
+        txtCalicium250.setText(ResultatActivity.calicium*250/100 + " " + getResources().getString(R.string.unity_g));
 
         return v;
     }

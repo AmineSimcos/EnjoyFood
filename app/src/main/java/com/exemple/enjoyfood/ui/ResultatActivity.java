@@ -26,6 +26,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.thekhaeng.pushdownanim.PushDownAnim;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Locale;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -52,42 +53,165 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
     private CircleImageView btn_add;
     private RequestQueue queue;
     private MyRequest request;
-    private String id, categorie, image;
-    private int volume;
+    public static int volume, fruits_lesgumes;
+    public static double energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium;
+    public static String id, code_Bar, titre, titre_en, titre_ar, description, desc_en, desc_ar, image, categorie, ingrediant, ingrediant_en, ingrediant_ar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultat);
+        iv = findViewById(R.id.iv);
+        pg = findViewById(R.id.pg_image_produit_resultat);
+        txtTitre = findViewById(R.id.titre);
+        txtDescription = findViewById(R.id.description);
+
+        A = findViewById(R.id.A);
+        B = findViewById(R.id.B);
+        C = findViewById(R.id.C);
+        D = findViewById(R.id.D);
+        E = findViewById(R.id.E);
+
+        // hadi ta3 in7inae min ykoun en arabe
+        if(Locale.getDefault().getLanguage().equals("ar")){
+            A.setBackground(getResources().getDrawable(R.drawable.bg_rounded_a_arabe));
+            E.setBackground(getResources().getDrawable(R.drawable.bg_rounded_e_arabe));
+        }
 
         Bundle b = getIntent().getExtras();
         final String code_Bar = b.getString("code_bar");
-        final String titre = b.getString("titre");
-        final String titre_en = b.getString("titre_en");
-        final String titre_ar = b.getString("titre_ar");
-        final String description = b.getString("description");
-        final String desc_en = b.getString("desc_en");
-        final String desc_ar = b.getString("desc_ar");
-        final String image = b.getString("image");
-        final String categorie = b.getString("categorie");
-        final double energie = b.getDouble("energie");
-        final double matiere_grasse = b.getDouble("matiere_grasse");
-        final double graisse = b.getDouble("graisse");
-        final double glucide = b.getDouble("glucide");
-        final double sucre = b.getDouble("sucre");
-        final double proteine = b.getDouble("proteine");
-        final double fibre = b.getDouble("fibres");
-        final double sodium = b.getDouble("sodium");
-        final double sel = b.getDouble("sel");
-        final double calicium = b.getDouble("calicium");
-        final int fruits_lesgumes = b.getInt("fruits_lesgumes");
-        final String ingrediant = b.getString("ingrediant");
-        final String ingrediant_en = b.getString("ingrediant_en");
-        final String ingrediant_ar = b.getString("ingrediant_ar");
-        final int volume = b.getInt("volume");
-        this.categorie = categorie;
-        this.volume = volume;
-        this.image = image;
+        queue = VolleySingleton.getInstance(this).getRequestQueue();
+        request = new MyRequest(this, queue);
+        request.informationProduct(code_Bar, new MyRequest.InformationCallback() {
+
+            @Override
+            public void onSucces(String code_bar, String titre, String titre_en, String titre_ar, String description, String desc_en, String desc_ar, String image, String categorie, double energie, double matiere_grasse, double graisse, double glucide, double sucre, double proteine,double fibre, double sodium, double sel, double calicium, int fruits_lesgumes, String ingrediant, String ingrediant_en, String ingrediant_ar, int volume) {
+                ResultatActivity.titre = titre;
+                ResultatActivity.titre_en = titre_en;
+                ResultatActivity.titre_ar = titre_ar;
+                ResultatActivity.description = description;
+                ResultatActivity.desc_en = desc_en;
+                ResultatActivity.desc_ar = desc_ar;
+                ResultatActivity.image = image;
+                ResultatActivity.categorie = categorie;
+                ResultatActivity.energie = energie;
+                ResultatActivity.matiere_grasse = matiere_grasse;
+                ResultatActivity.graisse = graisse;
+                ResultatActivity.glucide = glucide;
+                ResultatActivity.sucre = sucre;
+                ResultatActivity.proteine = proteine;
+                ResultatActivity.fibre = fibre;
+                ResultatActivity.sodium = sodium;
+                ResultatActivity.sel = sel;
+                ResultatActivity.calicium = calicium;
+                ResultatActivity.fruits_lesgumes = fruits_lesgumes;
+                ResultatActivity.ingrediant = ingrediant;
+                ResultatActivity.ingrediant_en = ingrediant_en;
+                ResultatActivity.ingrediant_ar = ingrediant_ar;
+                ResultatActivity.volume = volume;
+
+                produit = new Produit (code_Bar, titre, titre_en, titre_ar, description, desc_en, desc_ar, image, categorie, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant, ingrediant_en, ingrediant_ar, volume);
+                getSupportActionBar().setTitle(titre);
+
+
+                if(produit.getImage().equals("null")){
+                    iv.setVisibility(View.VISIBLE);
+                    pg.setVisibility(View.GONE);
+                }
+                else{
+                    new DownLoadImageTask(iv).execute(Config.URL_PHOTO + produit.getImage());
+                    iv.setVisibility(View.VISIBLE);
+                    pg.setVisibility(View.GONE);
+                }
+
+                /////////////////////////// Partie 2 //////////////////////////////////////
+                if(Locale.getDefault().getLanguage().equals("fr")) {
+                    txtTitre.setText(produit.getTitre());
+                    txtDescription.setText(produit.getDescription());
+                }
+                else if(Locale.getDefault().getLanguage().equals("en")){
+                    txtTitre.setText(produit.getTitre_en());
+                    txtDescription.setText(produit.getDesc_en());
+                }
+                else if(Locale.getDefault().getLanguage().equals("ar")){
+                    txtTitre.setText(produit.getTitre_ar());
+                    txtDescription.setText(produit.getDesc_ar());
+                }
+
+                /////// Vérification Nutri-Score /////////////////////////////////////////////////////////
+                String alphabet = Nutriscore.calcul(produit);
+
+                if(alphabet.equals("A")){
+                    A.setTextColor(getResources().getColor(R.color.white));
+                    A.getLayoutParams().height = (int) getResources().getDimension(R.dimen.nutri_height_transform_size);
+                    A.getLayoutParams().width = (int) getResources().getDimension(R.dimen.nutri_width_transform_size);
+                    A.setBackground(getResources().getDrawable(R.drawable.bg_rounded_a));
+                    A.setTextSize(TypedValue.COMPLEX_UNIT_SP,60);
+                }
+                else if(alphabet.equals("B")){
+                    B.setTextColor(getResources().getColor(R.color.white));
+                    B.getLayoutParams().height = (int) getResources().getDimension(R.dimen.nutri_height_transform_size);
+                    B.getLayoutParams().width = (int) getResources().getDimension(R.dimen.nutri_width_transform_size);
+                    B.setBackground(getResources().getDrawable(R.drawable.bg_rounded_b));
+                    B.setTextSize(TypedValue.COMPLEX_UNIT_SP,60);
+                }
+                else if(alphabet.equals("C")){
+                    C.setTextColor(getResources().getColor(R.color.white));
+                    C.getLayoutParams().height = (int) getResources().getDimension(R.dimen.nutri_height_transform_size);
+                    C.getLayoutParams().width = (int) getResources().getDimension(R.dimen.nutri_width_transform_size);
+                    C.setBackground(getResources().getDrawable(R.drawable.bg_rounded_c));
+                    C.setTextSize(TypedValue.COMPLEX_UNIT_SP,60);
+                }
+                else if(alphabet.equals("D")){
+                    D.setBackground(getResources().getDrawable(R.drawable.bg_rounded_d));
+                    D.setTextColor(getResources().getColor(R.color.white));
+                    D.getLayoutParams().height = (int) getResources().getDimension(R.dimen.nutri_height_transform_size);
+                    D.getLayoutParams().width = (int) getResources().getDimension(R.dimen.nutri_width_transform_size);
+                    D.setTextSize(TypedValue.COMPLEX_UNIT_SP,60);
+                }
+                else if(alphabet.equals("E")){
+                    E.setBackground(getResources().getDrawable(R.drawable.bg_rounded_e));
+                    E.setTextColor(getResources().getColor(R.color.white));
+                    E.getLayoutParams().height = (int) getResources().getDimension(R.dimen.nutri_height_transform_size);
+                    E.getLayoutParams().width = (int) getResources().getDimension(R.dimen.nutri_width_transform_size);
+                    E.setTextSize(TypedValue.COMPLEX_UNIT_SP,60);
+                }
+
+                TabLayout t = findViewById(R.id.tabLayout);
+                t.addTab(t.newTab().setText(getResources().getString(R.string.tableau)));
+                t.addTab(t.newTab().setText(getResources().getString(R.string.ingrediants)));
+                t.addTab(t.newTab().setText(getResources().getString(R.string.statistique)));
+                t.setTabGravity(TabLayout.GRAVITY_FILL);
+                final ViewPager viewPager = findViewById(R.id.viewPager);
+                final PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(),t.getTabCount());
+                viewPager.setAdapter(adapter);
+                viewPager.setOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(t));
+                t.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+                    @Override
+                    public void onTabSelected(TabLayout.Tab tab) {
+                        viewPager.setCurrentItem(tab.getPosition());
+                    }
+
+                    @Override
+                    public void onTabUnselected(TabLayout.Tab tab) {
+
+                    }
+
+                    @Override
+                    public void onTabReselected(TabLayout.Tab tab) {
+
+                    }
+                });
+
+            }
+
+            @Override
+            public void onError(String message) {
+                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
         //Toast.makeText(getApplicationContext(), "Hello", Toast.LENGTH_SHORT).show();
         SessionManager s = new SessionManager(this);
         if(s.isLogged()){
@@ -125,139 +249,6 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
         }
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
-
-
-        iv = findViewById(R.id.iv);
-        pg = findViewById(R.id.pg_image_produit_resultat);
-
-        TabLayout t = findViewById(R.id.tabLayout);
-        t.addTab(t.newTab().setText(getResources().getString(R.string.tableau)));
-        t.addTab(t.newTab().setText(getResources().getString(R.string.ingrediants)));
-        t.addTab(t.newTab().setText(getResources().getString(R.string.statistique)));
-        t.setTabGravity(TabLayout.GRAVITY_FILL);
-        final ViewPager viewPager = findViewById(R.id.viewPager);
-        final PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(),t.getTabCount());
-        viewPager.setAdapter(adapter);
-        viewPager.setOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(t));
-        t.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
-
-        ////////////////////////Partie initialisation //////////////////////////////////////////////
-        txtTitre = findViewById(R.id.titre);
-        txtDescription = findViewById(R.id.description);
-
-        A = findViewById(R.id.A);
-        B = findViewById(R.id.B);
-        C = findViewById(R.id.C);
-        D = findViewById(R.id.D);
-        E = findViewById(R.id.E);
-
-        // hadi ta3 in7inae min ykoun en arabe
-        if(Locale.getDefault().getLanguage().equals("ar")){
-            A.setBackground(getResources().getDrawable(R.drawable.bg_rounded_a_arabe));
-            E.setBackground(getResources().getDrawable(R.drawable.bg_rounded_e_arabe));
-        }
-        ////////////////////////////////////////////////////////////////////////////////////////////
-
-
-//        Runnable runnable = new Runnable(){
-//            @Override
-//            public void run(){
-//                //démarer une page
-//                Intent intent = new Intent(getApplicationContext(),IntroActivity.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//        };
-
-
-        produit = new Produit (code_Bar, titre, titre_en, titre_ar, description, desc_en, desc_ar, image, categorie, energie, matiere_grasse, graisse, glucide, sucre, proteine, fibre, sodium, sel, calicium, fruits_lesgumes, ingrediant, ingrediant_en, ingrediant_ar, volume);
-        getSupportActionBar().setTitle(titre);
-
-
-        if(produit.getImage().equals("null")){
-            iv.setVisibility(View.VISIBLE);
-            pg.setVisibility(View.GONE);
-        }
-        else{
-            new DownLoadImageTask(iv).execute(Config.URL_PHOTO + produit.getImage());
-            iv.setVisibility(View.VISIBLE);
-            pg.setVisibility(View.GONE);
-        }
-
-        ///////////////////////////////////////////////////////////////////////////
-
-
-
-
-        /////////////////////////// Partie 2 //////////////////////////////////////
-        if(Locale.getDefault().getLanguage().equals("fr")) {
-            txtTitre.setText(produit.getTitre());
-            txtDescription.setText(produit.getDescription());
-        }
-        else if(Locale.getDefault().getLanguage().equals("en")){
-            txtTitre.setText(produit.getTitre_en());
-            txtDescription.setText(produit.getDesc_en());
-        }
-        else if(Locale.getDefault().getLanguage().equals("ar")){
-            txtTitre.setText(produit.getTitre_ar());
-            txtDescription.setText(produit.getDesc_ar());
-        }
-
-        /////// Vérification Nutri-Score /////////////////////////////////////////////////////////
-        String alphabet = Nutriscore.calcul(produit);
-
-        if(alphabet.equals("A")){
-            A.setTextColor(getResources().getColor(R.color.white));
-            A.getLayoutParams().height = (int) getResources().getDimension(R.dimen.nutri_height_transform_size);
-            A.getLayoutParams().width = (int) getResources().getDimension(R.dimen.nutri_width_transform_size);
-            A.setBackground(getResources().getDrawable(R.drawable.bg_rounded_a));
-            A.setTextSize(TypedValue.COMPLEX_UNIT_SP,60);
-        }
-        else if(alphabet.equals("B")){
-            B.setTextColor(getResources().getColor(R.color.white));
-            B.getLayoutParams().height = (int) getResources().getDimension(R.dimen.nutri_height_transform_size);
-            B.getLayoutParams().width = (int) getResources().getDimension(R.dimen.nutri_width_transform_size);
-            B.setBackground(getResources().getDrawable(R.drawable.bg_rounded_b));
-            B.setTextSize(TypedValue.COMPLEX_UNIT_SP,60);
-        }
-        else if(alphabet.equals("C")){
-            C.setTextColor(getResources().getColor(R.color.white));
-            C.getLayoutParams().height = (int) getResources().getDimension(R.dimen.nutri_height_transform_size);
-            C.getLayoutParams().width = (int) getResources().getDimension(R.dimen.nutri_width_transform_size);
-            C.setBackground(getResources().getDrawable(R.drawable.bg_rounded_c));
-            C.setTextSize(TypedValue.COMPLEX_UNIT_SP,60);
-        }
-        else if(alphabet.equals("D")){
-            D.setBackground(getResources().getDrawable(R.drawable.bg_rounded_d));
-            D.setTextColor(getResources().getColor(R.color.white));
-            D.getLayoutParams().height = (int) getResources().getDimension(R.dimen.nutri_height_transform_size);
-            D.getLayoutParams().width = (int) getResources().getDimension(R.dimen.nutri_width_transform_size);
-            D.setTextSize(TypedValue.COMPLEX_UNIT_SP,60);
-        }
-        else if(alphabet.equals("E")){
-            E.setBackground(getResources().getDrawable(R.drawable.bg_rounded_e));
-            E.setTextColor(getResources().getColor(R.color.white));
-            E.getLayoutParams().height = (int) getResources().getDimension(R.dimen.nutri_height_transform_size);
-            E.getLayoutParams().width = (int) getResources().getDimension(R.dimen.nutri_width_transform_size);
-            E.setTextSize(TypedValue.COMPLEX_UNIT_SP,60);
-        }
 
     }
 
