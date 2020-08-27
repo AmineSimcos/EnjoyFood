@@ -89,7 +89,6 @@ public class Tab1 extends Fragment {
         txtCalicium250 = v.findViewById(R.id.txtCalicium250);
         txtFruitsLesgumes250 = v.findViewById(R.id.txtFruitsLegumes250);
 
-        txtIngrediant = v.findViewById(R.id.txtIngrediant);
 
         ligneEnergie1 = v.findViewById(R.id.ligne_energie_1);
         ligneEnergie2 = v.findViewById(R.id.ligne_energie_2);
