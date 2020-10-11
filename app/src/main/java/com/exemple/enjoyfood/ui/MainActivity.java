@@ -85,18 +85,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         });
 
 
-        menu.findItem(R.id.nav_login).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                Bundle b = new Bundle();
-                b.putBoolean("fragment", true);
-                Intent i = new Intent(getApplicationContext(), LoginActivity.class);
-                i.putExtras(b);
-                startActivityForResult(i, 1331);
-                return true;
-            }
-        });
-
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
