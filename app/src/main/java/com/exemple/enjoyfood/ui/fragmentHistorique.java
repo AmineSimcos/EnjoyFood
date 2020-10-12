@@ -158,6 +158,7 @@ public class fragmentHistorique extends Fragment {
         return v;
     }
 
+
     private void parseJSON(){
         listeProduits.clear();
         String url = Config.URL_HISTORY;
