@@ -107,6 +107,7 @@ public class fragmentHistorique extends Fragment {
                         .setInterpolatorRelease(PushDownAnim.DEFAULT_INTERPOLATOR);
             };
 
+
             // Vérifier si l'historique est vide, la touche ne fonctionne pas
 
                 tv_vider_historique.setOnClickListener(new View.OnClickListener() {
@@ -152,6 +153,7 @@ public class fragmentHistorique extends Fragment {
                 }
             });
         }
+
 
         return v;
     }
@@ -242,6 +244,7 @@ public class fragmentHistorique extends Fragment {
         };
         requestQueue.add(postRequest);
     }
+    
 
 }
 

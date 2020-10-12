@@ -208,6 +208,7 @@ public class ResultatActivity extends AppCompatActivity implements Dialog.Dialog
             @Override
             public void onError(String message) {
                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
 
